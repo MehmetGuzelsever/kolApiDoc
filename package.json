@@ -1,0 +1,20 @@
+{
+  "name": "myswagger-example",
+  "version": "1.0.0",
+  "description": "API document using swagger.io sdk",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mehmet Guzelsever",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.4",
+    "helmet": "^3.14.0",
+    "morgan": "^1.9.1",
+    "swagger-tools": "^0.10.4",
+    "swagger-ui-express": "^4.0.1",
+    "yamljs": "^0.3.0"
+  }
+}
