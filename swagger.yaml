@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: KANDY API
+  description: KANDY ORCHESTRATION LAYER [KOL](https://github.com/Fring/KOL).
+  version: 1.3
+servers:
+  - url: http://api-de.kandy.io/v1.3
+    description: Optional server description, e.g. Main EU (production) server
+  - url: http://api.kandycn.com/v1.3
+    description: Optional server description, e.g. Main CHINA (production) server
+  - url: http://api-apac.kandy.io/v1.3
+    description: Optional server description, e.g. Main ASIA (production) server
+  - url: http://api-apac.kandy.io/prp/v1.3
+    description: Optional server description, e.g. Main ASIA (test) server
+tags:
+- name: Admins
+  description: Admin Level Request (adminRequestHandler) /v1.3/admins
+- name: Accounts
+  description: Acoounts Level Request (accountRequestHandler) /v1.3/accounts
+- name: Domains
+  description: Domains Level Request (domainRequestHandler) /v1.3/domains/
+- name: Users
+  description: Users Level Request (userRequestHandler) /v1.3/users
+- name: Devices
+  description: Devices Level Request (deviceRequestHandler) /v1.3/devices             
+paths:
+  /user/{key}:
+    get:
+      tags:
+      - Accounts  
+      summary: for Accounts AccessToken.
+      parameters:
+        - name: key
+          in: path
+          required: true
+          description: Parameter description in CommonMark or HTML.
+          schema:
+            type : string
+            minimum: 1
+definitions: 
+  admins:
+    properties: 
+  accounts: 
+    properties: 
+  domains: 
+    properties:
+  users: 
+    properties:
+  devices: 
+    properties:               
+
