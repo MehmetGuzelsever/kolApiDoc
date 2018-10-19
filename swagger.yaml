@@ -587,8 +587,7 @@ paths:
       - Devices  
       summary: UploadDeviceAddressbookRequest
       parameters:
-        - $ref: '#/parameters/UserId'
-        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/info'
         - $ref: '#/parameters/DeviceId'
         - name: contacts
           in: path
@@ -602,17 +601,229 @@ paths:
       - Devices  
       summary: GetDeviceAddressbookRequest
       parameters:
-        - $ref: '#/parameters/UserId'
-        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/info'
         - $ref: '#/parameters/DeviceId'
     delete:
       tags:
       - Devices  
       summary: DeleteDeviceAddressbookRequest
       parameters:
-        - $ref: '#/parameters/UserId'
-        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/info'
         - $ref: '#/parameters/DeviceId'
+  /devices/addressbooks/hints:
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceAddressbookHintsRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'  
+  /devices/messages:
+    post:
+      tags:
+      - Devices  
+      summary: SendDeviceMessagesRequestV1_2
+      parameters:
+        - $ref: '#/parameters/DeviceId' 
+        - $ref: '#/parameters/message'
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceMessagesRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/info'
+    delete:
+      tags:
+      - Devices  
+      summary: AckDeviceMessagesRequest
+      parameters:
+        - $ref: '#/parameters/info' 
+        - $ref: '#/parameters/DeviceId' 
+        - $ref: '#/parameters/message' 
+        - name: configuration
+          in: path
+          required: true
+          description: Parameter (&configuration=)
+          schema:
+            type : string
+            minimum: 1                  
+  /devices/messages/read:
+    post:
+      tags:
+      - Devices  
+      summary: ReadDeviceMessagesRequest
+      parameters:
+        - $ref: '#/parameters/info' 
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/message' 
+        - name: configuration
+          in: path
+          required: true
+          description: Parameter (&configuration=)
+          schema:
+            type : string
+            minimum: 1    
+  /devices/smss:
+    post:
+      tags:
+      - Devices  
+      summary: SendDeviceSmsRequest
+      parameters:
+        - $ref: '#/parameters/info' 
+        - name: user_country_code
+          in: path
+          required: true
+          description: Parameter (&user_country_code=)
+          schema:
+            type : string
+            minimum: 1 
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/message' 
+  /devices/smss/out:
+    post:
+      tags:
+      - Devices  
+      summary: SendStroredSmsOutRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - name: user_country_code
+          in: path
+          required: true
+          description: Parameter (&user_country_code=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: destination
+          in: path
+          required: true
+          description: Parameter (&destination=)
+          schema:
+            type : string
+            minimum: 1  
+        - $ref: '#/parameters/message' 
+  /devices/content:
+    get:
+      tags:
+      - Devices  
+      summary: downloadFileRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - name: content_uuid
+          in: path
+          required: true
+          description: Parameter (&content_uuid=)
+          schema:
+            type : string
+            minimum: 1  
+    post:
+      tags:
+      - Devices  
+      summary: uploadFileRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - name: content_uuid
+          in: path
+          required: true
+          description: Parameter (&content_uuid=)
+          schema:
+            type : string
+            minimum: 1                      
+  /devices/content/thumbnail:
+    get:
+      tags:
+      - Devices  
+      summary: downloadFileThumbnailRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - name: content_uuid
+          in: path
+          required: true
+          description: Parameter (&content_uuid=)
+          schema:
+            type : string
+            minimum: 1
+  /devices/credentials/push:
+    post:
+      tags:
+      - Devices  
+      summary: SetDevicePushCredentialsRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: credentials
+          in: path
+          required: true
+          description: Parameter (&credentials=)
+          schema:
+            type : string
+            minimum: 1         
+    get:
+      tags:
+      - Devices  
+      summary: GetDevicePushCredentialsRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId' 
+    delete:
+      tags:
+      - Devices  
+      summary: DeleteDevicePushCredentialsRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: platform
+          in: body
+          required: true
+          description: Platform
+          schema:
+            type : string
+            minimum: 1  
+  /devices/location:
+    post:
+      tags:
+      - Devices  
+      summary: SetDeviceLocationRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: location_status
+          in: path
+          required: true
+          description: location_status (location_status=)
+          schema:
+            type : string
+            minimum: 1  
+  /devices/smss/invite:
+    post:
+      tags:
+      - Devices  
+      summary: SendInviteRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/message'
+        - $ref: '#/parameters/info'
+  /devices/connection_type:
+    post:
+      tags:
+      - Devices  
+      summary: SetDeviceConnectionTypeRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: connection_type
+          in: path
+          required: true
+          description: connection_type (connection_type=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceConnectionTypeRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'                                                                                                   
         #-------------- Admins ------------
   /admins:
     post:
@@ -762,7 +973,363 @@ paths:
           description: Switch Package Id (&switch_package_id=)
           schema:
             type : string
-            minimum: 1                                                                                                           
+            minimum: 1 
+  /admins/domains/billing/plans/active:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainActivePlansStatusRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: account_api_key
+          in: path
+          required: true
+          description: Account Api Key (&account_api_key=)
+          schema:
+            type : string
+            minimum: 1
+        - $ref: '#/parameters/DomainName'
+  /admins/billing/rates:
+    post:
+      tags:
+      - Admins  
+      summary: CreateRateTableRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: rates
+          in: path
+          required: true
+          description: Rates (&rates=)
+          schema:
+            type : string
+            minimum: 1
+        - name: rate_table_name
+          in: path
+          required: true
+          description: Rate Table Name (&name=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Admins  
+      summary: CreateRateTableRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+  /admins/accounts:
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountListRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+    post:
+      tags:
+      - Admins  
+      summary: RegisterAccountRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - name: account_email
+          in: path
+          required: true
+          description: Account Email (&account_email=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: account_password
+          in: path
+          required: true
+          description: Account Password (&account_password=)
+          schema:
+            type : string
+            minimum: 1
+    delete:
+      tags:
+      - Admins  
+      summary: UnregisterAccountRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - $ref: '#/parameters/AAK'
+            
+  /admins/accounts/accessTokens:
+    delete:
+      tags:
+      - Admins  
+      summary: RevokeAccountAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+  /admins/accounts/configurations:
+    post:
+      tags:
+      - Admins  
+      summary: SetAccountConfigurationRequest
+      parameters:
+        - name: account_email
+          in: path
+          required: true
+          description: Account Email (&account_email=)
+          schema:
+            type : string
+            minimum: 1
+        - name: account_configuration
+          in: path
+          required: true
+          description: Account Configuration (&account_configuration=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountConfigurationRequest
+      parameters:
+        - name: account_email
+          in: path
+          required: true
+          description: Account Email (&account_email=)
+          schema:
+            type : string
+            minimum: 1
+  /admins/domains/configurations:
+    post:
+      tags:
+      - Admins  
+      summary: SetDomainConfigurationRequest
+      parameters:
+        - name: domain_configuration
+          in: path
+          required: true
+          description: Domain Configuration
+          schema:
+            type : string
+            minimum: 1
+  /admins/domains/configurations/configuration:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainConfigurationRequest
+      parameters:
+  /admins/domains/configurations/route:
+    post:
+      tags:
+      - Admins  
+      summary: SetDomainConfigurationRouteRequest
+      parameters:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainConfigurationRouteRequest
+      parameters:
+  /admins/domains/configurations/communications/spidr:
+    post:
+      tags:
+      - Admins  
+      summary: GetDomainSpidrConfigurationRequest
+      parameters:
+  /admins/accounts/details:
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountDetailsRequest
+      parameters:
+        - $ref: '#/parameters/AAK'
+  /admins/billing/codes:
+    get:
+      tags:
+      - Admins  
+      summary: GetCodeListRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+    post:
+      tags:
+      - Admins  
+      summary: SetCodeListRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - name: code_list
+          in: path
+          required: true
+          description: Code List
+          schema:
+            type : string
+            minimum: 1
+  /admins/oauth/tokens:
+    get:
+      tags:
+      - Admins  
+      summary: GetOAuthTokenRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - $ref: '#/parameters/OAK'
+        - $ref: '#/parameters/OAS'
+  /admins/domains/users:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainUserListRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - $ref: '#/parameters/DAT'
+  /admins/domains/users/accesstokens:
+    get:
+      tags:
+      - Admins  
+      summary: GetUserAccessTokenByUserAndDomainRequest
+      parameters:
+        - $ref: '#/parameters/UserId'
+        - $ref: '#/parameters/DomainName'
+  /admins/domains/exists:
+    get:
+      tags:
+      - Admins  
+      summary: CheckAvailableDomainNameRequest
+      parameters:
+        - $ref: '#/parameters/DomainName'
+  /admins/domains/resources:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainResourcesRequest
+      parameters:
+        - $ref: '#/parameters/DomainName'
+    put:
+      tags:
+      - Admins  
+      summary: IncreaseDomainResourcesRequest
+      parameters:
+        - $ref: '#/parameters/DomainName'
+  /admins/domains/otp:
+    get:
+      tags:
+      - Admins  
+      summary: GetUserOtpsRequest
+      parameters:
+  /admins/domains/fastcall:
+    put:
+      tags:
+      - Admins  
+      summary: EnableDomainFastCallRequest
+      parameters:
+        - $ref: '#/parameters/DAT'
+    ## DSK
+  /admins/domain_special_keys:
+    post:
+      tags:
+      - Admins  
+      summary: RegisterDomainSpecialKeyRequest
+      parameters:
+        - $ref: '#/parameters/DSK'
+    get:
+      tags:
+      - Admins  
+      summary: GetRegisteredDomainSpecialKeysRequest
+      parameters:
+       # - $ref: '#/parameters/DSK'
+    delete:
+      tags:
+      - Admins  
+      summary: UnregisterDomainSpecialKeyRequest
+      parameters:
+        - $ref: '#/parameters/DSK'
+      ## DSK
+
+      ## Application Configuration
+  /admins/applications/configurations:
+    post:
+      tags:
+      - Admins  
+      summary: SetApplicationConfigurationRequest
+      parameters:
+        - name: application_configuration
+          in: path
+          required: true
+          description: Application Configuration  
+          schema:
+            type: string
+            minumum: 1
+        - $ref: '#/parameters/DSK'
+  /admins/applications/configurations/configuration:
+    get:
+      tags:
+      - Admins  
+      summary: GetApplicationConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/DSK'
+      ## Application Configuration 
+
+      ## // billing 
+  /admins/billing/packages:
+    get:
+      tags:
+      - Admins  
+      summary: GetPackagesRequest
+      parameters:
+        - name: key
+          in: path
+          required: true
+          description: Admin Key (?key=)
+          schema:
+            type: string
+            minumum: 1
+            ## // billing 
+
+            ## // misc
+  /admins/users/anonymous:
+    delete:
+      tags:
+      - Admins  
+      summary: DeleteAnonymousUserRequest
+      parameters:
+        - $ref: '#/parameters/UAT'
+  /admins/sessions/session/id:
+    delete:
+      tags:
+      - Admins  
+      summary: DeleteSessionRequest
+      parameters:
+        - name: session_id
+          in: path
+          required: true
+          description: Session ID (?session_id=)
+          schema:
+            type: string
+            minumum: 1
+             ## // misc
+
+             ## // reports
+  /admins/general_report:
+    post:
+      tags:
+      - Admins  
+      summary: GeneralReportRequest
+      parameters:
+
+  /admins/reports/data/apis/24h:
+    get:
+      tags:
+      - Admins  
+      summary: GetApiCallCountInLast24HRequest
+      parameters:
+        - name: api_name
+          in: path
+          required: true
+          description: Api Name (?api_name=)
+          schema:
+            type: string
+            minumum: 1
+  /admins/reports/data/apis/24h:
+    get:
+      tags:
+      - Admins  
+      summary: GetApiCallDataInLast24HRequest
+      parameters:
+        - name: api_name
+          in: path
+          required: true
+          description: Api Name (?api_name=)
+          schema:
+            type: string
+            minumum: 1                                                                                                                      
 parameters:
   AAK:
     name: key
@@ -923,6 +1490,54 @@ parameters:
     description: Domain Api Secret (?user_api_secret=)
     schema:
       type: string
-      minumum: 1                                                            
+      minumum: 1
+  DSK:
+    name: domain_special_key
+    in: path
+    required: true
+    description: Domain Special Key (?domain_special_key=)
+    schema:
+      type: string
+      minumum: 1
+  OAK:
+    name: oauth_key
+    in: path
+    required: true
+    description: Oauth Key (?oauth_key=)
+    schema:
+      type: string
+      minumum: 1
+  OAS:
+    name: oauth_secret
+    in: path
+    required: true
+    description: Oauth Secret (?oauth_secret=)
+    schema:
+      type: string
+      minumum: 1 
+  message:
+    name: message
+    in: body
+    required: true
+    description: Message
+    schema:
+      type: string
+      minumum: 1
+  info:
+    name: info
+    in: body
+    required: true
+    description: domain_name,user_id
+    schema:
+      type: object
+      required:
+        - "domain_name"
+        - "user_id"
+      properties:
+        domain_name:
+          type: string
+        user_id:
+          type: string    
+
 
 
