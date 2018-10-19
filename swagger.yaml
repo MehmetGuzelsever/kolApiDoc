@@ -23,7 +23,8 @@ tags:
   description: Users Level Request (userRequestHandler) /v1.3/users
 - name: Devices
   description: Devices Level Request (deviceRequestHandler) /v1.3/devices             
-paths:  
+paths:
+  #--------- Accounts ------------  
   /accounts/accessTokens:
     get:
       tags:
@@ -169,6 +170,7 @@ paths:
       summary: GetAccountConfigurationRequest
       parameters:
         - $ref: '#/parameters/AAT'
+        #----------------Domains Level ----------------- 
   /domains/users:
     get:
       tags:
@@ -264,7 +266,159 @@ paths:
           description: User Name (&user_name=)
           schema:
             type : string
+            minimum: 1
+  /domains/users/permission:
+    get:
+      tags:
+      - Domains  
+      summary: GetUserPermissionRequest
+      parameters:
+        - $ref: '#/parameters/DomainNameName'
+        - $ref: '#/parameters/UserId'  
+    put:
+      tags:
+      - Domains  
+      summary: UpdateUserPermissionRequest
+      parameters:
+        - $ref: '#/parameters/DomainNameName'
+        - $ref: '#/parameters/UserId'
+        - name: actions
+          in: path
+          required: true
+          description: Actions (&actions=)
+          schema:
+            type : string
             minimum: 1 
+    delete:
+      tags:
+      - Domains  
+      summary: DeleteUserPermissionRequest
+      parameters:
+        - $ref: '#/parameters/DomainNameName' 
+        - $ref: '#/parameters/UserId'
+        - name: actions
+          in: path
+          required: true
+          description: Actions (&actions=)
+          schema:
+            type : string
+            minimum: 1
+  /domains/devices:
+    delete:
+      tags:
+      - Domains  
+      summary: UnregisterDeviceRequest
+      parameters:
+        - $ref: '#/parameters/DomainNameName'
+        - $ref: '#/parameters/UserId'
+        - $ref: '#/parameters/DeviceId'
+  /domains/countrycodes:
+    get:
+      tags:
+      - Domains  
+      summary: GetCountryCodeRequest
+      parameters:
+        - $ref: '#/parameters/DomainNameName'
+  /domains/accessTokens:
+    get:
+      tags:
+      - Domains  
+      summary: GetDomainAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/DAS'
+  /domains/details:
+    get:
+      tags:
+      - Domains  
+      summary: GetDomainDetailsRequest
+      parameters:
+        - $ref: '#/parameters/DAKKey'
+        - $ref: '#/parameters/DAS'
+  /domains/details/limited/access_token:
+    get:
+      tags:
+      - Domains  
+      summary: GetLimitedDomainDetailsByAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/DATKey' 
+  /domains/details/limited/api_key:
+    get:
+      tags:
+      - Domains  
+      summary: GetLimitedDomainDetailsByApiKeyRequest
+      parameters:
+        - $ref: '#/parameters/DAKKey' 
+  /domains/configurations/communications/spidr:
+    get:
+      tags:
+      - Domains  
+      summary: GetSpidrCommunicationConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/DATKey'  
+  /domains/configurations/push:
+    get:
+      tags:
+      - Domains  
+      summary: GetPushConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/DATKey' 
+  /domains/users/locations:
+    get:
+      tags:
+      - Domains  
+      summary: GetUsersLocationsListRequest
+      parameters:
+        - $ref: '#/parameters/DomainName' 
+  /domains/users/smblocations:
+    get:
+      tags:
+      - Domains  
+      summary: GetUsersSmbLocationsListRequest
+      parameters:
+        - name: key
+          in: path
+          required: true
+          description: User Access Token (?key=)
+          schema:
+            type : string
+            minimum: 1   
+  /domains/users/registrations:
+    post:
+      tags:
+      - Domains  
+      summary: UserRegistrationRequest
+      parameters:
+        - name: key
+          in: path
+          required: true
+          description: User Access Token (?key=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: device_native_id
+          in: path
+          required: true
+          description: Device Native Id (&device_native_id=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: wifi
+          in: path
+          required: true
+          description: Wifi (&wifi=)
+          schema:
+            type : string
+            minimum: 1                                                                                                                                                                                                                                                                                                       
+      #----------- Users Level------------ 
+  /users/AccessTokens:
+    get:
+      tags:
+      - Users  
+      summary: GetUserAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/UAS'
+        - $ref: '#/parameters/UserId' 
+        - $ref: '#/parameters/DomainName'               
   /users/devices:
     get:
       tags:
@@ -347,6 +501,86 @@ paths:
           schema:
             type : string
             minimum: 1
+  /users/devices/details:
+    get:
+      tags:
+      - Users  
+      summary: GetDeviceDetailsRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/DomainName' 
+        - $ref: '#/parameters/UserId'
+  /users/details/limited:
+    get:
+      tags:
+      - Users  
+      summary: GetLimitedUserDetailsRequest
+      parameters:
+        - name: info
+          in: path
+          required: true
+          description: User Details (&info=)
+          schema:
+            type : string
+            minimum: 1  
+  /users/email/send:
+    get:
+      tags:
+      - Users  
+      summary: SendEmail
+      parameters:  
+        - name: email_contact
+          in: path
+          required: true
+          description: Email Contact (?email_contact=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: message
+          in: path
+          required: true
+          description: Message (&message=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: title
+          in: path
+          required: true
+          description: Title (&title=)
+          schema:
+            type : string
+            minimum: 1 
+  /users/report:
+    post:
+      tags:
+      - Users  
+      summary: userGeneralReportRequest
+      parameters:
+        - $ref: '#/parameters/UATKey'
+        - $ref: '#/parameters/DeviceId' 
+        - name: reportType
+          in: path
+          required: true
+          description: Parameter (&reportType=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: clientTimeStamp
+          in: path
+          required: true
+          description: Parameter (&clientTimeStamp=)
+          schema:
+            type : string
+            minimum: 1 
+  /users/report:
+    post:
+      tags:
+      - Users  
+      summary: CheckIfUserExistRequest
+      parameters:
+        - $ref: '#/parameters/UserId' 
+        - $ref: '#/parameters/DomainName'                                                                                                                  
+          #------------ Devices -------------  
   /devices/addressbooks:
     post:
       tags:
@@ -379,6 +613,7 @@ paths:
         - $ref: '#/parameters/UserId'
         - $ref: '#/parameters/DomainName'
         - $ref: '#/parameters/DeviceId'
+        #-------------- Admins ------------
   /admins:
     post:
       tags:
@@ -398,14 +633,14 @@ paths:
           description: Admin Name (&admin_name=)
           schema:
             type : string
-            minimum: 1 
-        - name: admin_name
+            minimum: 1
+        - name: admin_password
           in: path
           required: true
           description: Admin Password (&admin_password=)
           schema:
             type : string
-            minimum: 1
+            minimum: 1            
   /admins/configurations/configuration:
     get:
       tags:
@@ -527,7 +762,7 @@ paths:
           description: Switch Package Id (&switch_package_id=)
           schema:
             type : string
-            minimum: 1                                                                                                             
+            minimum: 1                                                                                                           
 parameters:
   AAK:
     name: key
@@ -597,7 +832,7 @@ parameters:
     name: user_access_token
     in: path
     required: true
-    description: User Api Key (&user_api_key=)
+    description: User Access Token (&user_access_token=)
     schema:
       type: string
       minumum: 1 
@@ -605,7 +840,7 @@ parameters:
     name: key
     in: path
     required: true
-    description: User Api Key (?key=)
+    description: User Access Token (?key=)
     schema:
       type: string
       minumum: 1                                                     
@@ -613,25 +848,17 @@ parameters:
     name: key
     in: path
     required: true
-    description: User Api Key (?key=)
+    description: Domain Api Key (?key=)
     schema:
       type: string
       minumum: 1 
   DeviceList:
-    name: Device=device_native_id,device_family,device_name,device_os_version
+    name: Device
     in: body
     required: true
     description: User Api Key (?key=)
     schema:
-      type: string
-      minumum: 1 
-  UserId:
-    name: user_id
-    in: peth
-    required: true
-    description: User Id (?user_id=)
-    schema:
-      type: string
+      type: device_native_id,device_family,device_name,device_os_version
       minumum: 1  
   DeviceId:
     name: device_id
@@ -664,6 +891,38 @@ parameters:
     description: Plan Name (&plan_name=)
     schema:
       type: string
-      minumum: 1                                    
+      minumum: 1 
+  UserId:
+    name: user_id
+    in: path
+    required: true
+    description: User Id (&user_id=)
+    schema:
+      type: string
+      minumum: 1  
+  DomainNameName:
+    name: name
+    in: path
+    required: true
+    description: Domain Name (?name=)
+    schema:
+      type: string
+      minumum: 1 
+  DAS:
+    name: domain_api_secret
+    in: path
+    required: true
+    description: Domain Api Secret (?domain_api_secret=)
+    schema:
+      type: string
+      minumum: 1 
+  UAS:
+    name: user_api_secret
+    in: path
+    required: true
+    description: Domain Api Secret (?user_api_secret=)
+    schema:
+      type: string
+      minumum: 1                                                            
 
 
