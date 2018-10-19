@@ -23,29 +23,647 @@ tags:
   description: Users Level Request (userRequestHandler) /v1.3/users
 - name: Devices
   description: Devices Level Request (deviceRequestHandler) /v1.3/devices             
-paths:
-  /user/{key}:
+paths:  
+  /accounts/accessTokens:
     get:
       tags:
       - Accounts  
-      summary: for Accounts AccessToken.
+      summary: GetAccountAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/AAK'
+        - $ref: '#/parameters/AAS'
+  /accounts/domains:
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainListRequest
+      parameters:
+      - $ref: '#/parameters/AAT'
+    post:
+      tags:
+      - Accounts  
+      summary: RegisterDomainRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - $ref: '#/parameters/DomainName'
+    delete:
+      tags:
+      - Accounts  
+      summary: UnregisterDomainRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - $ref: '#/parameters/DAK'
+  accounts/domains/status:
+    post:
+      tags:
+      - Accounts  
+      summary: ChangeDomainStatusRequest
+      parameters:
+        - $ref: '#/parameters/DAK'
+        - name: domain_status
+          in: path
+          required: true
+          description: Domain Status (&domain_status=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainStatusRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - $ref: '#/parameters/DAK'
+  /accounts/domains/status/all:
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainsStatusListRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+  /accounts/domains/details:
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainDetailsRequest
+      parameters:
+        - name: key (JUST DOMAIN ACCESS TOKEN)
+          in: path
+          required: true
+          description: Domain Access Token (?key=)
+          schema:
+            type : string
+            minimum: 1
+        - name: key (JUST DOMAIN API KEY)
+          in: path
+          required: true
+          description: Domain Api Key (?key=)
+          schema:
+            type : string
+            minimum: 1
+  /accounts/domains/accessTokens:
+    delete:
+      tags:
+      - Accounts  
+      summary: RevokeDomainAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/DAT'
+  /accounts/domains/exists/experius:
+    get:
+      tags:
+      - Accounts  
+      summary: CheckDomainNameInExperiusRequest
+      parameters:
+         - $ref: '#/parameters/DomainName'
+  /accounts/domain/users/anonymous:
+    post:
+      tags:
+      - Accounts  
+      summary: AddAnonUserToDomainRequest
       parameters:
         - name: key
           in: path
           required: true
-          description: Parameter description in CommonMark or HTML.
+          description: Domain Access Token (?key=)
           schema:
             type : string
             minimum: 1
-definitions: 
-  admins:
-    properties: 
-  accounts: 
-    properties: 
-  domains: 
-    properties:
-  users: 
-    properties:
-  devices: 
-    properties:               
+  /accounts/billing/credit_cards:
+    get:
+      tags:
+      - Accounts  
+      summary: GetCreditCardDetailsRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+    post:
+      tags:
+      - Accounts  
+      summary: SetCreditCardDetailsRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - name: credit_cards
+          in: path
+          required: true
+          description: Credit Cards (&credit_cards=)
+          schema:
+            type : string
+            minimum: 1
+  /accounts/configurations:
+    post:
+      tags:
+      - Accounts  
+      summary: SetAccountConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - name: account_configuration
+          in: path
+          required: true
+          description: Account Configuration (&account_configuration=)
+          schema:
+            type : string
+            minimum: 1
+  /accounts/configurations/configuration:
+    get:
+      tags:
+      - Accounts  
+      summary: GetAccountConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+  /domains/users:
+    get:
+      tags:
+      - Domains  
+      summary: GetUserListRequest
+      parameters:
+        - $ref: '#/parameters/DATKey'
+    delete:
+      tags:
+      - Domains  
+      summary: UnregisterUserRequest
+      parameters:
+        - $ref: '#/parameters/DATKey'
+        - $ref: '#/parameters/UAK'        
+  /domains/users/phone_number:
+    post:
+      tags:
+      - Domains  
+      summary: RegisterUserByPhoneNumberRequest
+      parameters:
+        - $ref: '#/parameters/DATKey'
+        - name: user_phone_number
+          in: path
+          required: true
+          description: User Phone Number (&user_phone_number=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: user_country_code
+          in: path
+          required: true
+          description: User Country Code (&user_country_code=)
+          schema:
+            type : string
+            minimum: 1 
+  /domains/users/user_id:
+    post:
+      tags:
+      - Domains  
+      summary: RegisterUserByUserIdRequest
+      parameters:
+        - $ref: '#/parameters/DATKey'
+        - name: user_id
+          in: path
+          required: true
+          description: User Id (&user_id=)
+          schema:
+            type : string
+            minimum: 1 
+  /domains/users/details:
+    get:
+      tags:
+      - Domains  
+      summary: GetUserDetailsRequest
+      parameters:
+        - name: user_access_token
+          in: path
+          required: true
+          description: User Access Token (&user_access_token=)
+          schema:
+            type : string
+            minimum: 1
+  /domains/users/AccessTokens:
+    get:
+      tags:
+      - Domains  
+      summary: GetUserAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/DAKKey'
+        - name: user_id
+          in: path
+          required: true
+          description: User Id (&user_id=)
+          schema:
+            type : string
+            minimum: 1
+    delete:
+      tags:
+      - Domains  
+      summary: RevokeUserAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/UAT'
+        - $ref: '#/parameters/DATKey'
+  /domains/users/devices:
+    get:
+      tags:
+      - Domains  
+      summary: GetUserDeviceListRequest
+      parameters:
+        - name: user_name
+          in: path
+          required: true
+          description: User Name (&user_name=)
+          schema:
+            type : string
+            minimum: 1 
+  /users/devices:
+    get:
+      tags:
+      - Users  
+      summary: GetDeviceListRequest
+      parameters:
+        - name: domain_name
+          in: path
+          required: true
+          description: Domain Name (?domain_name=)
+          schema:
+            type : string
+            minimum: 1  
+        - name: user_id
+          in: path
+          required: true
+          description: User Id (?user_id=)
+          schema:
+            type : string
+            minimum: 1 
+    post:
+      tags:
+      - Users  
+      summary: RegisterDeviceRequest
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          description: User Id (?user_id=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: domain_name
+          in: path
+          required: true
+          description: Domain Name (&domain_name=)
+          schema:
+            type : string
+            minimum: 1
+        - $ref: '#/parameters/DeviceList'
+    delete:
+      tags:
+      - Users  
+      summary: UnregisterDeviceRequest
+      parameters:
+        - $ref: '#/parameters/UATKey'
+        - name: domain_name
+          in: path
+          required: true
+          description: Domain Name (&domain_name=)
+          schema:
+            type : string
+            minimum: 1  
+        - name: user_id
+          in: path
+          required: true
+          description: User Id (&user_id=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: device_id
+          in: path
+          required: true
+          description: Device Id (&device_id=)
+          schema:
+            type : string
+            minimum: 1
+  /users/devices/multiple:
+    get:
+      tags:
+      - Users  
+      summary: UnregisterMultipleDeviceRequest
+      parameters:
+        - $ref: '#/parameters/UserId'    
+        - $ref: '#/parameters/DomainName'
+        - name: type
+          in: path
+          required: true
+          description: Type (&type=)
+          schema:
+            type : string
+            minimum: 1
+  /devices/addressbooks:
+    post:
+      tags:
+      - Devices  
+      summary: UploadDeviceAddressbookRequest
+      parameters:
+        - $ref: '#/parameters/UserId'
+        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/DeviceId'
+        - name: contacts
+          in: path
+          required: true
+          description: Type (&contats=)
+          schema:
+            type : string
+            minimum: 1 
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceAddressbookRequest
+      parameters:
+        - $ref: '#/parameters/UserId'
+        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/DeviceId'
+    delete:
+      tags:
+      - Devices  
+      summary: DeleteDeviceAddressbookRequest
+      parameters:
+        - $ref: '#/parameters/UserId'
+        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/DeviceId'
+  /admins:
+    post:
+      tags:
+      - Admins  
+      summary: AddAdminRequest
+      parameters:
+        - name: key
+          in: path
+          required: true
+          description: Super Admin Key (?key=)
+          schema:
+            type : string
+            minimum: 1
+        - name: admin_name
+          in: path
+          required: true
+          description: Admin Name (&admin_name=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: admin_name
+          in: path
+          required: true
+          description: Admin Password (&admin_password=)
+          schema:
+            type : string
+            minimum: 1
+  /admins/configurations/configuration:
+    get:
+      tags:
+      - Admins  
+      summary: GetAdminConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+  /admins/configurations:
+    post:
+      tags:
+      - Admins  
+      summary: SetAdminConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - name: admin_configuration
+          in: body
+          required: true
+          description: Admin Configuration
+          schema:
+            type : string
+            minimum: 1 
+  /admins/billing/packages:
+    get:
+      tags:
+      - Admins  
+      summary: GetPackagesRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+  /admins/accounts/status:
+    put:
+      tags:
+      - Admins  
+      summary: ChangeAccountStatusRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey' 
+        - name: account_email
+          in: path
+          required: true
+          description: Admin Email (&account_email=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: account_status
+          in: path
+          required: true
+          description: Admin Status (&admin_status=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountStatusRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: account_email
+          in: path
+          required: true
+          description: Admin Email (&account_email=)
+          schema:
+            type : string
+            minimum: 1 
+  /admins/billing/plans:
+    post:
+      tags:
+      - Admins  
+      summary: CreatePlanRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK' 
+        - $ref: '#/parameters/PlanName'
+        - name: plan_codes
+          in: path
+          required: true
+          description: Plan Codes (&plan_codes=)
+          schema:
+            type : string
+            minimum: 1 
+    get:
+      tags:
+      - Admins  
+      summary: GetPlansRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+  /admins/domains/billing/plans:
+    put:
+      tags:
+      - Admins  
+      summary: AssignPlanRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: account_api_key
+          in: path
+          required: true
+          description: Account Api Key (&account_api_key=)
+          schema:
+            type : string
+            minimum: 1 
+        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/PlanName' 
+  /admins/domains/billing/plans/switch:
+    put:
+      tags:
+      - Admins  
+      summary: SwitchPlanRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: account_api_key
+          in: path
+          required: true
+          description: Account Api Key (&account_api_key=)
+          schema:
+            type : string
+            minimum: 1
+        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/PlanName' 
+        - name: switch_package_id
+          in: path
+          required: true
+          description: Switch Package Id (&switch_package_id=)
+          schema:
+            type : string
+            minimum: 1                                                                                                             
+parameters:
+  AAK:
+    name: key
+    in: path
+    required: true
+    description: Account Api Key (?key=)
+    schema:
+      type: string
+      minumum: 1
+  AAS:
+    name: account_api_secret
+    in: path
+    required: true
+    description: Account Api Secret (&account_api_secret=)
+    schema:
+      type: string
+      minumum: 1 
+  AAT:
+    name: key
+    in: path
+    required: true
+    description: Account Access Token (?key=)
+    schema:
+      type: string
+      minumum: 1
+  DomainName:
+    name: domain_name
+    in: path
+    required: true
+    description: Domain Name (&domain_name=)
+    schema:
+      type: string
+      minumum: 1 
+  DAK:
+    name: domain_api_key
+    in: path
+    required: true
+    description: Domain Api Key (&domain_api_key=)
+    schema:
+      type: string
+      minumum: 1  
+  DAT:
+    name: domain_access_token
+    in: path
+    required: true
+    description: Domain Access Token (&domain_access_token=)
+    schema:
+      type: string
+      minumum: 1
+  DATKey:
+    name: key
+    in: path
+    required: true
+    description: Domain Access Token (?key=)
+    schema:
+      type: string
+      minumum: 1 
+  UAK:
+    name: user_api_key
+    in: path
+    required: true
+    description: User Api Key (&user_api_key=)
+    schema:
+      type: string
+      minumum: 1 
+  UAT:
+    name: user_access_token
+    in: path
+    required: true
+    description: User Api Key (&user_api_key=)
+    schema:
+      type: string
+      minumum: 1 
+  UATKey:
+    name: key
+    in: path
+    required: true
+    description: User Api Key (?key=)
+    schema:
+      type: string
+      minumum: 1                                                     
+  DAKKey:
+    name: key
+    in: path
+    required: true
+    description: User Api Key (?key=)
+    schema:
+      type: string
+      minumum: 1 
+  DeviceList:
+    name: Device=device_native_id,device_family,device_name,device_os_version
+    in: body
+    required: true
+    description: User Api Key (?key=)
+    schema:
+      type: string
+      minumum: 1 
+  UserId:
+    name: user_id
+    in: peth
+    required: true
+    description: User Id (?user_id=)
+    schema:
+      type: string
+      minumum: 1  
+  DeviceId:
+    name: device_id
+    in: path
+    required: true
+    description: Device Id (?device_id=)
+    schema:
+      type: string
+      minumum: 1 
+  AdminAK:
+    name: key
+    in: path
+    required: true
+    description: Admin Api Key (?key=)
+    schema:
+      type: string
+      minumum: 1 
+  AAccessKey:
+    name: key
+    in: path
+    required: true
+    description: Admin Access Key (?key=)
+    schema:
+      type: string
+      minumum: 1 
+  PlanName:
+    name: plan_name
+    in: path
+    required: true
+    description: Plan Name (&plan_name=)
+    schema:
+      type: string
+      minumum: 1                                    
+
 
