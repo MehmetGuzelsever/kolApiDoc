@@ -1,0 +1,10 @@
+- name: Admins
+  description: Admin Level Request (adminRequestHandler) /v1.3/admins
+- name: Accounts
+  description: Acoounts Level Request (accountRequestHandler) /v1.3/accounts
+- name: Domains
+  description: Domains Level Request (domainRequestHandler) /v1.3/domains/
+- name: Users
+  description: Users Level Request (userRequestHandler) /v1.3/users
+- name: Devices
+  description: Devices Level Request (deviceRequestHandler) /v1.3/devices  

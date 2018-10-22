@@ -2,14 +2,12 @@ const express     =require("express");
 const cors        =require("cors");
 const helmet      =require("helmet");
 const morgan      =require("morgan");
-const swaggerUi   =require("swagger-ui-express");
 const swaggerTool =require("swagger-tools");
-const yaml        =require("yamljs");
+const resolve     =require("json-refs").resolveRefs;
+const YAML        =require("js-yaml");
+const fs          =require("fs");
 const port        ="8080";
 
-
-//Swagger Config Yaml File
-const swaggerDoc = yaml.load('./swagger.yaml');
 
 //Express App
 const app = express();
@@ -19,29 +17,28 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(helmet());
 
+   var root = YAML.safeLoad(fs.readFileSync("./index.yaml").toString());
+   var options = {
+     filter        : ['relative', 'remote'],
+     loaderOptions : {
+       processContent : function (res, callback) {
+         callback(null, YAML.safeLoad(res.text));
+       }
+     }
+   };
 
-//Swagger.io Serve
-app.use('/docs',swaggerUi.serve, swaggerUi.setup(swaggerDoc));
-
-//Server
-app.listen(port,function(err){
-    if(err){ console.log("Server Disconnected!!!"); }
-    console.log("Server Connected");
-})
-
-
-
-//Swagger-tool Serve
-/*swaggerTool.initializeMiddleware(swaggerDoc,function(middleware){
- 
-    app.use(middleware.swaggerValidator());
+resolve(root,options).then(function(results){
+    const swaggerDoc = results.resolved;
+    console.log(YAML.dump(swaggerDoc))
+    swaggerTool.initializeMiddleware(swaggerDoc,function(middleware){
+        
+        app.use(middleware.swaggerUi());
     
-    app.use(middleware.swaggerUi());
+        //Server
+        app.listen(port,function(err){
+        if(err){ console.log("Server Disconnected!!!"); }
+        console.log("Server Connected");
+    })
+    })
+})
 
-    //Server
-    app.listen(port,function(err){
-    if(err){ console.log("Server Disconnected!!!"); }
-    console.log("Server Connected");
-})
-})
-*/

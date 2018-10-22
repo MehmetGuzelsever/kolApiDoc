@@ -1,0 +1,170 @@
+  /users/AccessTokens:
+    get:
+      tags:
+      - Users  
+      summary: GetUserAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/UAS'
+        - $ref: '#/parameters/UserId' 
+        - $ref: '#/parameters/DomainName'               
+  /users/devices:
+    get:
+      tags:
+      - Users  
+      summary: GetDeviceListRequest
+      parameters:
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name (?domain_name=)
+          schema:
+            type : string
+            minimum: 1  
+        - name: user_id
+          in: query
+          required: true
+          description: User Id (?user_id=)
+          schema:
+            type : string
+            minimum: 1 
+    post:
+      tags:
+      - Users  
+      summary: RegisterDeviceRequest
+      parameters:
+        - name: user_id
+          in: query
+          required: true
+          description: User Id (?user_id=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name (&domain_name=)
+          schema:
+            type : string
+            minimum: 1
+        - $ref: '#/parameters/DeviceList'
+    delete:
+      tags:
+      - Users  
+      summary: UnregisterDeviceRequest
+      parameters:
+        - $ref: '#/parameters/UATKey'
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name (&domain_name=)
+          schema:
+            type : string
+            minimum: 1  
+        - name: user_id
+          in: query
+          required: true
+          description: User Id (&user_id=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: device_id
+          in: query
+          required: true
+          description: Device Id (&device_id=)
+          schema:
+            type : string
+            minimum: 1
+  /users/devices/multiple:
+    get:
+      tags:
+      - Users  
+      summary: UnregisterMultipleDeviceRequest
+      parameters:
+        - $ref: '#/parameters/UserId'    
+        - $ref: '#/parameters/DomainName'
+        - name: type
+          in: query
+          required: true
+          description: Type (&type=)
+          schema:
+            type : string
+            minimum: 1
+  /users/devices/details:
+    get:
+      tags:
+      - Users  
+      summary: GetDeviceDetailsRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/DomainName' 
+        - $ref: '#/parameters/UserId'
+  /users/details/limited:
+    get:
+      tags:
+      - Users  
+      summary: GetLimitedUserDetailsRequest
+      parameters:
+        - name: info
+          in: query
+          required: true
+          description: User Details (&info=)
+          schema:
+            type : string
+            minimum: 1  
+  /users/email/send:
+    get:
+      tags:
+      - Users  
+      summary: SendEmail
+      parameters:  
+        - name: email_contact
+          in: query
+          required: true
+          description: Email Contact (?email_contact=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: message
+          in: query
+          required: true
+          description: Message (&message=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: title
+          in: query
+          required: true
+          description: Title (&title=)
+          schema:
+            type : string
+            minimum: 1 
+  /users/report:
+    post:
+      tags:
+      - Users  
+      summary: userGeneralReportRequest
+      parameters:
+        - $ref: '#/parameters/UATKey'
+        - $ref: '#/parameters/DeviceId' 
+        - name: reportType
+          in: query
+          required: true
+          description: Parameter (&reportType=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: clientTimeStamp
+          in: query
+          required: true
+          description: Parameter (&clientTimeStamp=)
+          schema:
+            type : string
+            minimum: 1 
+  /users/exists:
+    post:
+      tags:
+      - Users  
+      summary: CheckIfUserExistRequest
+      parameters:
+        - $ref: '#/parameters/UserId' 
+        - $ref: '#/parameters/DomainName'   

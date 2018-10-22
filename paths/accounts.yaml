@@ -1,0 +1,145 @@
+  /accounts/accessTokens:
+    get:
+      tags:
+      - Accounts  
+      summary: GetAccountAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/AAK'
+        - $ref: '#/parameters/AAS'
+  /accounts/domains:
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainListRequest
+      parameters:
+      - $ref: '#/parameters/AAT'
+    post:
+      tags:
+      - Accounts  
+      summary: RegisterDomainRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - $ref: '#/parameters/DomainName'
+    delete:
+      tags:
+      - Accounts  
+      summary: UnregisterDomainRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - $ref: '#/parameters/DAK'
+  accounts/domains/status:
+    post:
+      tags:
+      - Accounts  
+      summary: ChangeDomainStatusRequest
+      parameters:
+        - $ref: '#/parameters/DAK'
+        - name: domain_status
+          in: query
+          required: true
+          description: Domain Status (&domain_status=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainStatusRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - $ref: '#/parameters/DAK'
+  /accounts/domains/status/all:
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainsStatusListRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+  /accounts/domains/details:
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainDetailsRequest
+      parameters:
+        - name: key (JUST DOMAIN ACCESS TOKEN)
+          in: query
+          required: true
+          description: Domain Access Token (?key=)
+          schema:
+            type : string
+            minimum: 1
+        - name: key (JUST DOMAIN API KEY)
+          in: query
+          required: true
+          description: Domain Api Key (?key=)
+          schema:
+            type : string
+            minimum: 1
+  /accounts/domains/accessTokens:
+    delete:
+      tags:
+      - Accounts  
+      summary: RevokeDomainAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/DAT'
+  /accounts/domains/exists/experius:
+    get:
+      tags:
+      - Accounts  
+      summary: CheckDomainNameInExperiusRequest
+      parameters:
+         - $ref: '#/parameters/DomainName'
+  /accounts/domain/users/anonymous:
+    post:
+      tags:
+      - Accounts  
+      summary: AddAnonUserToDomainRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Domain Access Token (?key=)
+          schema:
+            type : string
+            minimum: 1
+  /accounts/billing/credit_cards:
+    get:
+      tags:
+      - Accounts  
+      summary: GetCreditCardDetailsRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+    post:
+      tags:
+      - Accounts  
+      summary: SetCreditCardDetailsRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - name: credit_cards
+          in: query
+          required: true
+          description: Credit Cards (&credit_cards=)
+          schema:
+            type : string
+            minimum: 1
+  /accounts/configurations:
+    post:
+      tags:
+      - Accounts  
+      summary: SetAccountConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+        - name: account_configuration
+          in: query
+          required: true
+          description: Account Configuration (&account_configuration=)
+          schema:
+            type : string
+            minimum: 1
+  /accounts/configurations/configuration:
+    get:
+      tags:
+      - Accounts  
+      summary: GetAccountConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AAT'

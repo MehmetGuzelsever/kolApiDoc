@@ -1,0 +1,458 @@
+  /admins:
+    post:
+      tags:
+      - Admins  
+      summary: AddAdminRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Super Admin Key (?key=)
+          schema:
+            type : string
+            minimum: 1
+        - name: admin_name
+          in: query
+          required: true
+          description: Admin Name (&admin_name=)
+          schema:
+            type : string
+            minimum: 1
+        - name: admin_password
+          in: query
+          required: true
+          description: Admin Password (&admin_password=)
+          schema:
+            type : string
+            minimum: 1            
+  /admins/configurations/configuration:
+    get:
+      tags:
+      - Admins  
+      summary: GetAdminConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+  /admins/configurations:
+    post:
+      tags:
+      - Admins  
+      summary: SetAdminConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - name: admin_configuration
+          in: body
+          required: true
+          description: Admin Configuration
+          schema:
+            type : string
+            minimum: 1 
+  /admins/billing/packages:
+    get:
+      tags:
+      - Admins  
+      summary: GetPackagesRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+  /admins/accounts/status:
+    put:
+      tags:
+      - Admins  
+      summary: ChangeAccountStatusRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - $ref: '#/parameters/AccountEmail'
+        - name: account_status
+          in: query
+          required: true
+          description: Admin Status (&admin_status=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountStatusRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - $ref: '#/parameters/AccountEmail'
+  /admins/billing/plans:
+    post:
+      tags:
+      - Admins  
+      summary: CreatePlanRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK' 
+        - $ref: '#/parameters/PlanName'
+        - name: plan_codes
+          in: query
+          required: true
+          description: Plan Codes (&plan_codes=)
+          schema:
+            type : string
+            minimum: 1 
+    get:
+      tags:
+      - Admins  
+      summary: GetPlansRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+  /admins/domains/billing/plans:
+    put:
+      tags:
+      - Admins  
+      summary: AssignPlanRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: account_api_key
+          in: query
+          required: true
+          description: Account Api Key (&account_api_key=)
+          schema:
+            type : string
+            minimum: 1 
+        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/PlanName' 
+  /admins/domains/billing/plans/switch:
+    put:
+      tags:
+      - Admins  
+      summary: SwitchPlanRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: account_api_key
+          in: query
+          required: true
+          description: Account Api Key (&account_api_key=)
+          schema:
+            type : string
+            minimum: 1
+        - $ref: '#/parameters/DomainName'
+        - $ref: '#/parameters/PlanName' 
+        - name: switch_package_id
+          in: query
+          required: true
+          description: Switch Package Id (&switch_package_id=)
+          schema:
+            type : string
+            minimum: 1 
+  /admins/domains/billing/plans/active:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainActivePlansStatusRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: account_api_key
+          in: query
+          required: true
+          description: Account Api Key (&account_api_key=)
+          schema:
+            type : string
+            minimum: 1
+        - $ref: '#/parameters/DomainName'
+  /admins/billing/rates:
+    post:
+      tags:
+      - Admins  
+      summary: CreateRateTableRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+        - name: rates
+          in: query
+          required: true
+          description: Rates (&rates=)
+          schema:
+            type : string
+            minimum: 1
+        - name: rate_table_name
+          in: query
+          required: true
+          description: Rate Table Name (&name=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Admins  
+      summary: CreateRateTableRequest
+      parameters:
+        - $ref: '#/parameters/AAccessKey'
+  /admins/accounts:
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountListRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+    post:
+      tags:
+      - Admins  
+      summary: RegisterAccountRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - $ref: '#/parameters/AccountEmail'
+        - name: account_password
+          in: query
+          required: true
+          description: Account Password (&account_password=)
+          schema:
+            type : string
+            minimum: 1
+    delete:
+      tags:
+      - Admins  
+      summary: UnregisterAccountRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - $ref: '#/parameters/AAK'
+            
+  /admins/accounts/accessTokens:
+    delete:
+      tags:
+      - Admins  
+      summary: RevokeAccountAccessTokenRequest
+      parameters:
+        - $ref: '#/parameters/AAT'
+  /admins/accounts/configurations:
+    post:
+      tags:
+      - Admins  
+      summary: SetAccountConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AccountEmail'
+        - name: account_configuration
+          in: query
+          required: true
+          description: Account Configuration (&account_configuration=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/AccountEmail'
+  /admins/domains/configurations:
+    post:
+      tags:
+      - Admins  
+      summary: SetDomainConfigurationRequest
+      parameters:
+        - name: domain_configuration
+          in: query
+          required: true
+          description: Domain Configuration
+          schema:
+            type : string
+            minimum: 1
+  /admins/domains/configurations/configuration:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainConfigurationRequest
+      parameters:
+  /admins/domains/configurations/route:
+    post:
+      tags:
+      - Admins  
+      summary: SetDomainConfigurationRouteRequest
+      parameters:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainConfigurationRouteRequest
+      parameters:
+  /admins/domains/configurations/communications/spidr:
+    post:
+      tags:
+      - Admins  
+      summary: GetDomainSpidrConfigurationRequest
+      parameters:
+  /admins/accounts/details:
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountDetailsRequest
+      parameters:
+        - $ref: '#/parameters/AAK'
+  /admins/billing/codes:
+    get:
+      tags:
+      - Admins  
+      summary: GetCodeListRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+    post:
+      tags:
+      - Admins  
+      summary: SetCodeListRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - name: code_list
+          in: query
+          required: true
+          description: Code List
+          schema:
+            type : string
+            minimum: 1
+  /admins/oauth/tokens:
+    get:
+      tags:
+      - Admins  
+      summary: GetOAuthTokenRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - $ref: '#/parameters/OAK'
+        - $ref: '#/parameters/OAS'
+  /admins/domains/users:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainUserListRequest
+      parameters:
+        - $ref: '#/parameters/AdminAK'
+        - $ref: '#/parameters/DAT'
+  /admins/domains/users/accesstokens:
+    get:
+      tags:
+      - Admins  
+      summary: GetUserAccessTokenByUserAndDomainRequest
+      parameters:
+        - $ref: '#/parameters/UserId'
+        - $ref: '#/parameters/DomainName'
+  /admins/domains/exists:
+    get:
+      tags:
+      - Admins  
+      summary: CheckAvailableDomainNameRequest
+      parameters:
+        - $ref: '#/parameters/DomainName'
+  /admins/domains/resources:
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainResourcesRequest
+      parameters:
+        - $ref: '#/parameters/DomainName'
+    put:
+      tags:
+      - Admins  
+      summary: IncreaseDomainResourcesRequest
+      parameters:
+        - $ref: '#/parameters/DomainName'
+  /admins/domains/otp:
+    get:
+      tags:
+      - Admins  
+      summary: GetUserOtpsRequest
+      parameters:
+  /admins/domains/fastcall:
+    put:
+      tags:
+      - Admins  
+      summary: EnableDomainFastCallRequest
+      parameters:
+        - $ref: '#/parameters/DAT'
+    ## DSK
+  /admins/domain_special_keys:
+    post:
+      tags:
+      - Admins  
+      summary: RegisterDomainSpecialKeyRequest
+      parameters:
+        - $ref: '#/parameters/DSK'
+    get:
+      tags:
+      - Admins  
+      summary: GetRegisteredDomainSpecialKeysRequest
+      parameters:
+       # - $ref: '#/parameters/DSK'
+    delete:
+      tags:
+      - Admins  
+      summary: UnregisterDomainSpecialKeyRequest
+      parameters:
+        - $ref: '#/parameters/DSK'
+      ## DSK
+
+      ## Application Configuration
+  /admins/applications/configurations:
+    post:
+      tags:
+      - Admins  
+      summary: SetApplicationConfigurationRequest
+      parameters:
+        - name: application_configuration
+          in: query
+          required: true
+          description: Application Configuration  
+          schema:
+            type: string
+            minumum: 1
+        - $ref: '#/parameters/DSK'
+  /admins/applications/configurations/configuration:
+    get:
+      tags:
+      - Admins  
+      summary: GetApplicationConfigurationRequest
+      parameters:
+        - $ref: '#/parameters/DSK'
+      ## Application Configuration 
+  /admins/users/anonymous:
+    delete:
+      tags:
+      - Admins  
+      summary: DeleteAnonymousUserRequest
+      parameters:
+        - $ref: '#/parameters/UAT'
+  /admins/sessions/session/id:
+    delete:
+      tags:
+      - Admins  
+      summary: DeleteSessionRequest
+      parameters:
+        - name: session_id
+          in: query
+          required: true
+          description: Session ID (?session_id=)
+          schema:
+            type: string
+            minumum: 1
+             ## // misc
+
+             ## // reports
+  /admins/general_report:
+    post:
+      tags:
+      - Admins  
+      summary: GeneralReportRequest
+      parameters:
+
+  /admins/reports/count/apis/24h:
+    get:
+      tags:
+      - Admins  
+      summary: GetApiCallCountInLast24HRequest
+      parameters:
+        - name: api_name
+          in: query
+          required: true
+          description: Api Name (?api_name=)
+          schema:
+            type: string
+            minumum: 1
+  /admins/reports/data/apis/24h:
+    get:
+      tags:
+      - Admins  
+      summary: GetApiCallDataInLast24HRequest
+      parameters:
+        - name: api_name
+          in: query
+          required: true
+          description: Api Name (?api_name=)
+          schema:
+            type: string
+            minumum: 1   
+                              

@@ -62,7 +62,7 @@ paths:
       parameters:
         - $ref: '#/parameters/DAK'
         - name: domain_status
-          in: path
+          in: query
           required: true
           description: Domain Status (&domain_status=)
           schema:
@@ -89,14 +89,14 @@ paths:
       summary: GetDomainDetailsRequest
       parameters:
         - name: key (JUST DOMAIN ACCESS TOKEN)
-          in: path
+          in: query
           required: true
           description: Domain Access Token (?key=)
           schema:
             type : string
             minimum: 1
         - name: key (JUST DOMAIN API KEY)
-          in: path
+          in: query
           required: true
           description: Domain Api Key (?key=)
           schema:
@@ -123,7 +123,7 @@ paths:
       summary: AddAnonUserToDomainRequest
       parameters:
         - name: key
-          in: path
+          in: query
           required: true
           description: Domain Access Token (?key=)
           schema:
@@ -143,7 +143,7 @@ paths:
       parameters:
         - $ref: '#/parameters/AAT'
         - name: credit_cards
-          in: path
+          in: query
           required: true
           description: Credit Cards (&credit_cards=)
           schema:
@@ -157,7 +157,7 @@ paths:
       parameters:
         - $ref: '#/parameters/AAT'
         - name: account_configuration
-          in: path
+          in: query
           required: true
           description: Account Configuration (&account_configuration=)
           schema:
@@ -193,14 +193,14 @@ paths:
       parameters:
         - $ref: '#/parameters/DATKey'
         - name: user_phone_number
-          in: path
+          in: query
           required: true
           description: User Phone Number (&user_phone_number=)
           schema:
             type : string
             minimum: 1 
         - name: user_country_code
-          in: path
+          in: query
           required: true
           description: User Country Code (&user_country_code=)
           schema:
@@ -214,7 +214,7 @@ paths:
       parameters:
         - $ref: '#/parameters/DATKey'
         - name: user_id
-          in: path
+          in: query
           required: true
           description: User Id (&user_id=)
           schema:
@@ -227,7 +227,7 @@ paths:
       summary: GetUserDetailsRequest
       parameters:
         - name: user_access_token
-          in: path
+          in: query
           required: true
           description: User Access Token (&user_access_token=)
           schema:
@@ -241,7 +241,7 @@ paths:
       parameters:
         - $ref: '#/parameters/DAKKey'
         - name: user_id
-          in: path
+          in: query
           required: true
           description: User Id (&user_id=)
           schema:
@@ -261,7 +261,7 @@ paths:
       summary: GetUserDeviceListRequest
       parameters:
         - name: user_name
-          in: path
+          in: query
           required: true
           description: User Name (&user_name=)
           schema:
@@ -283,7 +283,7 @@ paths:
         - $ref: '#/parameters/DomainNameName'
         - $ref: '#/parameters/UserId'
         - name: actions
-          in: path
+          in: query
           required: true
           description: Actions (&actions=)
           schema:
@@ -297,7 +297,7 @@ paths:
         - $ref: '#/parameters/DomainNameName' 
         - $ref: '#/parameters/UserId'
         - name: actions
-          in: path
+          in: query
           required: true
           description: Actions (&actions=)
           schema:
@@ -376,7 +376,7 @@ paths:
       summary: GetUsersSmbLocationsListRequest
       parameters:
         - name: key
-          in: path
+          in: query
           required: true
           description: User Access Token (?key=)
           schema:
@@ -389,21 +389,21 @@ paths:
       summary: UserRegistrationRequest
       parameters:
         - name: key
-          in: path
+          in: query
           required: true
           description: User Access Token (?key=)
           schema:
             type : string
             minimum: 1 
         - name: device_native_id
-          in: path
+          in: query
           required: true
           description: Device Native Id (&device_native_id=)
           schema:
             type : string
             minimum: 1 
         - name: wifi
-          in: path
+          in: query
           required: true
           description: Wifi (&wifi=)
           schema:
@@ -426,14 +426,14 @@ paths:
       summary: GetDeviceListRequest
       parameters:
         - name: domain_name
-          in: path
+          in: query
           required: true
           description: Domain Name (?domain_name=)
           schema:
             type : string
             minimum: 1  
         - name: user_id
-          in: path
+          in: query
           required: true
           description: User Id (?user_id=)
           schema:
@@ -445,14 +445,14 @@ paths:
       summary: RegisterDeviceRequest
       parameters:
         - name: user_id
-          in: path
+          in: query
           required: true
           description: User Id (?user_id=)
           schema:
             type : string
             minimum: 1 
         - name: domain_name
-          in: path
+          in: query
           required: true
           description: Domain Name (&domain_name=)
           schema:
@@ -466,21 +466,21 @@ paths:
       parameters:
         - $ref: '#/parameters/UATKey'
         - name: domain_name
-          in: path
+          in: query
           required: true
           description: Domain Name (&domain_name=)
           schema:
             type : string
             minimum: 1  
         - name: user_id
-          in: path
+          in: query
           required: true
           description: User Id (&user_id=)
           schema:
             type : string
             minimum: 1 
         - name: device_id
-          in: path
+          in: query
           required: true
           description: Device Id (&device_id=)
           schema:
@@ -495,7 +495,7 @@ paths:
         - $ref: '#/parameters/UserId'    
         - $ref: '#/parameters/DomainName'
         - name: type
-          in: path
+          in: query
           required: true
           description: Type (&type=)
           schema:
@@ -517,7 +517,7 @@ paths:
       summary: GetLimitedUserDetailsRequest
       parameters:
         - name: info
-          in: path
+          in: query
           required: true
           description: User Details (&info=)
           schema:
@@ -530,21 +530,21 @@ paths:
       summary: SendEmail
       parameters:  
         - name: email_contact
-          in: path
+          in: query
           required: true
           description: Email Contact (?email_contact=)
           schema:
             type : string
             minimum: 1 
         - name: message
-          in: path
+          in: query
           required: true
           description: Message (&message=)
           schema:
             type : string
             minimum: 1 
         - name: title
-          in: path
+          in: query
           required: true
           description: Title (&title=)
           schema:
@@ -559,20 +559,20 @@ paths:
         - $ref: '#/parameters/UATKey'
         - $ref: '#/parameters/DeviceId' 
         - name: reportType
-          in: path
+          in: query
           required: true
           description: Parameter (&reportType=)
           schema:
             type : string
             minimum: 1 
         - name: clientTimeStamp
-          in: path
+          in: query
           required: true
           description: Parameter (&clientTimeStamp=)
           schema:
             type : string
             minimum: 1 
-  /users/report:
+  /users/exists:
     post:
       tags:
       - Users  
@@ -590,7 +590,7 @@ paths:
         - $ref: '#/parameters/info'
         - $ref: '#/parameters/DeviceId'
         - name: contacts
-          in: path
+          in: query
           required: true
           description: Type (&contats=)
           schema:
@@ -642,7 +642,7 @@ paths:
         - $ref: '#/parameters/DeviceId' 
         - $ref: '#/parameters/message' 
         - name: configuration
-          in: path
+          in: query
           required: true
           description: Parameter (&configuration=)
           schema:
@@ -658,7 +658,7 @@ paths:
         - $ref: '#/parameters/DeviceId'
         - $ref: '#/parameters/message' 
         - name: configuration
-          in: path
+          in: query
           required: true
           description: Parameter (&configuration=)
           schema:
@@ -672,7 +672,7 @@ paths:
       parameters:
         - $ref: '#/parameters/info' 
         - name: user_country_code
-          in: path
+          in: query
           required: true
           description: Parameter (&user_country_code=)
           schema:
@@ -688,14 +688,14 @@ paths:
       parameters:
         - $ref: '#/parameters/info'
         - name: user_country_code
-          in: path
+          in: query
           required: true
           description: Parameter (&user_country_code=)
           schema:
             type : string
             minimum: 1 
         - name: destination
-          in: path
+          in: query
           required: true
           description: Parameter (&destination=)
           schema:
@@ -710,7 +710,7 @@ paths:
       parameters:
         - $ref: '#/parameters/DeviceId'
         - name: content_uuid
-          in: path
+          in: query
           required: true
           description: Parameter (&content_uuid=)
           schema:
@@ -723,7 +723,7 @@ paths:
       parameters:
         - $ref: '#/parameters/info'
         - name: content_uuid
-          in: path
+          in: query
           required: true
           description: Parameter (&content_uuid=)
           schema:
@@ -737,7 +737,7 @@ paths:
       parameters:
         - $ref: '#/parameters/DeviceId'
         - name: content_uuid
-          in: path
+          in: query
           required: true
           description: Parameter (&content_uuid=)
           schema:
@@ -752,7 +752,7 @@ paths:
         - $ref: '#/parameters/info'
         - $ref: '#/parameters/DeviceId'
         - name: credentials
-          in: path
+          in: query
           required: true
           description: Parameter (&credentials=)
           schema:
@@ -788,7 +788,7 @@ paths:
         - $ref: '#/parameters/info'
         - $ref: '#/parameters/DeviceId'
         - name: location_status
-          in: path
+          in: query
           required: true
           description: location_status (location_status=)
           schema:
@@ -812,7 +812,7 @@ paths:
         - $ref: '#/parameters/info'
         - $ref: '#/parameters/DeviceId'
         - name: connection_type
-          in: path
+          in: query
           required: true
           description: connection_type (connection_type=)
           schema:
@@ -832,21 +832,21 @@ paths:
       summary: AddAdminRequest
       parameters:
         - name: key
-          in: path
+          in: query
           required: true
           description: Super Admin Key (?key=)
           schema:
             type : string
             minimum: 1
         - name: admin_name
-          in: path
+          in: query
           required: true
           description: Admin Name (&admin_name=)
           schema:
             type : string
             minimum: 1
         - name: admin_password
-          in: path
+          in: query
           required: true
           description: Admin Password (&admin_password=)
           schema:
@@ -886,16 +886,10 @@ paths:
       - Admins  
       summary: ChangeAccountStatusRequest
       parameters:
-        - $ref: '#/parameters/AAccessKey' 
-        - name: account_email
-          in: path
-          required: true
-          description: Admin Email (&account_email=)
-          schema:
-            type : string
-            minimum: 1 
+        - $ref: '#/parameters/AAccessKey'
+        - $ref: '#/parameters/AccountEmail'
         - name: account_status
-          in: path
+          in: query
           required: true
           description: Admin Status (&admin_status=)
           schema:
@@ -907,13 +901,7 @@ paths:
       summary: GetAccountStatusRequest
       parameters:
         - $ref: '#/parameters/AAccessKey'
-        - name: account_email
-          in: path
-          required: true
-          description: Admin Email (&account_email=)
-          schema:
-            type : string
-            minimum: 1 
+        - $ref: '#/parameters/AccountEmail'
   /admins/billing/plans:
     post:
       tags:
@@ -923,7 +911,7 @@ paths:
         - $ref: '#/parameters/AdminAK' 
         - $ref: '#/parameters/PlanName'
         - name: plan_codes
-          in: path
+          in: query
           required: true
           description: Plan Codes (&plan_codes=)
           schema:
@@ -943,7 +931,7 @@ paths:
       parameters:
         - $ref: '#/parameters/AAccessKey'
         - name: account_api_key
-          in: path
+          in: query
           required: true
           description: Account Api Key (&account_api_key=)
           schema:
@@ -959,7 +947,7 @@ paths:
       parameters:
         - $ref: '#/parameters/AAccessKey'
         - name: account_api_key
-          in: path
+          in: query
           required: true
           description: Account Api Key (&account_api_key=)
           schema:
@@ -968,7 +956,7 @@ paths:
         - $ref: '#/parameters/DomainName'
         - $ref: '#/parameters/PlanName' 
         - name: switch_package_id
-          in: path
+          in: query
           required: true
           description: Switch Package Id (&switch_package_id=)
           schema:
@@ -982,7 +970,7 @@ paths:
       parameters:
         - $ref: '#/parameters/AAccessKey'
         - name: account_api_key
-          in: path
+          in: query
           required: true
           description: Account Api Key (&account_api_key=)
           schema:
@@ -997,14 +985,14 @@ paths:
       parameters:
         - $ref: '#/parameters/AAccessKey'
         - name: rates
-          in: path
+          in: query
           required: true
           description: Rates (&rates=)
           schema:
             type : string
             minimum: 1
         - name: rate_table_name
-          in: path
+          in: query
           required: true
           description: Rate Table Name (&name=)
           schema:
@@ -1029,15 +1017,9 @@ paths:
       summary: RegisterAccountRequest
       parameters:
         - $ref: '#/parameters/AdminAK'
-        - name: account_email
-          in: path
-          required: true
-          description: Account Email (&account_email=)
-          schema:
-            type : string
-            minimum: 1 
+        - $ref: '#/parameters/AccountEmail'
         - name: account_password
-          in: path
+          in: query
           required: true
           description: Account Password (&account_password=)
           schema:
@@ -1064,15 +1046,9 @@ paths:
       - Admins  
       summary: SetAccountConfigurationRequest
       parameters:
-        - name: account_email
-          in: path
-          required: true
-          description: Account Email (&account_email=)
-          schema:
-            type : string
-            minimum: 1
+        - $ref: '#/parameters/AccountEmail'
         - name: account_configuration
-          in: path
+          in: query
           required: true
           description: Account Configuration (&account_configuration=)
           schema:
@@ -1083,13 +1059,7 @@ paths:
       - Admins  
       summary: GetAccountConfigurationRequest
       parameters:
-        - name: account_email
-          in: path
-          required: true
-          description: Account Email (&account_email=)
-          schema:
-            type : string
-            minimum: 1
+        - $ref: '#/parameters/AccountEmail'
   /admins/domains/configurations:
     post:
       tags:
@@ -1097,7 +1067,7 @@ paths:
       summary: SetDomainConfigurationRequest
       parameters:
         - name: domain_configuration
-          in: path
+          in: query
           required: true
           description: Domain Configuration
           schema:
@@ -1147,7 +1117,7 @@ paths:
       parameters:
         - $ref: '#/parameters/AdminAK'
         - name: code_list
-          in: path
+          in: query
           required: true
           description: Code List
           schema:
@@ -1241,7 +1211,7 @@ paths:
       summary: SetApplicationConfigurationRequest
       parameters:
         - name: application_configuration
-          in: path
+          in: query
           required: true
           description: Application Configuration  
           schema:
@@ -1265,7 +1235,7 @@ paths:
       summary: GetPackagesRequest
       parameters:
         - name: key
-          in: path
+          in: query
           required: true
           description: Admin Key (?key=)
           schema:
@@ -1288,7 +1258,7 @@ paths:
       summary: DeleteSessionRequest
       parameters:
         - name: session_id
-          in: path
+          in: query
           required: true
           description: Session ID (?session_id=)
           schema:
@@ -1304,14 +1274,14 @@ paths:
       summary: GeneralReportRequest
       parameters:
 
-  /admins/reports/data/apis/24h:
+  /admins/reports/count/apis/24h:
     get:
       tags:
       - Admins  
       summary: GetApiCallCountInLast24HRequest
       parameters:
         - name: api_name
-          in: path
+          in: query
           required: true
           description: Api Name (?api_name=)
           schema:
@@ -1324,7 +1294,7 @@ paths:
       summary: GetApiCallDataInLast24HRequest
       parameters:
         - name: api_name
-          in: path
+          in: query
           required: true
           description: Api Name (?api_name=)
           schema:
@@ -1333,7 +1303,7 @@ paths:
 parameters:
   AAK:
     name: key
-    in: path
+    in: query
     required: true
     description: Account Api Key (?key=)
     schema:
@@ -1341,7 +1311,7 @@ parameters:
       minumum: 1
   AAS:
     name: account_api_secret
-    in: path
+    in: query
     required: true
     description: Account Api Secret (&account_api_secret=)
     schema:
@@ -1349,7 +1319,7 @@ parameters:
       minumum: 1 
   AAT:
     name: key
-    in: path
+    in: query
     required: true
     description: Account Access Token (?key=)
     schema:
@@ -1357,7 +1327,7 @@ parameters:
       minumum: 1
   DomainName:
     name: domain_name
-    in: path
+    in: query
     required: true
     description: Domain Name (&domain_name=)
     schema:
@@ -1365,7 +1335,7 @@ parameters:
       minumum: 1 
   DAK:
     name: domain_api_key
-    in: path
+    in: query
     required: true
     description: Domain Api Key (&domain_api_key=)
     schema:
@@ -1373,7 +1343,7 @@ parameters:
       minumum: 1  
   DAT:
     name: domain_access_token
-    in: path
+    in: query
     required: true
     description: Domain Access Token (&domain_access_token=)
     schema:
@@ -1381,7 +1351,7 @@ parameters:
       minumum: 1
   DATKey:
     name: key
-    in: path
+    in: query
     required: true
     description: Domain Access Token (?key=)
     schema:
@@ -1389,7 +1359,7 @@ parameters:
       minumum: 1 
   UAK:
     name: user_api_key
-    in: path
+    in: query
     required: true
     description: User Api Key (&user_api_key=)
     schema:
@@ -1397,7 +1367,7 @@ parameters:
       minumum: 1 
   UAT:
     name: user_access_token
-    in: path
+    in: query
     required: true
     description: User Access Token (&user_access_token=)
     schema:
@@ -1405,7 +1375,7 @@ parameters:
       minumum: 1 
   UATKey:
     name: key
-    in: path
+    in: query
     required: true
     description: User Access Token (?key=)
     schema:
@@ -1413,7 +1383,7 @@ parameters:
       minumum: 1                                                     
   DAKKey:
     name: key
-    in: path
+    in: query
     required: true
     description: Domain Api Key (?key=)
     schema:
@@ -1429,7 +1399,7 @@ parameters:
       minumum: 1  
   DeviceId:
     name: device_id
-    in: path
+    in: query
     required: true
     description: Device Id (?device_id=)
     schema:
@@ -1437,7 +1407,7 @@ parameters:
       minumum: 1 
   AdminAK:
     name: key
-    in: path
+    in: query
     required: true
     description: Admin Api Key (?key=)
     schema:
@@ -1445,7 +1415,7 @@ parameters:
       minumum: 1 
   AAccessKey:
     name: key
-    in: path
+    in: query
     required: true
     description: Admin Access Key (?key=)
     schema:
@@ -1453,7 +1423,7 @@ parameters:
       minumum: 1 
   PlanName:
     name: plan_name
-    in: path
+    in: query
     required: true
     description: Plan Name (&plan_name=)
     schema:
@@ -1461,7 +1431,7 @@ parameters:
       minumum: 1 
   UserId:
     name: user_id
-    in: path
+    in: query
     required: true
     description: User Id (&user_id=)
     schema:
@@ -1469,7 +1439,7 @@ parameters:
       minumum: 1  
   DomainNameName:
     name: name
-    in: path
+    in: query
     required: true
     description: Domain Name (?name=)
     schema:
@@ -1477,7 +1447,7 @@ parameters:
       minumum: 1 
   DAS:
     name: domain_api_secret
-    in: path
+    in: query
     required: true
     description: Domain Api Secret (?domain_api_secret=)
     schema:
@@ -1485,7 +1455,7 @@ parameters:
       minumum: 1 
   UAS:
     name: user_api_secret
-    in: path
+    in: query
     required: true
     description: Domain Api Secret (?user_api_secret=)
     schema:
@@ -1493,7 +1463,7 @@ parameters:
       minumum: 1
   DSK:
     name: domain_special_key
-    in: path
+    in: query
     required: true
     description: Domain Special Key (?domain_special_key=)
     schema:
@@ -1501,7 +1471,7 @@ parameters:
       minumum: 1
   OAK:
     name: oauth_key
-    in: path
+    in: query
     required: true
     description: Oauth Key (?oauth_key=)
     schema:
@@ -1509,7 +1479,7 @@ parameters:
       minumum: 1
   OAS:
     name: oauth_secret
-    in: path
+    in: query
     required: true
     description: Oauth Secret (?oauth_secret=)
     schema:
@@ -1525,9 +1495,9 @@ parameters:
       minumum: 1
   info:
     name: info
-    in: body
+    in: query
     required: true
-    description: domain_name,user_id
+    description: domain_name,user_id (info.domain_name=, info.user_id)
     schema:
       type: object
       required:
@@ -1537,7 +1507,19 @@ parameters:
         domain_name:
           type: string
         user_id:
-          type: string    
+          type: string 
+  AccountEmail:
+    name: Account Email
+    in: body
+    required: true
+    description: Email
+    schema:
+      type: object
+      minumum: 1
+      properties:
+        account_email:
+          type: user@kandy.io
+                     
 
 
 

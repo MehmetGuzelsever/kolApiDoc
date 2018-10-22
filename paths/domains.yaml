@@ -1,0 +1,30 @@
+  /domains/users:
+    get:
+      tags:
+      - Domains  
+      summary: GetUserListRequest
+      parameters:
+        - in: query
+          name: userId
+          required: true
+          type: integer
+          description: asdasd
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Domains  
+      summary: UnregisterUserRequest
+      parameters:
+        - in: query
+          name: userId
+          required: true
+          type: integer      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                  

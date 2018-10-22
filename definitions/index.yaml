@@ -1,0 +1,2 @@
+success:
+  $ref: ./user.yaml

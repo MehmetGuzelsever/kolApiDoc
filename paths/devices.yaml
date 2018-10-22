@@ -1,0 +1,243 @@
+  /devices/addressbooks:
+    post:
+      tags:
+      - Devices  
+      summary: UploadDeviceAddressbookRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: contacts
+          in: query
+          required: true
+          description: Type (&contats=)
+          schema:
+            type : string
+            minimum: 1 
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceAddressbookRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+    delete:
+      tags:
+      - Devices  
+      summary: DeleteDeviceAddressbookRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+  /devices/addressbooks/hints:
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceAddressbookHintsRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'  
+  /devices/messages:
+    post:
+      tags:
+      - Devices  
+      summary: SendDeviceMessagesRequestV1_2
+      parameters:
+        - $ref: '#/parameters/DeviceId' 
+        - $ref: '#/parameters/message'
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceMessagesRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/info'
+    delete:
+      tags:
+      - Devices  
+      summary: AckDeviceMessagesRequest
+      parameters:
+        - $ref: '#/parameters/info' 
+        - $ref: '#/parameters/DeviceId' 
+        - $ref: '#/parameters/message' 
+        - name: configuration
+          in: query
+          required: true
+          description: Parameter (&configuration=)
+          schema:
+            type : string
+            minimum: 1                  
+  /devices/messages/read:
+    post:
+      tags:
+      - Devices  
+      summary: ReadDeviceMessagesRequest
+      parameters:
+        - $ref: '#/parameters/info' 
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/message' 
+        - name: configuration
+          in: query
+          required: true
+          description: Parameter (&configuration=)
+          schema:
+            type : string
+            minimum: 1    
+  /devices/smss:
+    post:
+      tags:
+      - Devices  
+      summary: SendDeviceSmsRequest
+      parameters:
+        - $ref: '#/parameters/info' 
+        - name: user_country_code
+          in: query
+          required: true
+          description: Parameter (&user_country_code=)
+          schema:
+            type : string
+            minimum: 1 
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/message' 
+  /devices/smss/out:
+    post:
+      tags:
+      - Devices  
+      summary: SendStroredSmsOutRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - name: user_country_code
+          in: query
+          required: true
+          description: Parameter (&user_country_code=)
+          schema:
+            type : string
+            minimum: 1 
+        - name: destination
+          in: query
+          required: true
+          description: Parameter (&destination=)
+          schema:
+            type : string
+            minimum: 1  
+        - $ref: '#/parameters/message' 
+  /devices/content:
+    get:
+      tags:
+      - Devices  
+      summary: downloadFileRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - name: content_uuid
+          in: query
+          required: true
+          description: Parameter (&content_uuid=)
+          schema:
+            type : string
+            minimum: 1  
+    post:
+      tags:
+      - Devices  
+      summary: uploadFileRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - name: content_uuid
+          in: query
+          required: true
+          description: Parameter (&content_uuid=)
+          schema:
+            type : string
+            minimum: 1                      
+  /devices/content/thumbnail:
+    get:
+      tags:
+      - Devices  
+      summary: downloadFileThumbnailRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - name: content_uuid
+          in: query
+          required: true
+          description: Parameter (&content_uuid=)
+          schema:
+            type : string
+            minimum: 1
+  /devices/credentials/push:
+    post:
+      tags:
+      - Devices  
+      summary: SetDevicePushCredentialsRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: credentials
+          in: query
+          required: true
+          description: Parameter (&credentials=)
+          schema:
+            type : string
+            minimum: 1         
+    get:
+      tags:
+      - Devices  
+      summary: GetDevicePushCredentialsRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId' 
+    delete:
+      tags:
+      - Devices  
+      summary: DeleteDevicePushCredentialsRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: platform
+          in: body
+          required: true
+          description: Platform
+          schema:
+            type : string
+            minimum: 1  
+  /devices/location:
+    post:
+      tags:
+      - Devices  
+      summary: SetDeviceLocationRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: location_status
+          in: query
+          required: true
+          description: location_status (location_status=)
+          schema:
+            type : string
+            minimum: 1  
+  /devices/smss/invite:
+    post:
+      tags:
+      - Devices  
+      summary: SendInviteRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId'
+        - $ref: '#/parameters/message'
+        - $ref: '#/parameters/info'
+  /devices/connection_type:
+    post:
+      tags:
+      - Devices  
+      summary: SetDeviceConnectionTypeRequest
+      parameters:
+        - $ref: '#/parameters/info'
+        - $ref: '#/parameters/DeviceId'
+        - name: connection_type
+          in: query
+          required: true
+          description: connection_type (connection_type=)
+          schema:
+            type : string
+            minimum: 1
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceConnectionTypeRequest
+      parameters:
+        - $ref: '#/parameters/DeviceId' 
