@@ -1,0 +1,198 @@
+      
+        
+                        
+   
+  /devices/credentials/push:
+    post:
+      tags:
+      - Devices  
+      summary: SetDevicePushCredentialsRequest
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID  
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID
+        - in: query
+          name: credentials
+          required: true
+          type: string
+          description: Credentials  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'              
+    get:
+      tags:
+      - Devices  
+      summary: GetDevicePushCredentialsRequest
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID  
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'            
+    delete:
+      tags:
+      - Devices  
+      summary: DeleteDevicePushCredentialsRequest
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID  
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID  
+        - in: query
+          name: platform
+          required: true
+          type: string
+          description: Platform 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          
+  /devices/location:
+    post:
+      tags:
+      - Devices  
+      summary: SetDeviceLocationRequest
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID  
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID  
+        - in: query
+          name: location_status
+          required: true
+          type: string
+          description: Location Status 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          
+  /devices/smss/invite:
+    post:
+      tags:
+      - Devices  
+      summary: SendInviteRequest
+      parameters:
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID  
+        - in: query
+          name: message
+          required: true
+          type: string
+          description: Message
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          
+  /devices/connection_type:
+    post:
+      tags:
+      - Devices  
+      summary: SetDeviceConnectionTypeRequest
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID  
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID  
+        - in: query
+          name: connection_type
+          required: true
+          type: string
+          description: Connection Type  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          
+    get:
+      tags:
+      - Devices  
+      summary: GetDeviceConnectionTypeRequest
+      parameters:
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID   
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'           

@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Users  
+      summary: SendEmail
+      parameters:  
+        - in: query
+          name: email_contact
+          required: true
+          type: string
+          description: Email Contact
+        - in: query
+          name: message
+          required: true
+          type: string
+          description: Message
+        - in: query
+          name: title
+          required: true
+          type: string
+          description: Title
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

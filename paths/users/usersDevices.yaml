@@ -1,0 +1,81 @@
+    get:
+      tags:
+      - Users  
+      summary: GetDeviceListRequest
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID
+        - in: query
+          name: type
+          required: true
+          type: string
+          description: Type
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                   
+    post:
+      tags:
+      - Users  
+      summary: RegisterDeviceRequest
+      parameters:
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: body
+          name: device
+          required: true
+          description: Device List
+          schema:
+            $ref: '#/definitions/deviceList'                                                                         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                  
+    delete:
+      tags:
+      - Users  
+      summary: UnregisterDeviceRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

@@ -1,0 +1,12 @@
+type: object
+properties:
+  device_native_id:
+    type: string 
+  device_family:
+    type: string
+  device_name:
+    type: string
+  device_os_version:
+    type: string  
+  client_sw_version:
+    type: string                    

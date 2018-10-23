@@ -1,0 +1,35 @@
+    post:
+      tags:
+      - Devices  
+      summary: SendDeviceSmsRequest
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name 
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID          
+        - in: query
+          name: user_country_code
+          required: true
+          type: string
+          description: User Country Code
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID
+        - in: query
+          name: message
+          required: true
+          type: string
+          description: Message
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'           

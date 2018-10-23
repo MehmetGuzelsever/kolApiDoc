@@ -1,2 +1,4 @@
 success:
   $ref: ./user.yaml
+deviceList:
+  $ref: ./deviceList.yaml    

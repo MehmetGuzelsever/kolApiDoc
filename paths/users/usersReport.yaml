@@ -1,0 +1,30 @@
+    post:
+      tags:
+      - Users  
+      summary: userGeneralReportRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID 
+        - in: query
+          name: reportType
+          required: true
+          type: string
+          description: Report Type
+        - in: query
+          name: clientTimeStump
+          required: true
+          type: string
+          description: Client Time Stump
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

@@ -64,8 +64,46 @@
     $ref: ./domains/domainsUsersRegister.yaml                                                                                                                            
 #------------------#
 #----Users---------#
-
+  /users/AccessTokens:
+    $ref: ./users/usersAccessTokens.yaml 
+  /users/devices:
+    $ref: ./users/usersDevices.yaml  
+  /users/devices/multiple:
+    $ref: ./users/usersDevicesMultiple.yaml  
+  /users/devices/details:
+    $ref: ./users/usersDevicesDetails.yaml  
+  /users/details/limited:
+    $ref: ./users/usersDetailsLimited.yaml  
+  /users/email/send:
+    $ref: ./users/usersEmailSend.yaml  
+  /users/report:
+    $ref: ./users/usersReport.yaml  
+  /users/exists:
+    $ref: ./users/usersExists.yaml                                 
 #------------------#
 #----Devices-------#
-
+  /devices/addressbooks:
+    $ref: ./devices/devicesAdressBooks.yaml
+  /devices/addressbooks/hints:
+    $ref: ./devices/devicesAdressbooksHints.yaml 
+  /devices/messages/read:
+    $ref: ./devices/devicesMessagesRead.yaml 
+  /devices/smss:
+    $ref: ./devices/devicesSmss.yaml     
+  /devices/smss/out:
+    $ref: ./devices/devicesSmssOut.yaml 
+  /devices/content:
+    $ref: ./devices/devicesContent.yaml 
+  /devices/content/thumbnail:
+    $ref: ./devices/devicesContentThumbnail.yaml 
+  /devices/credentials/push:
+    $ref: ./devices/devicesCredentialsPush.yaml 
+  /devices/location:
+    $ref: ./devices/devicesLocation.yaml 
+  /devices/smss/invite:
+    $ref: ./devices/devicesSmssInvite.yaml 
+  /devices/connection_type:
+    $ref: ./devices/devicesConnectionType.yaml 
+  /devices/messages:
+    $ref: ./devices/devicesMessages.yaml                                                  
 #------------------#
