@@ -1,0 +1,50 @@
+#-----Admins-------#
+
+#------------------#
+#----Accounts------#
+
+#-----------------#
+#----Domains-------#
+  /domains/users:
+    $ref: ./domains/domainsUsers.yaml
+  /domains/users/phone_number:
+    $ref: ./domains/domainsUsersPhoneNumber.yaml
+  /domains/users/user_id:
+    $ref: ./domains/domainsUsersUserId.yaml
+  /domains/users/details:
+    $ref: ./domains/domainsUsersDetails.yaml
+  /domains/users/AccessTokens:
+    $ref: ./domains/domainsUsersAccessToken.yaml
+  /domains/users/devices:
+    $ref: ./domains/domainsUsersDevice.yaml
+  /domains/users/permission:
+    $ref: ./domains/domainsUsersPermission.yaml
+  /domains/devices:
+    $ref: ./domains/domainsDevices.yaml
+  /domains/countrycodes:
+    $ref: ./domains/domainsCountrycodes.yaml
+  /domains/accessTokens:
+    $ref: ./domains/domainsAccessToken.yaml
+  /domains/details:
+    $ref: ./domains/domainsDetails.yaml
+  /domains/details/limited/access_token:
+    $ref: ./domains/domainsDetailsLimitedAccess.yaml
+  /domains/details/limited/api_key:
+    $ref: ./domains/domainsDetailsLimitedApiKey.yaml
+  /domains/configurations/communications/spidr:
+    $ref: ./domains/domainsConfComSpidr.yaml
+  /domains/configurations/push:
+    $ref: ./domains/domainsConfPush.yaml
+  /domains/users/locations:
+    $ref: ./domains/domainsUsersLocal.yaml
+  /domains/users/smblocations:
+    $ref: ./domains/domainsUsersSmbLocal.yaml
+  /domains/users/registrations:
+    $ref: ./domains/domainsUsersRegister.yaml                                                                                                                            
+#------------------#
+#----Users---------#
+
+#------------------#
+#----Devices-------#
+
+#------------------#

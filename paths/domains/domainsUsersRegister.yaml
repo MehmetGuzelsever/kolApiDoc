@@ -1,0 +1,25 @@
+    post:
+      tags:
+      - Domains  
+      summary: UserRegistrationRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token
+        - in: query
+          name: device_native_id
+          required: true
+          type: string
+          description: Device Native Id
+        - in: query
+          name: wifi
+          required: true
+          type: string
+          description: Wifi
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

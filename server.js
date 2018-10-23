@@ -29,7 +29,7 @@ app.use(helmet());
 
 resolve(root,options).then(function(results){
     const swaggerDoc = results.resolved;
-    console.log(YAML.dump(swaggerDoc))
+    //console.log(YAML.dump(swaggerDoc))
     swaggerTool.initializeMiddleware(swaggerDoc,function(middleware){
         
         app.use(middleware.swaggerUi());

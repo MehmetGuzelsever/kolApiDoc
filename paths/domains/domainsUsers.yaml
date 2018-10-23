@@ -1,14 +1,13 @@
-  /domains/users:
     get:
       tags:
       - Domains  
       summary: GetUserListRequest
       parameters:
         - in: query
-          name: userId
+          name: key
           required: true
-          type: integer
-          description: asdasd
+          type: string
+          description: Domain Access Token
       responses:
         200:
           description: The request completed successfully
@@ -20,11 +19,17 @@
       summary: UnregisterUserRequest
       parameters:
         - in: query
-          name: userId
+          name: key
           required: true
-          type: integer      
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: user_api_key
+          required: true
+          type: string
+          description: User Api Key
       responses:
         200:
           description: The request completed successfully
           schema: 
-            $ref: '#/definitions/success'                  
+            $ref: '#/definitions/success'

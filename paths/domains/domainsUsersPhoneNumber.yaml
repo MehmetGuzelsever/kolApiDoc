@@ -1,0 +1,25 @@
+    post:
+      tags:
+      - Domains  
+      summary: RegisterUserByPhoneNumberRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: user_phone_number
+          required: true
+          type: string
+          description: User Phone Number 
+        - in: query
+          name: user_country_code
+          required: true
+          type: string
+          description: User Country Code
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

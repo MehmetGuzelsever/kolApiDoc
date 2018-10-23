@@ -1,7 +1,9 @@
 swagger: '2.0'
 info:
   $ref: ./info/index.yaml
+tags:
+  $ref: ./tags/index.yaml  
 paths:
-  $ref: ./paths/domains.yaml
+  $ref: ./paths/index.yaml
 definitions:
   $ref: ./definitions/index.yaml

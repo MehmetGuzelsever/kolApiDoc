@@ -1,0 +1,40 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetUserAccessTokenRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User Id
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          
+    delete:
+      tags:
+      - Domains  
+      summary: RevokeUserAccessTokenRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: user_access_token
+          required: true
+          type: string
+          description: User Access Token
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

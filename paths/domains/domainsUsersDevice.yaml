@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetUserDeviceListRequest
+      parameters:
+        - in: query
+          name: name
+          required: true
+          type: string
+          description: Domain Name      
+        - in: query
+          name: user_name
+          required: true
+          type: string
+          description: User Name
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'   
