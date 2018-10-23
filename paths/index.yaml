@@ -2,7 +2,28 @@
 
 #------------------#
 #----Accounts------#
-
+  /accounts/accessTokens:
+    $ref: ./accounts/accountsAccessToken.yaml
+  /accounts/domains:
+    $ref: ./accounts/accountsDomains.yaml
+  /accounts/domains/status:
+    $ref: ./accounts/accountsDomainsStatus.yaml
+  /accounts/domains/status/all:
+    $ref: ./accounts/accountsDomainsStatusAll.yaml
+  /accounts/domains/details:
+    $ref: ./accounts/accountsDomainsDetails.yaml
+  /accounts/domains/accessTokens:
+    $ref: ./accounts/accountsDomainsAccessTokens.yaml
+  /accounts/domains/exists/experius:
+    $ref: ./accounts/accountsDomainsExistsExp.yaml
+  /accounts/domain/users/anonymous:
+    $ref: ./accounts/accountsDomainUsersAnonymous.yaml
+  /accounts/billing/credit_cards:
+    $ref: ./accounts/accountsBillingCreditcards.yaml
+  /accounts/configurations:
+    $ref: ./accounts/accountsConf.yaml
+  /accounts/configurations/configuration:
+    $ref: ./accounts/accountsConfConfiguration.yaml                                       
 #-----------------#
 #----Domains-------#
   /domains/users:

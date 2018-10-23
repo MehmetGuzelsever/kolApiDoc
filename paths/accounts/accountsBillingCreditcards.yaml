@@ -1,0 +1,35 @@
+    get:
+      tags:
+      - Accounts  
+      summary: GetCreditCardDetailsRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Access Token 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          
+    post:
+      tags:
+      - Accounts  
+      summary: SetCreditCardDetailsRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Access Token 
+        - in: query
+          name: credit_cards
+          required: true
+          type: string
+          description: Credit Carts
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

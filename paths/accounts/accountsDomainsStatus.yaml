@@ -1,0 +1,40 @@
+    post:
+      tags:
+      - Accounts  
+      summary: ChangeDomainStatusRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Api Key 
+        - in: query
+          name: domain_status
+          required: true
+          type: string
+          description: Domain Status
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'           
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainStatusRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Access Token 
+        - in: query
+          name: domain_api_key
+          required: true
+          type: string
+          description: Domain Api Key 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 

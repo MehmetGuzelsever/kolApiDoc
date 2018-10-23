@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainDetailsRequest
+      parameters:
+        - in: query
+          name: key (with Just Domain Access Token)
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: key (with Just Domain Api Key)
+          required: true
+          type: string
+          description: Domain Api Key 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 

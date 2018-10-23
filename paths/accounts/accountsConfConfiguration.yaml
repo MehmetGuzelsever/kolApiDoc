@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Accounts  
+      summary: GetAccountConfigurationRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Access Token
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          

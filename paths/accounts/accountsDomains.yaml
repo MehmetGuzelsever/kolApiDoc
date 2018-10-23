@@ -1,0 +1,55 @@
+    get:
+      tags:
+      - Accounts  
+      summary: GetDomainListRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Access Token
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          
+    post:
+      tags:
+      - Accounts  
+      summary: RegisterDomainRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Access Token
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          
+    delete:
+      tags:
+      - Accounts  
+      summary: UnregisterDomainRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Access Token
+        - in: query
+          name: domain_api_key
+          required: true
+          type: string
+          description: Domain Api Key
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          

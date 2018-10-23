@@ -54,7 +54,7 @@ paths:
       parameters:
         - $ref: '#/parameters/AAT'
         - $ref: '#/parameters/DAK'
-  accounts/domains/status:
+  /accounts/domains/status:
     post:
       tags:
       - Accounts  
