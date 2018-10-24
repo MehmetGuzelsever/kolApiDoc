@@ -1,0 +1,29 @@
+    put:
+      tags:
+      - Users  
+      summary: AddPackageRequest (userBillingHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token 
+        - in: query
+          name: package_name
+          required: true
+          type: string
+          description: Package Name
+        - in: body
+          name: package_comment
+          required: true
+          description: Package Comment 
+          schema:
+            type: object
+            properties:
+              package_comment:
+                 type: string                            
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

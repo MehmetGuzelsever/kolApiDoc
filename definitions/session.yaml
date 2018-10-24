@@ -1,0 +1,16 @@
+type: object
+properties:
+  session_name:
+    type: string 
+  expiry_timestamp:
+    type: string
+  user_nickname:
+    type: string   
+  user_first_name:
+    type: string 
+  user_last_name:
+    type: string 
+  user_phone_number:
+    type: string     
+  user_email:
+    type: string                      

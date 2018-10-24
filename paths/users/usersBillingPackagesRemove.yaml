@@ -1,0 +1,29 @@
+    delete:
+      tags:
+      - Users  
+      summary: RemovePackageRequest (userBillingHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token 
+        - in: query
+          name: package_id
+          required: true
+          type: string
+          description: Package ID
+        - in: body
+          name: package_comment
+          required: true
+          description: Package Comment 
+          schema:
+            type: object
+            properties:
+              package_comment:
+                 type: string                            
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

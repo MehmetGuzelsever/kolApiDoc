@@ -1,0 +1,60 @@
+    put:
+      tags:
+      - Users  
+      summary: BlockUserContactsRequest
+      parameters:
+        - in: query
+          name: name
+          required: true
+          type: string
+          description: Full User ID
+        - in: query
+          name: contacts
+          required: true
+          type: string
+          description: Contacts         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Users  
+      summary: UnBlockUserContactsRequest
+      parameters:      
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID   
+        - in: query
+          name: contacts
+          required: true
+          type: string
+          description: Contacts 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'    
+    get:
+      tags:
+      - Users  
+      summary: GetBlockedUserContactsRequest
+      parameters:        
+        - in: query
+          name: name
+          required: true
+          type: string
+          description: Full User ID       
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                               

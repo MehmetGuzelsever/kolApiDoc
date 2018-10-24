@@ -1,0 +1,8 @@
+type: object
+properties:
+  call_id or callId:
+    type: string 
+  unique_id or uniqueId:
+    type: string
+  client_timestamp or clientTimestamp:
+    type: string     

@@ -1,0 +1,100 @@
+    get:
+      tags:
+      - Users  
+      summary: GetUserPersonalAddressbookRequest (userAddressbookHandler)
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    post:
+      tags:
+      - Users  
+      summary: AddContactToUserPersonalAddressbookRequest (userAddressbookHandler)
+      parameters: 
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID         
+        - in: query
+          name: contact
+          required: true
+          type: string
+          description: Contact  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                        
+    delete:
+      tags:
+      - Users  
+      summary: DeleteContactFromUserPersonalAddressbookRequest (userAddressbookHandler)
+      parameters:    
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID    
+        - in: query
+          name: contact_id
+          required: true
+          type: string
+          description: Contact ID      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                               
+    put:
+      tags:
+      - Users  
+      summary: EditContactInUserPersonalAddressbookRequest (userAddressbookHandler)
+      parameters:
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID 
+        - in: query
+          name: contact
+          required: true
+          type: string
+          description: Contact
+        - in: query
+          name: contact_id
+          required: true
+          type: string
+          description: Contact ID 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                         

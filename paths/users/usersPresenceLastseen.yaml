@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Users  
+      summary: GetUserLastSeenTimestampRequest
+      parameters:
+        - in: query
+          name: users
+          required: true
+          type: string
+          description: Users                                                                    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

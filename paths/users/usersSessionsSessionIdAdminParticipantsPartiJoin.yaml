@@ -1,0 +1,40 @@
+    post:
+      tags:
+      - Users  
+      summary: ApproveParticipantJoinRequest (userProfileHandler)
+      parameters:
+        - in: query
+          name: session_id
+          required: true
+          type: string
+          description: Session ID      
+        - in: query
+          name: full_user_id
+          required: true
+          type: string
+          description: Full User ID                         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Users  
+      summary: RejectParticipantJoinRequest (userProfileHandler)
+      parameters:         
+        - in: query
+          name: session_id
+          required: true
+          type: string
+          description: Session ID      
+        - in: query
+          name: full_user_id
+          required: true
+          type: string
+          description: Full User ID            
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'          

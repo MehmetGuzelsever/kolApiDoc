@@ -1,0 +1,14 @@
+type: object
+properties:
+  first_name:
+    type: string 
+  last_name:
+    type: string
+  status_text:
+    type: string   
+  image_details:
+    type: string 
+  user_data:
+    type: string 
+  user_private_data:
+    type: string                    

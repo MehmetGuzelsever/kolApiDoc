@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Accounts  
+      summary: queryAccountDataAllDomainStatusPerAccountRequests (reportApiHandler)
+      parameters:
+        - in: path
+          name: active
+          required: true
+          type: string
+          description: Path Type 
+        - in: path
+          name: suspend
+          required: true
+          type: string
+          description: Path Type 
+        - in: path
+          name: all
+          required: true
+          type: string
+          description: Path Type                     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'    

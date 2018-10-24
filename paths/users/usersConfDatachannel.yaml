@@ -1,0 +1,9 @@
+    get:
+      tags:
+      - Users  
+      summary: GetDataChannelConfigurationRequest
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'        

@@ -1,4 +1,16 @@
 success:
   $ref: ./user.yaml
 deviceList:
-  $ref: ./deviceList.yaml    
+  $ref: ./deviceList.yaml
+userProfile:
+  $ref: ./userProfile.yaml       
+forwardPending:
+  $ref: ./forwardPending.yaml
+callReport:
+  $ref: ./callReport.yaml    
+messageConversation:
+  $ref: ./messageConversation.yaml       
+session:
+  $ref: ./session.yaml     
+sessionParti:
+  $ref: ./sessionParti.yaml       

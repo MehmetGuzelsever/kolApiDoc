@@ -1,0 +1,30 @@
+    get:
+      tags:
+      - Users  
+      summary: SearchUserNativeDirectoryByPhoneNumberRequest (userAddressbookHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: search_string
+          required: true
+          type: string
+          description: Search String
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID                                                                                                                                                   
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

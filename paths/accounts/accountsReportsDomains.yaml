@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Accounts  
+      summary: queryAccountDataAllDomainRegistrationActionsPerAccountRequests (reportApiHandler)
+      parameters:
+        - in: path
+          name: type
+          required: true
+          type: string
+          description: unregistrations,registrations,all                    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'    

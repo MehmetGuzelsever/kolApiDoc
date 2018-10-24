@@ -1,4 +1,4 @@
-#-----Admins-------#
+#-------------------------Admins---------------------#
   /admins:
     $ref: ./admins/admins.yaml
   /admins/configurations/configuration:
@@ -67,8 +67,8 @@
     $ref: ./admins/adminsReportsCountApis24h.yaml
   /admins/reports/data/apis/24h:
     $ref: ./admins/adminsReportDataApis24h.yaml
-#------------------#
-#----Accounts------#
+#-------------------------------------------------------------------------------------------------#
+#-------------------------------------Accounts----------------------------------------------------#
   /accounts/accessTokens:
     $ref: ./accounts/accountsAccessToken.yaml
   /accounts/domains:
@@ -90,9 +90,17 @@
   /accounts/configurations:
     $ref: ./accounts/accountsConf.yaml
   /accounts/configurations/configuration:
-    $ref: ./accounts/accountsConfConfiguration.yaml                                       
-#-----------------#
-#----Domains-------#
+    $ref: ./accounts/accountsConfConfiguration.yaml
+  /accounts/auth/whitelist/ips:
+    $ref: ./accounts/accountsAuthWhitelistIps.yaml 
+  /accounts/auth/whitelist:
+    $ref: ./accounts/accountsAuthWhitelist.yaml 
+  /accounts/reports/domains/{type}:
+    $ref: ./accounts/accountsReportsDomains.yaml 
+  /accounts/reports/domains/status/{type}:
+    $ref: ./accounts/accountsReportsDomains.yaml                                                          
+#-------------------------------------------------------------------------------------------------#
+#--------------------------------------------Domains----------------------------------------------#
   /domains/users:
     $ref: ./domains/domainsUsers.yaml
   /domains/users/phone_number:
@@ -129,8 +137,8 @@
     $ref: ./domains/domainsUsersSmbLocal.yaml
   /domains/users/registrations:
     $ref: ./domains/domainsUsersRegister.yaml                                                                                                                            
-#------------------#
-#----Users---------#
+#-------------------------------------------------------------------------------------------------#
+#------------------------------------------Users--------------------------------------------------#
   /users/AccessTokens:
     $ref: ./users/usersAccessTokens.yaml 
   /users/devices:
@@ -146,9 +154,119 @@
   /users/report:
     $ref: ./users/usersReport.yaml  
   /users/exists:
-    $ref: ./users/usersExists.yaml                                 
-#------------------#
-#----Devices-------#
+    $ref: ./users/usersExists.yaml
+  /users/profiles/user_profiles/user_profile:
+    $ref: ./users/usersProfilesUserprofilesUP.yaml
+  /users/profiles/user_profiles:
+    $ref: ./users/usersProfilesUserprofiles.yaml  
+  /users/profiles:
+    $ref: ./users/usersProfiles.yaml 
+  /users/configurations/data_channel:
+    $ref: ./users/usersConfDatachannel.yaml
+  /users/configurations/communications/spidr:
+    $ref: ./users/usersConfCommunicationsSpidr.yaml
+  /users/addressbooks/device:
+    $ref: ./users/usersAdressbooksDevice.yaml
+  /users/addressbooks/domains:
+    $ref: ./users/usersAdressbooksDomains.yaml
+  /users/addressbooks/personal:
+    $ref: ./users/usersAdressbooksPersonal.yaml 
+  /users/addressbooks/domains/hints:
+    $ref: ./users/usersAdressbooksDomainsHints.yaml 
+  /users/contacts/blocked:
+    $ref: ./users/usersContactsBlocked.yaml  
+  /users/billing/packages:
+    $ref: ./users/usersBillingPackages.yaml 
+  /users/billing/packages/status:
+    $ref: ./users/usersBillingPackagesStatus.yaml   
+  /users/billing/packages/status/active:
+    $ref: ./users/usersBillingPackagesStatusActive.yaml  
+  /users/billing/packages/add:
+    $ref: ./users/usersBillingPackageAdd.yaml  
+  /users/billing/packages/remove:
+    $ref: ./users/usersBillingPackagesRemove.yaml   
+  /users/billing/dids/providers:
+    $ref: ./users/usersBillingDidsProviders.yaml    
+  /users/billing/dids/countries:
+    $ref: ./users/usersBillingDidsCountries.yaml  
+  /users/billing/dids/cities:
+    $ref: ./users/usersBillingDidsCities.yaml  
+  /users/billing/dids/area_codes/by_country:
+    $ref: ./users/usersBillingDidsAreacodesBYcountry.yaml
+  /users/billing/dids/area_codes/by_city:
+    $ref: ./users/usersBillingDidsAreacodesBYcity.yaml   
+  /users/billing/dids/types:
+    $ref: ./users/usersBillingDidsTypes.yaml  
+  /users/billing/dids/buy:
+    $ref: ./users/usersBillingDidsBuy.yaml
+  /users/billing/dids/cancel:
+    $ref: ./users/usersBillingDidsCancel.yaml 
+  /users/billing/dids/associate:
+    $ref: ./users/usersBillingDidsAssociate.yaml  
+  /users/billing/topup/card:
+    $ref: ./users/usersBillingTopupCard.yaml  
+  /users/presence/last_seen:
+    $ref: ./users/usersPresenceLastseen.yaml  
+  /users/directories/native:
+    $ref: ./users/usersDirectoriesNative.yaml   
+  /users/directories/native/search:  #Search
+    $ref: ./users/usersDirectoriesNativeSearch.yaml      
+  /users/directories/native/searches/name:
+    $ref: ./users/usersDirectoriesNativeSearcsName.yaml   
+  /users/directories/native/searches/user_id:
+    $ref: ./users/usersDirectoriesNativeSearcsUserid.yaml   
+  /users/directories/native/searches/phone_number:
+    $ref: ./users/usersDirectoriesNativeSearchesPhonenumber.yaml      
+  /users/services/normalize/phone_number:
+    $ref: ./users/usersServicesNormalizePhonenumber.yaml 
+  /users/calls/forward:
+    $ref: ./users/usersCallsForward.yaml     
+  /users/calls/reject:
+    $ref: ./users/usersCallReject.yaml 
+  /users/calls/report:
+    $ref: ./users/usersCallsReport.yaml  
+  /users/general_report:
+    $ref: ./users/usersGeneralReport.yaml    
+  /users/diduserslists/users/mute:
+    $ref: ./users/usersDiduserslistsUsersMute.yaml 
+  /users/diduserslists/users/unmute:
+    $ref: ./users/usersDiduserslistsUsersUnmute.yaml    
+  /users/messages/conversations:
+    $ref: ./users/usersMessagesConversation.yaml 
+  /users/messages/conversations/conversation:
+    $ref: ./users/usersMessagesConversationsConversation.yaml 
+  /users/messages/conversations/wrapper:
+    $ref: ./users/usersMessagesConversationsWrapper.yaml 
+  /users/messages/conversations/conversation/messages:
+    $ref: ./users/usersMessagesConversationsConverMessage.yaml  
+  /users/provision/users/user:  #Search
+    $ref: ./users/usersProvisionUsersUser.yaml  
+  /users/contents/content/file:
+    $ref: ./users/usersContentsContentFile.yaml  
+  /users/sessions:
+    $ref: ./users/usersSessions.yaml   
+  /v1.3/users/sessions/type:
+    $ref: ./users/usersSessionsType.yaml  
+  /users/sessions/user:
+    $ref: ./users/usersSessionsUser.yaml
+  /users/sessions/session:
+    $ref: ./users/usersSessionsSession.yaml   
+  /users/sessions/session/id:
+    $ref: ./users/usersSessionsSessionId.yaml   
+  /users/sessions/session/name:
+    $ref: ./users/usersSessionsSessionName.yaml   
+  /users/sessions/session/id/start:
+    $ref: ./users/usersSessionsSessionIdStart.yaml 
+  /users/sessions/session/id/stop:
+    $ref: ./users/usersSessionsSessionIdStop.yaml   
+  /users/sessions/session/id/participants/participant:
+    $ref: ./users/usersSessionsSessionIdParticipantsParti.yaml    
+  /users/sessions/session/id/admin/participants/participant/join:
+    $ref: ./users/usersSessionsSessionIdAdminParticipantsPartiJoin.yaml   
+  /users/sessions/session/id/admin/participants/participant:
+    $ref: ./users/usersSessionsSessionIdAdminParticipantsParti.yaml                                                                                                                                                                                                                                                                                                                                                   
+#-------------------------------------------------------------------------------------------------#
+#-----------------------------------------Devices-------------------------------------------------#
   /devices/addressbooks:
     $ref: ./devices/devicesAdressBooks.yaml
   /devices/addressbooks/hints:
@@ -173,4 +291,4 @@
     $ref: ./devices/devicesConnectionType.yaml 
   /devices/messages:
     $ref: ./devices/devicesMessages.yaml                                                  
-#------------------#
+#-------------------------------------------------------------------------------------------------#

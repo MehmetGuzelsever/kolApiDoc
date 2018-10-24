@@ -1,0 +1,24 @@
+    delete:
+      tags:
+      - Users  
+      summary: DeleteMessagesRequest 
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token  
+        - in: query
+          name: conversation_id
+          required: true
+          type: string
+          description: Conversation ID        
+        - in: query
+          name: Message Parameter (body or query)
+          type: string
+          description: Messages                                                                                                                                                                                                                                                    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

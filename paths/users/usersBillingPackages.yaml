@@ -1,0 +1,35 @@
+    get:
+      tags:
+      - Users  
+      summary: GetPackageRequest (userBillingHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    put:
+      tags:
+      - Users  
+      summary: AssignPackageRequest (userBillingHandler)
+      parameters: 
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token  
+        - in: query
+          name: package_id
+          required: true
+          type: string
+          description: Package ID 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                    

@@ -1,0 +1,26 @@
+    post:
+      tags:
+      - Users  
+      summary: CreateSessionRequest (sessionHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token     
+        - in: query
+          name: session_type
+          required: true
+          type: string
+          description: Session Type  
+        - in: body
+          name: Session Paramater
+          required: true
+          description: Session
+          schema:
+            $ref: '#/definitions/session'                              
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

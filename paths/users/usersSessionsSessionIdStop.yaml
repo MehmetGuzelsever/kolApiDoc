@@ -1,0 +1,20 @@
+    post:
+      tags:
+      - Users  
+      summary: StopSessionBySessionIdRequest (sessionHandler)
+      parameters:
+        - in: query
+          name: session_id
+          required: true
+          type: string
+          description: Session ID
+        - in: query
+          name: name
+          required: true
+          type: string
+          description: Full User ID                                           
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

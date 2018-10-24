@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Users  
+      summary: DownloadContentRequest 
+      parameters:
+        - in: query
+          name: content_uuid
+          required: true
+          type: string
+          description: Content UUID                                                                                                                                                                                                                                                          
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

@@ -1,0 +1,19 @@
+    delete:
+      tags:
+      - Users  
+      summary: rejectPendingCallsRequest 
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token     
+        - in: query
+          name: call_id
+          type: string
+          description: Call ID                                                                                                                                                                                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

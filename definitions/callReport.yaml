@@ -1,0 +1,12 @@
+type: object
+properties:
+  call_id:
+    type: string 
+  reporter:
+    type: string
+  callStatistics:
+    type: string   
+  source:
+    type: string 
+  destination:
+    type: string            

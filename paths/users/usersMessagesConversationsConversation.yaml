@@ -1,0 +1,50 @@
+    get:
+      tags:
+      - Users  
+      summary: GetConversationThreadRequest 
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token 
+        - in: query
+          name: conversation_id
+          required: true
+          type: string
+          description: Conversation ID
+        - in: query
+          name: conversation_type
+          required: true
+          type: string
+          description: Conversation Type  
+        - in: body
+          name: Body Parameters (no required)
+          description: Conversation
+          schema:
+            $ref: '#/definitions/messageConversation'                                                                                                                                                                                                                                                     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Users  
+      summary: DeleteConversationsRequest 
+      parameters:       
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token  
+        - in: query
+          name: conversations
+          required: true
+          type: string
+          description: Conversation ID  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                             

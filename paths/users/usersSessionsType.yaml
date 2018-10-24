@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Users  
+      summary: GetSessionsBySessionTypeRequest (sessionHandler)
+      parameters:
+        - in: query
+          name: session_type
+          required: true
+          type: string
+          description: Session Type
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Session Type          
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

@@ -1,0 +1,50 @@
+    post:
+      tags:
+      - Accounts  
+      summary: AddAuthKeyRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Api Key 
+        - in: query
+          name: account_api_secret
+          required: true
+          type: string
+          description: Account Api Secret
+        - in: query
+          name: api_key
+          required: true
+          type: string
+          description: Api Key
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'               
+    delete:
+      tags:
+      - Accounts  
+      summary: RemoveAuthKeyRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Account Api Key 
+        - in: query
+          name: account_api_secret
+          required: true
+          type: string
+          description: Account Api Secret
+        - in: query
+          name: api_key
+          required: true
+          type: string
+          description: Api Key                              
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'              

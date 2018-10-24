@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Users  
+      summary: GetDidCountriesRequest (userBillingHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token  
+        - in: query
+          name: provider_id
+          required: true
+          type: string
+          description: Provider ID                                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

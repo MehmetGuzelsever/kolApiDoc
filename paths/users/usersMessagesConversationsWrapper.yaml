@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Users  
+      summary: GetAllConversationsThreadsRequest 
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token 
+        - in: body
+          name: Body Parameters (no required)
+          description: Conversation
+          schema:
+            $ref: '#/definitions/messageConversation'                                                                                                                                                                                                                                                     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

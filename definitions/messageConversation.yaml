@@ -1,0 +1,10 @@
+type: object
+properties:
+  number_of_records:
+    type: string 
+  message_sequence_number:
+    type: string
+  timestamp:
+    type: string   
+  order:
+    type: string              

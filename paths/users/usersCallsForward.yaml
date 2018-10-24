@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Users  
+      summary: forwardPendingCallsRequest 
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token    
+        - in: body
+          name: Body Parameters
+          description: Forward Pending
+          schema:
+            $ref: '#/definitions/forwardPending'                                                                                                                                                                        
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
