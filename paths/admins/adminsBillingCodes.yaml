@@ -1,0 +1,35 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetCodeListRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Api Key
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    post:
+      tags:
+      - Admins  
+      summary: SetCodeListRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Api Key
+          type : string
+        - name: code_list
+          in: query
+          required: true
+          description: Code List
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

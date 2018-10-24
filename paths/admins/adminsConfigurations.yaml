@@ -1,0 +1,20 @@
+    post:
+      tags:
+      - Admins  
+      summary: SetAdminConfigurationRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Api Key
+          type : string
+        - name: admin_configuration
+          in: query
+          required: true
+          description: Admin Configuration
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 

@@ -1,0 +1,15 @@
+    put:
+      tags:
+      - Admins  
+      summary: EnableDomainFastCallRequest
+      parameters:
+        - name: domain_access_token
+          in: query
+          required: true
+          description: Domain Access Token
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

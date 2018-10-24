@@ -1,0 +1,40 @@
+    post:
+      tags:
+      - Admins  
+      summary: CreateRateTableRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Access Key
+          type : string
+        - name: rates
+          in: query
+          required: true
+          description: Rates
+          type : string
+        - name: rate_table_name
+          in: query
+          required: true
+          description: Rate Table Name
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    get:
+      tags:
+      - Admins  
+      summary: CreateRateTableRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Access Key
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

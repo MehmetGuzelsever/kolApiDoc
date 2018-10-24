@@ -1,0 +1,30 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainResourcesRequest
+      parameters:
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    put:
+      tags:
+      - Admins  
+      summary: IncreaseDomainResourcesRequest
+      parameters:
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

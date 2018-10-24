@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainActivePlansStatusRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Access Key
+          type : string
+        - name: account_api_key
+          in: query
+          required: true
+          description: Account Api Key 
+          type : string
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 

@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetOAuthTokenRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Api Key
+          type: string
+        - name: oauth_key
+          in: query
+          required: true
+          description: Oauth Key
+          type: string
+        - name: oauth_secret
+          in: query
+          required: true
+          description: Oauth Secret
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

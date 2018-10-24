@@ -1,0 +1,20 @@
+    post:
+      tags:
+      - Admins  
+      summary: SetApplicationConfigurationRequest
+      parameters:
+        - name: application_configuration
+          in: query
+          required: true
+          description: Application Configuration  
+          type: string
+        - name: domain_special_key
+          in: query
+          required: true
+          description: Domain Special Key
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

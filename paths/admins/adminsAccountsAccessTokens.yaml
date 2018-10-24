@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Accounts  
+      summary: GetAccountAccessTokenRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Account Api Key
+          type: string
+        - name: account_api_secret
+          in: query
+          required: true
+          description: Account Api Secret
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

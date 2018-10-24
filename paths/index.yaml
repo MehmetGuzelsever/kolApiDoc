@@ -1,5 +1,72 @@
 #-----Admins-------#
-
+  /admins:
+    $ref: ./admins/admins.yaml
+  /admins/configurations/configuration:
+    $ref: ./admins/adminsConfigurationsConfiguration.yaml
+  /admins/configurations:
+    $ref: ./admins/adminsConfigurations.yaml
+  /admins/billing/packages:
+    $ref: ./admins/adminsBillingPackages.yaml
+  /admins/accounts/status:
+    $ref: ./admins/adminsAccountsStatus.yaml
+  /admins/billing/plans:
+    $ref: ./admins/adminsBillingPlans.yaml
+  /admins/domains/billing/plans:
+    $ref: ./admins/adminsDomainsBillingPlans.yaml
+  /admins/domains/billing/plans/switch:
+    $ref: ./admins/adminsDomainsBillingPlansSwitch.yaml
+  /admins/domains/billing/plans/active:
+    $ref: ./admins/adminsDomainsBillingPlansActive.yaml
+  /admins/billing/rates:
+    $ref: ./admins/adminsBillingRates.yaml
+  /admins/accounts:
+    $ref: ./admins/adminsAccounts.yaml
+  /admins/accounts/accessTokens:
+    $ref: ./admins/adminsAccountsAccessTokens.yaml
+  /admins/accounts/configurations:
+    $ref: ./admins/adminsAccountsConfigurations.yaml
+  /admins/domains/configurations:
+    $ref: ./admins/adminsDomainsConfigurations.yaml
+  /admins/domains/configurations/configuration:
+    $ref: ./admins/adminsDomainsConfigurationsConfiguration.yaml
+  /admins/domains/configurations/route:
+    $ref: ./admins/adminsDomainsConfigurationsRoute.yaml
+  /admins/domains/configurations/communications/spidr:
+    $ref: ./admins/adminsDomainsConfigurationsCommunicationsSpider.yaml
+  /admins/accounts/details:
+    $ref: ./admins/adminsAccountsDetails.yaml
+  /admins/billing/codes:
+    $ref: ./admins/adminsBillingCodes.yaml
+  /admins/oauth/tokens:
+    $ref: ./admins/adminsOauthTokens.yaml
+  /admins/domains/users:
+    $ref: ./admins/adminsDomainsUsers.yaml
+  /admins/domains/users/accesstokens:
+    $ref: ./admins/adminsDomainsUsersAccessTokens.yaml
+  /admins/domains/exists:
+    $ref: ./admins/adminsDomainsExists.yaml
+  /admins/domains/resources:
+    $ref: ./admins/adminsDomainsResources.yaml
+  /admins/domains/otp:
+    $ref: ./admins/adminsDomainsOtp.yaml
+  /admins/domains/fastcall:
+    $ref: ./admins/adminsDomainsFastcall.yaml
+  /admins/domain_special_keys:
+    $ref: ./admins/adminsDomainSpecialKeys.yaml
+  /admins/applications/configurations:
+    $ref: ./admins/adminsApplicationsConfigurations.yaml
+  /admins/applications/configurations/configuration:
+    $ref: ./admins/adminsApplicationsConfigurationsConfiguration.yaml
+  /admins/users/anonymous:
+    $ref: ./admins/adminsUsersAnonymous.yaml
+  /admins/sessions/session/id:
+    $ref: ./admins/adminsSessionsSessionId.yaml
+  /admins/general_report:
+    $ref: ./admins/adminsGeneralReport.yaml
+  /admins/reports/count/apis/24h:
+    $ref: ./admins/adminsReportsCountApis24h.yaml
+  /admins/reports/data/apis/24h:
+    $ref: ./admins/adminsReportDataApis24h.yaml
 #------------------#
 #----Accounts------#
   /accounts/accessTokens:

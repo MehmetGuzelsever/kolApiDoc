@@ -1,0 +1,21 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetUserAccessTokenByUserAndDomainRequest
+      parameters:
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type : string
+        - name: user_id
+          in: query
+          required: true
+          description: User Id
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+        

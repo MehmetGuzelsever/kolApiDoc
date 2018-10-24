@@ -1,0 +1,40 @@
+    post:
+      tags:
+      - Admins  
+      summary: CreatePlanRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Api Key
+          type : string
+        - name: plan_name
+          in: query
+          required: true
+          description: Plan Name
+          type: string
+        - name: plan_codes
+          in: query
+          required: true
+          description: Plan Codes
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    get:
+      tags:
+      - Admins  
+      summary: GetPlansRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Access Key
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'      

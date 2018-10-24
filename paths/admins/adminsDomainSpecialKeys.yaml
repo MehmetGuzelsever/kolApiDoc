@@ -1,0 +1,45 @@
+    post:
+      tags:
+      - Admins  
+      summary: RegisterDomainSpecialKeyRequest
+      parameters:
+        - name: domain_special_key
+          in: query
+          required: true
+          description: Domain Special Key
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    get:
+      tags:
+      - Admins  
+      summary: GetRegisteredDomainSpecialKeysRequest
+      parameters:
+        - name: domain_special_key
+          in: query
+          required: true
+          description: Domain Special Key
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    delete:
+      tags:
+      - Admins  
+      summary: UnregisterDomainSpecialKeyRequest
+      parameters:
+        - name: domain_special_key
+          in: query
+          required: true
+          description: Domain Special Key
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 

@@ -1,0 +1,15 @@
+    post:
+      tags:
+      - Admins  
+      summary: GeneralReportRequest
+      parameters:
+        - name: GeneralReportRequest
+          in: query
+          required: true
+          description: GeneralReportRequest
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

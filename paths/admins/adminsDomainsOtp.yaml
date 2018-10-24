@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetUserOtpsRequest
+      parameters:
+        - name: GetUserOtpsRequest
+          in: query
+          required: true
+          description: GetUserOtpsRequest
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

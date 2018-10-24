@@ -1,0 +1,25 @@
+    post:
+      tags:
+      - Admins  
+      summary: AddAdminRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Super Admin Key
+          type: string
+        - name: admin_name
+          in: query
+          required: true
+          description: Admin Name 
+          type : string
+        - name: admin_password
+          in: query
+          required: true
+          description: Admin Password
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'    

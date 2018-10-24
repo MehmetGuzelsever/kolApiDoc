@@ -1,0 +1,30 @@
+    post:
+      tags:
+      - Admins  
+      summary: SetDomainConfigurationRouteRequest
+      parameters:
+        - name: SetDomainConfigurationRouteRequest
+          in: query
+          required: true
+          description: SetDomainConfigurationRouteRequest
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainConfigurationRouteRequest
+      parameters:
+        - name: SetDomainConfigurationRouteRequest
+          in: query
+          required: true
+          description: SetDomainConfigurationRouteRequest
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

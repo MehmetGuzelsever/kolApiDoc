@@ -1,0 +1,45 @@
+    put:
+      tags:
+      - Admins  
+      summary: ChangeAccountStatusRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          type: string
+          description: Admin Access Key
+        - name: account_email
+          in: query
+          required: true
+          description: Email
+          type: string            
+        - name: account_status
+          in: query
+          required: true
+          description: Admin Status
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    get:
+      tags:
+      - Admins  
+      summary: GetAccountStatusRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Access Key
+          type: string
+        - name: account_email
+          in: query
+          required: true
+          description: Email
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
