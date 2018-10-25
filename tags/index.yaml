@@ -5,6 +5,6 @@
 - name: Domains
   description: Domains Level Request (domainRequestHandler) /v1.3/domains/
 - name: Users
-  description: Users Level Request (userRequestHandler) /v1.3/users
+  description: Users Level Request (userRequestHandler) /v1.3/users Note=If parameters aren't in key, key=>User Access Token 
 - name: Devices
   description: Devices Level Request (deviceRequestHandler) /v1.3/devices  

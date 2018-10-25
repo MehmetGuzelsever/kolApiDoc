@@ -1,0 +1,65 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetBaiduPushCertsRequest
+      parameters:
+        - name: GetBaiduPushCertsRequest
+          in: query
+          required: true
+          description: GetBaiduPushCertsRequest
+          type: string     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    post:
+      tags:
+      - Admins  
+      summary: AddBaiduPushCertRequest
+      parameters:
+        - name: bundle_id
+          in: query
+          required: true
+          description: Bundle Id
+          type: string     
+        - name: api_key
+          in: query
+          required: true
+          description: Api Key
+          type: string     
+        - name: api_secret
+          in: query
+          required: true
+          description: Api Secret
+          type: string           
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    delete:
+      tags:
+      - Admins  
+      summary: RemoveBaiduPushCertRequest
+      parameters:
+        - name: domain
+          in: query
+          required: true
+          description: Domain
+          type: string
+        - name: bundle_id
+          in: query
+          required: true
+          description: Bundle Id
+          type: string    
+        - name: api_secret
+          in: query
+          required: true
+          description: Api Secret
+          type: string                          
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                         

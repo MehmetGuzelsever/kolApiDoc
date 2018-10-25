@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetUserByDidRequest
+      parameters:
+        - name: did
+          in: query
+          required: true
+          description: Did
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 

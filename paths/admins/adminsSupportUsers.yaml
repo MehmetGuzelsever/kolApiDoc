@@ -1,0 +1,65 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetSupportUserRequest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          description: Name
+          type: string     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    post:
+      tags:
+      - Admins  
+      summary: AddSupportUserRequest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          description: Name
+          type: string     
+        - name: domain
+          in: query
+          required: true
+          description: Domain
+          type: string     
+        - name: pass
+          in: query
+          required: true
+          description: Pass
+          type: string
+        - name: app_type
+          in: query
+          required: true
+          description: App Type
+          type: string                         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    delete:
+      tags:
+      - Admins  
+      summary: DeleteSupportUserRequest
+      parameters:
+        - name: name
+          in: query
+          required: true
+          description: Name
+          type: string      
+        - name: app_type
+          in: query
+          required: true
+          description: App Type
+          type: string                                    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                         

@@ -1,0 +1,30 @@
+    post:
+      tags:
+      - Admins  
+      summary: UnMuteUserInUserListRequest
+      parameters:
+        - name: list_id
+          in: query
+          required: true
+          description: List Id
+          type : string
+        - name: list_type
+          in: query
+          required: true
+          description: List Type
+          type : string
+        - name: user_name
+          in: query
+          required: true
+          description: User Name
+          type : string
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type : string        
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

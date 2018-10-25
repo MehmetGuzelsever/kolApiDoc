@@ -1,0 +1,75 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetIosPushCertsRequest
+      parameters:
+        - name: GetIosPushCertsRequest
+          in: query
+          required: true
+          description: GetIosPushCertsRequest
+          type: string     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    post:
+      tags:
+      - Admins  
+      summary: AddIosPushCertRequest
+      parameters:
+        - name: domain
+          in: query
+          required: true
+          description: domain
+          type: string     
+        - name: bundle_id
+          in: query
+          required: true
+          description: Bundle Id
+          type: string     
+        - name: is_voip
+          in: query
+          required: true
+          description: Is Voip
+          type: string        
+        - name: is_sandbox
+          in: query
+          required: true
+          description: Is Sandbox
+          type: string              
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    delete:
+      tags:
+      - Admins  
+      summary: RemoveIosPushCertRequest
+      parameters:
+        - name: domain
+          in: query
+          required: true
+          description: domain
+          type: string     
+        - name: bundle_id
+          in: query
+          required: true
+          description: Bundle Id
+          type: string     
+        - name: is_voip
+          in: query
+          required: true
+          description: Is Voip
+          type: string        
+        - name: is_sandbox
+          in: query
+          required: true
+          description: Is Sandbox
+          type: string                                       
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                         

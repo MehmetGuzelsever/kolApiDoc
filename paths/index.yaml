@@ -67,6 +67,98 @@
     $ref: ./admins/adminsReportsCountApis24h.yaml
   /admins/reports/data/apis/24h:
     $ref: ./admins/adminsReportDataApis24h.yaml
+  /admins/billing/credit_check:
+    $ref: ./admins/adminsBillingCreditCheck.yaml
+  /admins/billing/ability_check:
+    $ref: ./admins/adminsBillingAbilityCheck.yaml
+  /admins/billing/call_start:
+    $ref: ./admins/adminsBillingCallStart.yaml
+  /admins/billing/call_end:
+    $ref: ./admins/adminsBillingCallEnd.yaml
+  /admins/services/push/call:
+    $ref: ./admins/adminsServicesPushCall.yaml
+  /admins/services/push/call_answered:
+    $ref: ./admins/adminsServicesPushCallAnswered.yaml
+  /admins/services/push/call_with_call_id:
+    $ref: ./admins/adminsServicesPushCallWithCallId.yaml
+  /admins/billing/user_by_did:
+    $ref: ./admins/adminsBillingUserByDid.yaml
+  /admins/groups:
+    $ref: ./admins/adminsGroups.yaml
+  /admins/groups/user:
+    $ref: ./admins/adminsGroupsUser.yaml
+  /admins/groups/group:
+    $ref: ./admins/adminsGroupsGroup.yaml
+  /admins/groups/user/group:
+    $ref: ./admins/adminsGroupsUserGroup.yaml
+  /admins/cache:
+    $ref: ./admins/adminsCache.yaml
+  /admins/userlists:
+    $ref: ./admins/adminsUserLists.yaml
+  /admins/userlists/userlist:
+    $ref: ./admins/adminsUserListsUserList.yaml
+  /admins/userlists/users:
+    $ref: ./admins/adminsUserListsUsers.yaml    
+  /admins/userlists/users/mute:
+    $ref: ./admins/adminsUserListsUsersMute.yaml
+  /admins/userlists/users/unmute:
+    $ref: ./admins/adminsUserListsUsersUnMute.yaml    
+  /admins/domains/users/status:
+    $ref: ./admins/adminsDomainsUsersStatus.yaml
+  /admins/auth/whitelist/ips:
+    $ref: ./admins/adminsAuthWhiteListIps.yaml
+  /admins/auth/whitelist:
+    $ref: ./admins/adminsAuthWhiteList.yaml
+  /admins/push/certs/ios:
+    $ref: ./admins/adminsPushCertsIos.yaml
+  /admins/push/certs/gcm:
+    $ref: ./admins/adminsPushCertsGcm.yaml
+  /admins/push/certs/baidu:
+    $ref: ./admins/adminsPushCertsBaidu.yaml
+  /admins/spidrRegistration/domains:
+    $ref: ./admins/adminsSpidrRegistrationDomains.yaml
+####### Kontrol edilmeli
+  /admins/reports/accounts/registrations/{type}:
+    $ref: ./admins/adminsReportsAccountsRegistrationsType.yaml
+  /admins/reports/domains/registrations/{type}:
+    $ref: ./admins/adminsReportsDomainsRegistrationsType.yaml        
+  /admins/reports/registration:
+    $ref: ./admins/adminsReportsRegistration.yaml        
+  /admins/reports/billing/credit:
+    $ref: ./admins/adminsReportsBillingCredit.yaml        
+  /admins/reports/billing/packages:
+    $ref: ./admins/adminsReportsBillingPackages.yaml        
+  /admins/reports/calls/{type}:
+    $ref: ./admins/adminsReportsCallsType.yaml        
+  /admins/reports/calls/stats/{type}:
+    $ref: ./admins/adminsReportsCallsStatsType.yaml        
+  /admins/reports/messages:
+    $ref: ./admins/adminsReportsMessages.yaml        
+  /admins/reports/group/messages:
+    $ref: ./admins/adminsReportsGroupMessages.yaml        
+  /admins/reports/sms:
+    $ref: ./admins/adminsReportsSms.yaml        
+  /admins/reports/domains/status/{type}:
+    $ref: ./admins/adminsReportsDomainsStatusTpe.yaml        
+  /admins/reports/mpv/{type}:
+    $ref: ./admins/adminsReportsMpvType.yaml        
+  /admins/reports/calls/mpv:
+    $ref: ./admins/adminsReportsCallsMpv.yaml        
+  /admins/reports/calls/stats/mpv:
+    $ref: ./admins/adminsReportsCallsStatsMpv.yaml        
+###### kontrol Edilmeli
+
+  /admins/mpv/events:
+    $ref: ./admins/adminsMpvEvents.yaml
+  /admins/lawfulintercept:
+    $ref: ./admins/adminsLawfulintercept.yaml
+  /admins/supportusers:
+    $ref: ./admins/adminsSupportUsers.yaml
+  /admins/supportusers/verifications/smss:
+    $ref: ./admins/adminsSupportUsersVerificationsSmss.yaml  
+## get ve postu aynı codesun?      
+  /admins/supportusers/verifications/codes:
+    $ref: ./admins/adminsSupportUsersVerificationsCodes.yaml   
 #-------------------------------------------------------------------------------------------------#
 #-------------------------------------Accounts----------------------------------------------------#
   /accounts/accessTokens:

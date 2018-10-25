@@ -1,0 +1,55 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetGcmPushCertsRequest
+      parameters:
+        - name: GetGcmPushCertsRequest
+          in: query
+          required: true
+          description: GetGcmPushCertsRequest
+          type: string     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    post:
+      tags:
+      - Admins  
+      summary: AddGcmPushCertRequest
+      parameters:
+        - name: bundle_id
+          in: query
+          required: true
+          description: Bundle Id
+          type: string     
+        - name: api_key
+          in: query
+          required: true
+          description: Api Key
+          type: string     
+        - name: notification_provider
+          in: query
+          required: true
+          description: Notification Provider
+          type: string           
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    delete:
+      tags:
+      - Admins  
+      summary: RemoveGcmPushCertRequest
+      parameters:
+        - name: notification_provider
+          in: query
+          required: true
+          description: Notification Provider
+          type: string                              
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                         

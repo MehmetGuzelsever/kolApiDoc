@@ -1,0 +1,70 @@
+    post:
+      tags:
+      - Admins  
+      summary: CallPushWithCallIdRequest
+      parameters:
+        - name: call_source
+          in: query
+          required: true
+          description: Call Source
+          type : string
+        - name: call_destination
+          in: query
+          required: true
+          description: Call Destination
+          type : string
+        - name: isVideo
+          in: query
+          required: true
+          description: isVideo
+          type : string
+        - name: isPSTN
+          in: query
+          required: true
+          description: isPSTN
+          type : string
+        - name: sipProxyUniqueID
+          in: query
+          required: true
+          description: SIP Proxy Unique Id
+          type : string          
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Admins  
+      summary: CancelPushedCallWithCallIdRequest
+      parameters:
+        - name: call_source
+          in: query
+          required: true
+          description: Call Source
+          type : string
+        - name: call_destination
+          in: query
+          required: true
+          description: Call Destination
+          type : string
+        - name: isVideo
+          in: query
+          required: true
+          description: isVideo
+          type : string
+        - name: isPSTN
+          in: query
+          required: true
+          description: isPSTN
+          type : string
+        - name: sipProxyUniqueID
+          in: query
+          required: true
+          description: SIP Proxy Unique Id
+          type : string          
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'           

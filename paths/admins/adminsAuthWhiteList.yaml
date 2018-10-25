@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetAuthWhitelistRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Key
+          type: string     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 

@@ -1,0 +1,60 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetSupportUserRequest
+      parameters:
+        - name: phone_number
+          in: query
+          required: true
+          description: Phone Number
+          type: string     
+        - name: domain
+          in: query
+          required: true
+          description: Domain
+          type: string     
+        - name: validation_code
+          in: query
+          required: true
+          description: Validation Code
+          type: string
+        - name: app_type
+          in: query
+          required: true
+          description: App Type
+          type: string      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    post:
+      tags:
+      - Admins  
+      summary: VerifyValidationCodeForSupportUserRequest
+      parameters:
+        - name: phone_number
+          in: query
+          required: true
+          description: Phone Number
+          type: string     
+        - name: domain
+          in: query
+          required: true
+          description: Domain
+          type: string     
+        - name: validation_code
+          in: query
+          required: true
+          description: Validation Code
+          type: string
+        - name: app_type
+          in: query
+          required: true
+          description: App Type
+          type: string                         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

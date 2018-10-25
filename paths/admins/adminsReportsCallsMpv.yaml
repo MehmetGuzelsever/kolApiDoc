@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Admins  
+      summary: queryAdminDataAllMpvCallsRequest
+      parameters:
+        - name: queryAdminDataAllMpvCallsRequest
+          in: query
+          required: true
+          description: queryAdminDataAllMpvCallsRequest
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

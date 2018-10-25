@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Admins  
+      summary: queryAdminDataAllCallsByTypeRequest
+      parameters:
+        - name: type
+          in: path
+          required: true
+          description: queryAdminDataAllCallsByTypeRequest
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

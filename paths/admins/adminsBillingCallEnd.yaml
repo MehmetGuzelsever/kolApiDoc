@@ -1,0 +1,20 @@
+    post:
+      tags:
+      - Admins  
+      summary: CallEndRequest
+      parameters:
+        - name: sessionId
+          in: query
+          required: true
+          description: Session Id
+          type : string
+        - name: reasonCode
+          in: query
+          required: true
+          description: Reason Code
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

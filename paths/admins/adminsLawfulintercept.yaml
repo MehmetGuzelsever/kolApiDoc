@@ -1,0 +1,40 @@
+    post:
+      tags:
+      - Admins  
+      summary: RegisterLIDomainRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Api Key
+          type: string
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Admins  
+      summary: UnregisterLIDomainRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Api Key
+          type: string
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'            

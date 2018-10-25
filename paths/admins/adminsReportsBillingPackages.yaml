@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Admins  
+      summary: queryAdminDataAllPackagesActionsRequest
+      parameters:
+        - name: queryAdminDataAllPackagesActionsRequest
+          in: query
+          required: true
+          description: queryAdminDataAllPackagesActionsRequest
+          type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

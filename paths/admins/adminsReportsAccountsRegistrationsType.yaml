@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Admins  
+      summary: queryAdminDataAllAccountRegistrationsActionsRequest
+      parameters:
+        - name: type
+          in: path
+          required: true
+          description: queryAdminDataAllAccountRegistrationsActionsRequest
+          type: string          
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

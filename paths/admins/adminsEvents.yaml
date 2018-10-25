@@ -1,0 +1,42 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetEventListRequest
+      parameters:
+       - name: key
+         in: query
+         required: true
+         description: Admin Api Key
+         type: string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    post:
+      tags:
+      - Admins  
+      summary: AddEventRequest
+      parameters:
+       - name: key
+         in: query
+         required: true
+         description: Admin Api Key
+         type: string
+       - name: name
+         in: query
+         required: true
+         description: Event Name
+         type: string
+       - name: mandatoryFields
+         in: query
+         required: true
+         description: Event Mandatory Fields
+         type: string                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+                
+        

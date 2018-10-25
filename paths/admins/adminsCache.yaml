@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetStoredValueRequest
+      parameters:
+        - name: db_key
+          in: query
+          required: true
+          description: DB Key
+          type : string
+        - name: password
+          in: query
+          required: true
+          description: Password
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 

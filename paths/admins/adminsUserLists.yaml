@@ -1,0 +1,50 @@
+    post:
+      tags:
+      - Admins  
+      summary: CreateUserListRequest
+      parameters:
+        - name: list_id
+          in: query
+          required: true
+          description: List Id
+          type : string
+        - name: list_name
+          in: query
+          required: true
+          description: List Name
+          type : string          
+        - name: list_type
+          in: query
+          required: true
+          description: List Type
+          type : string 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Admins  
+      summary: DelUserListRequest
+      parameters:
+        - name: list_id
+          in: query
+          required: true
+          description: List Id
+          type : string
+        - name: list_name
+          in: query
+          required: true
+          description: List Name
+          type : string          
+        - name: list_type
+          in: query
+          required: true
+          description: List Type
+          type : string    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
