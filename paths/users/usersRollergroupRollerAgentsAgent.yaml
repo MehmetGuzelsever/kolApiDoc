@@ -1,0 +1,30 @@
+    delete:
+      tags:
+      - Users  
+      summary: UserDeleteAgentFromRolloverGroupRequest (rollovergroupsHandler) 
+      parameters:
+        - in: query
+          name: group_name
+          required: true
+          type: string
+          description: Group Name  
+        - in: query
+          name: agent_id
+          required: true
+          type: string
+          description: Agent ID     
+        - in: query
+          name: domain_name
+          required: false
+          type: string
+          description: Domain Name    
+        - in: query
+          name: name
+          required: false
+          type: string
+          description: Full User ID                                                                                                                                                                                                                                                                                                            
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

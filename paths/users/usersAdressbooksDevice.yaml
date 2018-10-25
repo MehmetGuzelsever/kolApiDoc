@@ -5,22 +5,22 @@
       parameters:
         - in: query
           name: domain_name
-          required: true
+          required: false
           type: string
           description: Domain Name
         - in: query
           name: user_id
-          required: true
+          required: false
           type: string
           description: User ID
         - in: query
           name: include_profiles
-          required: true
+          required: false
           type: string
           description: Include Profiles 
         - in: query
           name: getExtendedABData
-          required: true
+          required: false
           type: string
           description: getExtendedABData==true                              
       responses:

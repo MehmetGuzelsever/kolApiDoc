@@ -1,0 +1,8 @@
+type: object
+properties:
+  admin_user_data:
+    type: string 
+  group_user_data:
+    type: string
+  group_type:
+    type: string                 

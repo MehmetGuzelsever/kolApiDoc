@@ -2,12 +2,6 @@
       tags:
       - Admins  
       summary: queryAdminDataAllSmsMessagesRequest
-      parameters:
-        - name: queryAdminDataAllSmsMessagesRequest
-          in: query
-          required: true
-          description: queryAdminDataAllSmsMessagesRequest
-          type: string
       responses:
         200:
           description: The request completed successfully

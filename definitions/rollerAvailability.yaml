@@ -1,0 +1,12 @@
+type: object
+properties:
+  group_name:
+    type: string 
+  agent_id:
+    type: string
+  availability_day_of_week:
+    type: string
+  availability_start_time_UTC:
+    type: string  
+  availability_end_time_UTC:
+    type: string                    

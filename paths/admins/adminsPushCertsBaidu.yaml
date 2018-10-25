@@ -1,13 +1,7 @@
     get:
       tags:
       - Admins  
-      summary: GetBaiduPushCertsRequest
-      parameters:
-        - name: GetBaiduPushCertsRequest
-          in: query
-          required: true
-          description: GetBaiduPushCertsRequest
-          type: string     
+      summary: GetBaiduPushCertsRequest  
       responses:
         200:
           description: The request completed successfully

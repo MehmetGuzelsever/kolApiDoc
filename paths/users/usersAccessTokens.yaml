@@ -15,12 +15,12 @@
           description: User Api Secret
         - in: query
           name: user_id
-          required: true
+          required: false
           type: string
           description: User Id
         - in: query
           name: domain_name
-          required: true
+          required: false
           type: string
           description: Domain Name
       responses:

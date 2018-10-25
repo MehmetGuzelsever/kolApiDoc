@@ -2,17 +2,6 @@
       tags:
       - Admins  
       summary: AdminDeleteGroupRequest
-      parameters:
-        - name: group_id
-          in: query
-          required: true
-          description: Group Id
-          type : string
-        - name: full_user_id
-          in: query
-          required: true
-          description: Full User Id
-          type : string
       responses:
         200:
           description: The request completed successfully

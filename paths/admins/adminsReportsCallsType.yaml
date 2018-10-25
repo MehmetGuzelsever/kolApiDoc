@@ -7,7 +7,7 @@
           in: path
           required: true
           description: queryAdminDataAllCallsByTypeRequest
-          type: string
+          type: string         
       responses:
         200:
           description: The request completed successfully

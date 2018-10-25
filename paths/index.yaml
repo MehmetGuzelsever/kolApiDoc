@@ -356,7 +356,105 @@
   /users/sessions/session/id/admin/participants/participant/join:
     $ref: ./users/usersSessionsSessionIdAdminParticipantsPartiJoin.yaml   
   /users/sessions/session/id/admin/participants/participant:
-    $ref: ./users/usersSessionsSessionIdAdminParticipantsParti.yaml                                                                                                                                                                                                                                                                                                                                                   
+    $ref: ./users/usersSessionsSessionIdAdminParticipantsParti.yaml #safe
+  /users/rollovergroups:
+    $ref: ./users/usersRollergroups.yaml   
+  /users/rollovergroups/rollovergroup:
+    $ref: ./users/usersRollergroupRoller.yaml  
+  /users/rollovergroups/rollovergroup/agents:
+    $ref: ./users/usersRollergroupRollerAgents.yaml  
+  /users/rollovergroups/rollovergroup/agents/agent:
+    $ref: ./users/usersRollergroupRollerAgentsAgent.yaml   
+  /users/rollovergroups/rollovergroup/agents/agent/availabilities:
+    $ref: ./users/usersRollergroupRollerAgentsAgentAvailabilities.yaml  
+  /users/rollovergroups/rollovergroup/agents/agent/availabilities/availability: # <= safe
+    $ref: ./users/usersRollergroupRollerAgentsAgentAvailabilitiesAva.yaml 
+  /users/groups:
+    $ref: ./users/usersGroups.yaml   
+  /users/groups/group:
+    $ref: ./users/usersGroupsGroup.yaml  
+  /users/groups/group/participants:
+    $ref: ./users/usersGroupsGroupParti.yaml 
+  /users/groups/group/participants/participant:
+    $ref: ./users/usersGroupsGroupPartiParti.yaml      
+  /users/groups/group/admin:
+    $ref: ./users/usersGroupsGroupAdmin.yaml  
+  /users/families:
+    $ref: ./users/usersFamilies.yaml 
+  /users/families/family:
+    $ref: ./users/usersFamiliesFamily.yaml 
+  /users/families/family/members:
+    $ref: ./users/usersFamiliesFamilyMembers.yaml 
+  /users/families/family/members/member:
+    $ref: ./users/usersFamiliesFamilyMembersMember.yaml      
+  /users/chatgroups:
+    $ref: ./users/usersChatgroups.yaml  
+  /users/chatgroups/chatgroup:
+    $ref: ./users/usersChatgroupsChatgroup.yaml     
+  /users/chatgroups/list:
+    $ref: ./users/usersChatgroupsList.yaml   
+  /users/chatgroups/chatgroup/members:
+    $ref: ./users/usersChatgroupChatgroupMembers.yaml  
+  /users/chatgroups/chatgroup/members/membership:
+    $ref: ./users/usersChatgroupChatgroupMembersMembership.yaml 
+  /users/chatgroups/chatgroup/mute:
+    $ref: ./users/usersChatgroupsChatgroupMute.yaml 
+  /users/chatgroups/chatgroup/members/mute:
+    $ref: ./users/usersChatgroupsChatgroupMembersMute.yaml 
+  /users/chatgroups/chatgroup/messages:
+    $ref: ./users/usersChatgroupChatgroupMessages.yaml    
+  /users/gateway/subscriptions:
+    $ref: ./users/usersGatewaySubscription.yaml 
+  /users/gateway/subscriptions/subscription:
+    $ref: ./users/usersGatewaySubscriptionsSubs.yaml  
+  /users/gateway/calls:
+    $ref: ./users/usersGatewayCalls.yaml   
+  /users/gateway/calls/call:
+    $ref: ./users/usersGatewayCallsCall.yaml 
+  /users/gateway/anonymousCalls:
+    $ref: ./users/usersGatewayAnonymousCalls.yaml   
+  /users/gateway/anonymousCalls/anonymousCall:
+    $ref: ./users/usersGatewayAnonymousCallsAnonymousCall.yaml
+  /users/gateway/calldisposition:
+    $ref: ./users/usersGatewayCalldisposition.yaml         
+  /users/gateway/clicktocall:
+    $ref: ./users/usersGatewayClicktocall.yaml  
+  /users/gateway/connections/isAlive:
+    $ref: ./users/usersGatewayConnectionsIsAlive.yaml  
+  /users/gateway/imrn:
+    $ref: ./users/usersGatewayImrn.yaml  
+  /users/gateway/logHistory:
+    $ref: ./users/usersGatewayLogHistory.yaml  
+  /users/gateway/logRecord:
+    $ref: ./users/usersGatewayLogRecord.yaml
+  /users/gateway/presence:
+    $ref: ./users/usersGatewayPresence.yaml  
+  /users/gateway/presenceStateWatchers:
+    $ref: ./users/usersGatewayPresenceStateWatchers.yaml 
+  /users/gateway/routelist:
+    $ref: ./users/usersGatewayRoutelist.yaml 
+  /users/gateway/userProfileData:
+    $ref: ./users/usersGatewayUserProfileData.yaml    
+  /users/gateway/directory:
+    $ref: ./users/usersGatewayDirectory.yaml    
+  /users/gateway/addressbook:
+    $ref: ./users/usersGatewayAddressbook.yaml   
+  /users/gateway/collaboration/videocollaborationhosturl:
+    $ref: ./users/usersGatewayCollaborationVideo.yaml  
+  /users/gateway/collaboration/webcollaborationhosturl:
+    $ref: ./users/usersGatewayCollaborationWeb.yaml 
+  /users/messages/event:
+    $ref: ./users/usersMessagesEvent.yaml    
+  /users/chatgroups/chatgroup/messages/event:
+    $ref: ./users/usersChatgroupChatgroupMessagesEvent.yaml  
+  /users/spidr/notifications:
+    $ref: ./users/usersSpidrNotifications.yaml  
+  /users/contents/collections:
+    $ref: ./users/usersContentsCollections.yaml  
+  /users/contents/collections/collection/file:
+    $ref: ./users/usersContentCollectionsCollectionFile.yaml 
+  /users/contents/collections/collection:
+    $ref: ./users/usersContentsCollectionsCollection.yaml                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 #-------------------------------------------------------------------------------------------------#
 #-----------------------------------------Devices-------------------------------------------------#
   /devices/addressbooks:

@@ -1,0 +1,15 @@
+    post:
+      tags:
+      - Users  
+      summary: clickToCallsCreateRequest (spidrRestProxyRequestHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Users Access Token                                                                                                                                        
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

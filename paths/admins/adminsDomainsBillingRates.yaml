@@ -1,0 +1,55 @@
+    put:
+      tags:
+      - Admins  
+      summary: AssignRateTableRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Access Key
+          type : string
+        - name: rates
+          in: query
+          required: true
+          description: Rates
+          type : string
+        - name: account_api_key
+          in: query
+          required: true
+          description: Account Api Key
+          type : string          
+        - name: rate_table_id
+          in: query
+          required: true
+          description: Rate Id
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    get:
+      tags:
+      - Admins  
+      summary: GetDomainRateTableRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Access Key
+          type : string
+        - name: account_api_key
+          in: query
+          required: true
+          description: Account Api Key
+          type : string            
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type : string
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'              

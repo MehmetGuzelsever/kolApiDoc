@@ -1,0 +1,30 @@
+    get:
+      tags:
+      - Admins  
+      summary: GetAdminHistoryRequest
+      parameters:
+        - name: key
+          in: query
+          required: true
+          description: Admin Access Key
+          type : string       
+        - name: domain_name
+          in: query
+          required: true
+          description: Domain Name
+          type : string
+        - name: start_time
+          in: query
+          required: true
+          description: Start Time
+          type : string
+        - name: end_time
+          in: query
+          required: true
+          description: End Time
+          type : string                    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'              

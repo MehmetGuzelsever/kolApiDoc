@@ -1,0 +1,31 @@
+    get:
+      tags:
+      - Users  
+      summary: routeListsIndexRequest (spidrRestProxyRequestHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token                                                                                                                                     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    put:
+      tags:
+      - Users  
+      summary: routeListsUpdateRequest (spidrRestProxyRequestHandler)
+      parameters:      
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+                                      

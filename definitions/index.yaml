@@ -13,4 +13,14 @@ messageConversation:
 session:
   $ref: ./session.yaml     
 sessionParti:
-  $ref: ./sessionParti.yaml       
+  $ref: ./sessionParti.yaml   
+rollerParameter:
+  $ref: ./rollerParameter.yaml    
+rollerAvailability:
+  $ref: ./rollerAvailability.yaml 
+userGroupParameter:
+  $ref: ./userGroupParameter.yaml          
+userParticipant:
+  $ref: ./userParticipant.yaml    
+chatgroup:
+  $ref: ./chatgroup.yaml     

@@ -1,0 +1,29 @@
+    post:
+      tags:
+      - Users  
+      summary: sendMessageToGroupRequest (groupMessagingHandler)  
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Users Access Token      
+        - in: query
+          name: message
+          required: true
+          type: string
+          description: Message    
+        - in: body
+          name: device_id
+          required: true
+          description: Device ID
+          schema: 
+            type: object
+            properties: 
+              device_id:
+                type: string                                 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'   

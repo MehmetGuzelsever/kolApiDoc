@@ -1,0 +1,19 @@
+    post:
+      tags:
+      - Users  
+      summary: spidrNotificationRequest (spidrNotificationHandler)
+      parameters:
+        - in: body
+          name: notificationMessage
+          required: true
+          description: Notification Message
+          schema: 
+            type: string
+            properties: 
+              notificationMessage: 
+                type: string                                                                                                                                        
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

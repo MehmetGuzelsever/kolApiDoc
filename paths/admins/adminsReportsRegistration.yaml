@@ -2,12 +2,6 @@
       tags:
       - Admins  
       summary: queryAdminDataAllRegistrationsRequest
-      parameters:
-        - name: queryAdminDataAllRegistrationsRequest
-          in: query
-          required: true
-          description: queryAdminDataAllRegistrationsRequest
-          type: string
       responses:
         200:
           description: The request completed successfully

@@ -1,0 +1,8 @@
+type: object
+properties:
+  group_name:
+    type: string 
+  group_image:
+    type: string
+  device_id:
+    type: string        

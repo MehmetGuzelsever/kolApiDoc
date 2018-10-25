@@ -1,0 +1,52 @@
+    post:
+      tags:
+      - Users  
+      summary: addMembersToGroupRequest (groupMessagingHandler)  
+      parameters:
+        - in: body
+          name: Required Parameters (body or query)
+          required: true
+          description: Parameters 
+          schema: 
+            type: object
+            properties: 
+              members: 
+                type: string
+              group_id: 
+                type: string  
+        - in: query
+          name: Body Parameter (device_id)
+          required: false
+          type: string
+          description: Device ID                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'   
+    delete:
+      tags:
+      - Users  
+      summary: removeMembersFromGroupRequest (groupMessagingHandler)  
+      parameters:   
+        - in: body
+          name: Required Parameters (body or query)
+          required: true
+          description: Parameters 
+          schema: 
+            type: object
+            properties: 
+              members: 
+                type: string
+              group_id: 
+                type: string
+        - in: query
+          name: Body Parameter (device_id)
+          required: false
+          type: string
+          description: Device ID                       
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                              

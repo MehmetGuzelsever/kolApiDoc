@@ -1,23 +1,7 @@
     post:
       tags:
       - Admins  
-      summary: roomEventNotificationRequest
-      parameters:
-        - name: user_id
-          in: query
-          required: true
-          description: User Id
-          type: string
-        - name: domain_name
-          in: query
-          required: true
-          description: Domain Name
-          type: string
-        - name: conference_id
-          in: query
-          required: true
-          description: Conference Id
-          type: string                    
+      summary: roomEventNotificationRequest     
       responses:
         200:
           description: The request completed successfully

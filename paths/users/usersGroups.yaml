@@ -1,0 +1,36 @@
+    get:
+      tags:
+      - Users  
+      summary: UserGetUserGroupsRequest (groupsHandler) 
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token                                                        
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    post:
+      tags:
+      - Users  
+      summary: UserCreateGroupRequest (groupsHandler) 
+      parameters:   
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: User Access Token  
+        - in: body
+          name: Body Parameter
+          required: false
+          description: Parameters      
+          schema: 
+            $ref: '#/definitions/userGroupParameter'     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                              

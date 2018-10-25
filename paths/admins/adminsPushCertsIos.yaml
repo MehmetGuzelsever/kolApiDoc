@@ -2,12 +2,6 @@
       tags:
       - Admins  
       summary: GetIosPushCertsRequest
-      parameters:
-        - name: GetIosPushCertsRequest
-          in: query
-          required: true
-          description: GetIosPushCertsRequest
-          type: string     
       responses:
         200:
           description: The request completed successfully

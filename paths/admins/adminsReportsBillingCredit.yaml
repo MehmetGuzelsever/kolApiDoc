@@ -2,12 +2,6 @@
       tags:
       - Admins  
       summary: queryAdminDataAllCreditActionsRequest
-      parameters:
-        - name: queryAdminDataAllCreditActionsRequest
-          in: query
-          required: true
-          description: queryAdminDataAllCreditActionsRequest
-          type: string
       responses:
         200:
           description: The request completed successfully

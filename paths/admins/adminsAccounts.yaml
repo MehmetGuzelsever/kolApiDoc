@@ -13,4 +13,51 @@
           description: The request completed successfully
           schema: 
             $ref: '#/definitions/success'
+    post:
+      tags:
+      - Admins  
+      summary: RegisterAccountRequest
+      parameters:
+       - name: key
+         in: query
+         required: true
+         description: Admin Api Key
+         type: string
+       - name: account_email
+         in: query
+         required: true
+         description: Account Email
+         type: string           
+       - name: account_password
+         in: query
+         required: true
+         description: Account Password
+         type: string
+                
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Admins  
+      summary: UnregisterAccountRequest
+      parameters:
+       - name: key
+         in: query
+         required: true
+         description: Admin Api Key
+         type: string
+       - name: account_api_key
+         in: query
+         required: true
+         description: Account Api Key
+         type: string                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+                            
         

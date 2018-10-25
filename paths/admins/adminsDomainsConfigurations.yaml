@@ -2,12 +2,6 @@
       tags:
       - Admins  
       summary: SetDomainConfigurationRequest
-      parameters:
-        - name: domain_configuration
-          in: query
-          required: true
-          description: Domain Configuration
-          type : string
       responses:
         200:
           description: The request completed successfully

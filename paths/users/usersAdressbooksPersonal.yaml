@@ -5,12 +5,12 @@
       parameters:
         - in: query
           name: domain_name
-          required: true
+          required: false
           type: string
           description: Domain Name
         - in: query
           name: user_id
-          required: true
+          required: false
           type: string
           description: User ID         
       responses:
@@ -25,12 +25,12 @@
       parameters: 
         - in: query
           name: domain_name
-          required: true
+          required: false
           type: string
           description: Domain Name
         - in: query
           name: user_id
-          required: true
+          required: false
           type: string
           description: User ID         
         - in: query
@@ -50,12 +50,12 @@
       parameters:    
         - in: query
           name: domain_name
-          required: true
+          required: false
           type: string
           description: Domain Name
         - in: query
           name: user_id
-          required: true
+          required: false
           type: string
           description: User ID    
         - in: query
@@ -75,12 +75,12 @@
       parameters:
         - in: query
           name: domain_name
-          required: true
+          required: false
           type: string
           description: Domain Name
         - in: query
           name: user_id
-          required: true
+          required: false
           type: string
           description: User ID 
         - in: query

@@ -1,0 +1,30 @@
+    put:
+      tags:
+      - Users  
+      summary: changeMembersMuteStatusRequest (groupMessagingHandler)  
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Users Access Token
+        - in: query
+          name: group_id
+          required: true
+          type: string
+          description: Group ID 
+        - in: query
+          name: mute
+          required: true
+          type: string
+          description: Mute  
+        - in: query
+          name: members
+          required: true
+          type: string
+          description: Members                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'   

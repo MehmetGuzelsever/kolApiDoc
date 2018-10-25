@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Users  
+      summary: connectionsIsAliveRequest (spidrRestProxyRequestHandler)
+      parameters:
+        - in: query
+          name: firstKey
+          required: true
+          type: string
+          description: First Key                                                                                                                                        
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

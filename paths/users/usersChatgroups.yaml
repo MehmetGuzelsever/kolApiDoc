@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Users  
+      summary: getUserGroupsRequest (groupMessagingHandler)
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    post:
+      tags:
+      - Users  
+      summary: createGroupRequest (groupMessagingHandler)  
+      parameters:
+        - in: body
+          name: Body Parameters
+          required: false
+          description: Parameters   
+          schema:
+            $ref: '#/definitions/chatgroup'     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                    

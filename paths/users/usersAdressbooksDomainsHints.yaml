@@ -5,17 +5,17 @@
       parameters:
         - in: query
           name: domain_name
-          required: true
+          required: false
           type: string
           description: Domain Name
         - in: query
           name: user_id
-          required: true
+          required: false
           type: string
           description: User ID
         - in: body
           name: domains
-          required: true
+          required: false
           description: Domains
           schema:
             type: object
@@ -24,7 +24,7 @@
                 type: string   
         - in: query
           name: include_profiles
-          required: true
+          required: false
           type: string
           description: Include Profile                                                                                                                   
       responses:

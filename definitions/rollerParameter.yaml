@@ -1,0 +1,8 @@
+type: object
+properties:
+  group_name:
+    type: string 
+  agent_contact:
+    type: string
+  agent_contact_type:
+    type: string               

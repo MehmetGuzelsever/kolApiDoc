@@ -1,0 +1,30 @@
+    put:
+      tags:
+      - Users  
+      summary: subscriptionsUpdateRequest (spidrRestProxyRequestHandler)
+      parameters:
+        - in: query
+          name: subscription_id
+          required: true
+          type: string
+          description: Subscription ID                                                                                                                            
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Users  
+      summary: subscriptionsDeleteRequest (spidrRestProxyRequestHandler)
+      parameters:     
+        - in: query
+          name: subscription_id
+          required: true
+          type: string
+          description: Subscription ID  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                       

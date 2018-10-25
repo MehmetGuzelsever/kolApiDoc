@@ -1,0 +1,15 @@
+    delete:
+      tags:
+      - Users  
+      summary: logRecordsDeleteRequest (spidrRestProxyRequestHandler)
+      parameters:
+        - in: query
+          name: id
+          required: true
+          type: string
+          description: Log ID                                                                                                                                       
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

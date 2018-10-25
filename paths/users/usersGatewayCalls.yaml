@@ -1,0 +1,20 @@
+    post:
+      tags:
+      - Users  
+      summary: callsCreateRequest (spidrRestProxyRequestHandler)
+      parameters:
+        - in: query
+          name: device_id
+          required: true
+          type: string
+          description: Device ID   
+        - in: query
+          name: device_native_id
+          required: true
+          type: string
+          description: Device Native ID                                                                                                                                       
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
