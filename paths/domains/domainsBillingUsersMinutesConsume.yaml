@@ -1,0 +1,28 @@
+    post:
+      tags:
+      - Domains  
+      summary: consumeUserMinutesRequest (domainBillingHandler)
+      parameters:    
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: body
+          name: Required Parameters (body or query)
+          required: true
+          description: Parameters
+          schema:
+            type: string
+            properties:
+              source_user_id:
+                type: string 
+              destination_user_id:
+                type: string 
+              minutes:
+                type: string                                           
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

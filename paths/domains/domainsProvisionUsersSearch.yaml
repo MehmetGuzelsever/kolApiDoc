@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetProvisionedUserSearchRequest (domainProvisionHandler)
+      parameters:  
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: searchBy
+          required: true
+          type: string
+          description: SearchBy
+        - in: query
+          name: value
+          required: true
+          type: string
+          description: Value                         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'   

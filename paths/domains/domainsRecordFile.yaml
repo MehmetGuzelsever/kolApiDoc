@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetRecordingFileRequest (domainCallRecordingHandler)
+      parameters: 
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token   
+        - in: query
+          name: file_id
+          required: true
+          type: string
+          description: File ID 
+        - in: query
+          name: segment_id
+          required: true
+          type: string
+          description: Segment ID                      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

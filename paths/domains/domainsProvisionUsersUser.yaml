@@ -1,0 +1,45 @@
+    put:
+      tags:
+      - Domains  
+      summary: UpdateProvisionedUserRequestBase (domainProvisionHandler)
+      parameters: 
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    delete:
+      tags:
+      - Domains  
+      summary: UnprovisionUserRequestBase (domainProvisionHandler)
+      parameters:    
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    get:
+      tags:
+      - Domains  
+      summary: GetProvisionedUserRequestBase (domainProvisionHandler)
+      parameters:  
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                      

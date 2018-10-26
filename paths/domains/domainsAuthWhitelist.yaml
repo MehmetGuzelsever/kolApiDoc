@@ -1,20 +1,20 @@
     get:
       tags:
       - Domains  
-      summary: GetDomainAccessTokenRequest
-      parameters:
+      summary: GetAuthWhitelistRequest
+      parameters:               
         - in: query
           name: key
           required: true
           type: string
-          description: Domain Api Key       
+          description: Domain Api Key 
         - in: query
           name: domain_api_secret
           required: true
           type: string
-          description: Domain Api Secret 
+          description: Domain Api Secret  
       responses:
         200:
           description: The request completed successfully
           schema: 
-            $ref: '#/definitions/success'
+            $ref: '#/definitions/success'    

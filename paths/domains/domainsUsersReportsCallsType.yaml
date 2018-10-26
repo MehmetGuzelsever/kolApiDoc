@@ -1,0 +1,35 @@
+    get:
+      tags:
+      - Domains  
+      summary: queryDataAllCallsByTypeAndUserRequest (reportApiHandler)
+      parameters: 
+        - in: path
+          name: type
+          required: true
+          type: string
+          description: Call Type   
+        - in: body
+          name: Type Argument
+          required: true
+          description: Parameters   
+          schema: 
+             type: object
+             properties:
+                ip:
+                  type: string
+                pstn: 
+                  type: string
+                pstn2ip:
+                   type: string
+                ip2pstn: 
+                    type: string                                                                                                    
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

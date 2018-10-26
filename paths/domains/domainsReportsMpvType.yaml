@@ -1,0 +1,40 @@
+    get:
+      tags:
+      - Domains  
+      summary: queryDataAllMpvByTypePerDomainRequest (reportApiHandler)
+      parameters: 
+        - in: path
+          name: type
+          required: true
+          type: string
+          description: Call Type   
+        - in: body
+          name: Type Argument (Must Use one)
+          required: true
+          description: Parameters   
+          schema: 
+             type: object
+             properties:
+                create:
+                  type: string
+                remove: 
+                  type: string
+                pull:
+                   type: string
+                invite: 
+                    type: string
+                join: 
+                    type: string  
+                part: 
+                    type: string  
+                changename: 
+                    type: string  
+                control: 
+                    type: string  
+                all: 
+                    type: string                                                                                                                                                                                                          
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

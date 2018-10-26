@@ -1,0 +1,23 @@
+    post:
+      tags:
+      - Domains  
+      summary: SendDomainSmsRequest
+      parameters:               
+        - in: body
+          name: Required Parameters (body or query)
+          required: true
+          description: Parameters
+          schema: 
+            type: string
+            properties: 
+              from: 
+                type: string
+              to: 
+                type: string
+              message: 
+                type: string    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'   

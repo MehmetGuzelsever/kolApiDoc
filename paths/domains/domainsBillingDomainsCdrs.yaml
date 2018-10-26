@@ -1,18 +1,18 @@
     get:
       tags:
       - Domains  
-      summary: GetDomainAccessTokenRequest
+      summary: GetDomainHistoryRequest (domainBillingHandler)
       parameters:
         - in: query
           name: key
           required: true
           type: string
-          description: Domain Api Key       
+          description: Domain Access Token 
         - in: query
-          name: domain_api_secret
+          name: start_date
           required: true
           type: string
-          description: Domain Api Secret 
+          description: Start Date           
       responses:
         200:
           description: The request completed successfully

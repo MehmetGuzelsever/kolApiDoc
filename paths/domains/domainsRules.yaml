@@ -1,0 +1,60 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetDomainCHRListRequest (domainCHRRequestHandler)
+      parameters: 
+        - in: query
+          name: type
+          required: true
+          type: string
+          description: Domain Access Token
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    post:
+      tags:
+      - Domains  
+      summary: AddDomainCHRRequest (domainCHRRequestHandler)
+      parameters:  
+        - in: query
+          name: type
+          required: true
+          type: string
+          description: Domain Access Token  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'    
+    put:
+      tags:
+      - Domains  
+      summary: PutDomainCHRRequest (domainCHRRequestHandler)
+      parameters:     
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'      
+    delete:
+      tags:
+      - Domains  
+      summary: RemDomainCHRRequest (domainCHRRequestHandler)
+      parameters:     
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                                                                                     

@@ -1,0 +1,55 @@
+    post:
+      tags:
+      - Domains  
+      summary: SubscribeToEventRequest
+      parameters: 
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Api Key
+        - in: query
+          name: event
+          required: true
+          type: string
+          description: Event                                                                                                              
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    delete:
+      tags:
+      - Domains  
+      summary: UnsubscribeFromEventRequest
+      parameters:        
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Api Key
+        - in: query
+          name: event_id
+          required: true
+          type: string
+          description: Event ID      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    get:
+      tags:
+      - Domains  
+      summary: GetDomainEventsRequest
+      parameters: 
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Api Key
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                             

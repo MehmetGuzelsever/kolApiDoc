@@ -1,0 +1,40 @@
+    post:
+      tags:
+      - Domains  
+      summary: StartDomainRecordingRequest (domainCallRecordingHandler)
+      parameters:     
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: call_id
+          required: true
+          type: string
+          description: Call ID         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    delete:
+      tags:
+      - Domains  
+      summary: StopDomainRecordingRequest (domainCallRecordingHandler)
+      parameters: 
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: call_id
+          required: true
+          type: string
+          description: Call ID              
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                              

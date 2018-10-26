@@ -1,20 +1,20 @@
     get:
       tags:
       - Domains  
-      summary: GetDomainAccessTokenRequest
-      parameters:
+      summary: GetRecordingInfoRequest (domainCallRecordingHandler)
+      parameters: 
         - in: query
           name: key
           required: true
           type: string
-          description: Domain Api Key       
+          description: Domain Access Token  
         - in: query
-          name: domain_api_secret
+          name: record_id
           required: true
           type: string
-          description: Domain Api Secret 
+          description: Record ID             
       responses:
         200:
           description: The request completed successfully
           schema: 
-            $ref: '#/definitions/success'
+            $ref: '#/definitions/success'  

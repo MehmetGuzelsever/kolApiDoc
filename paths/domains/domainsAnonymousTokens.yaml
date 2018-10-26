@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetAnonymousTokensRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: origination
+          required: true
+          type: string
+          description: Origination
+        - in: query
+          name: destination
+          required: true
+          type: string
+          description: Destination                       
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'   

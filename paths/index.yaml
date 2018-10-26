@@ -228,7 +228,131 @@
   /domains/users/smblocations:
     $ref: ./domains/domainsUsersSmbLocal.yaml
   /domains/users/registrations:
-    $ref: ./domains/domainsUsersRegister.yaml                                                                                                                            
+    $ref: ./domains/domainsUsersRegister.yaml 
+  /domains/configurations/configuration:
+    $ref: ./domains/domainsConfConf.yaml 
+  /domains/billing/domains/cdrs:  #<= start
+    $ref: ./domains/domainsBillingDomainsCdrs.yaml    
+  /domains/billing/domains/time/cdrs:
+    $ref: ./domains/domainsBillingDomainsTimeCdrs.yaml
+  /domains/billing/users/wallet:
+    $ref: ./domains/domainsBillingUsersWallet.yaml  
+  /domains/billing/blocked_destinations:
+    $ref: ./domains/domainsBillingBlockedDestinations.yaml    
+  /domains/billing/users/minutes/consume:
+    $ref: ./domains/domainsBillingUsersMinutesConsume.yaml  
+  /domains/users/billing/topup/card:
+    $ref: ./domains/domainsUsersBillingTopupCard.yaml 
+  /domains/billing/topup:
+    $ref: ./domains/domainsBillingTopup.yaml 
+  /domains/directories/native:
+    $ref: ./domains/DomainsDirectoriesNative.yaml
+  /domains/directories/native/search:
+    $ref: ./domains/domainsdirectoriesNativeSearch.yaml
+  /domains/directories/native/searches/name:
+    $ref: ./domains/domainsDirectoriesNativeSearchesName.yaml  
+  /domains/directories/native/searches/user_id:
+    $ref: ./domains/domainsDirectoriesNativeSearchesUserId.yaml 
+  /domains/directories/native/searches/phone_number:
+    $ref: ./domains/domainsDirectoriesNativeSearchesPhoneNumber.yaml 
+  /domains/addressbooks/family:
+    $ref: ./domains/domainsAddressbookFamily.yaml
+  /domains/credentials/push:
+    $ref: ./domains/domainsCredentialsPush.yaml  
+  /domains/services/normalize/phone_number:
+    $ref: ./domains/domainsServicesNormalizePhoneNumber.yaml   
+  /domains/services:
+    $ref: ./domains/domainsServices.yaml 
+  /domains/provision/users:
+    $ref: ./domains/domainsProvisionUsers.yaml 
+  /domains/provision/users/user:
+    $ref: ./domains/domainsProvisionUsersUser.yaml   
+  /domains/provision/users/search:
+    $ref: ./domains/domainsProvisionUsersSearch.yaml  
+  /domains/routings/sip/trunk:
+    $ref: ./domains/domainsRoutingSipTrunk.yaml   
+  /domains/anonymous/callme:
+    $ref: ./domains/domainsAnonymousCallme.yaml 
+  /domains/anonymous/tokens:
+    $ref: ./domains/domainsAnonymousTokens.yaml    
+  /domains/anonymous/origination:
+    $ref: ./domains/domainsAnonymousOrigination.yaml 
+  /domains/anonymous/destination:
+    $ref: ./domains/domainsAnonymousDestination.yaml  
+  /domains/auth/whitelist/ips:
+    $ref: ./domains/domainsAuthWhitelistIps.yaml
+  /domains/auth/whitelist:
+    $ref: ./domains/domainsAuthWhitelist.yaml
+  /domains/sms:
+    $ref: ./domains/domainsSms.yaml  
+  /domains/users/reports/registration:
+    $ref: ./domains/domainsUsersReportsRegitration.yaml   
+  /domains/users/reports/provision:
+    $ref: ./domains/domainsUsersReportsProvision.yaml 
+  /domains/users/reports/outgoing:
+    $ref: ./domains/domainsUsersReportsOutgoing.yaml
+  /domains/users/reports/incoming:
+    $ref: ./domains/domainsUsersReportsIncoming.yaml  
+  /domains/users/reports/calls/{type}:
+    $ref: ./domains/domainsUsersReportsCallsType.yaml
+  /domains/users/reports/messages:
+    $ref: ./domains/domainsUsersReportsMessages.yaml
+  /domains/users/reports/group/messages:
+    $ref: ./domains/domainsUsersReportsGroupMessages.yaml   
+  /domains/users/reports/sms:
+    $ref: ./domains/domainsUsersReportsSms.yaml            
+  /domains/users/reports/billing/packages:
+    $ref: ./domains/domainsUsersReportsBillingPackages.yaml 
+  /domains/users/reports/billing/credit:
+    $ref: ./domains/domainsUsersReportsBillingCredit.yaml       
+  /domains/users/reports/calls/mpv/{direction}:
+    $ref: ./domains/domainsUsersReportsMpvDirection.yaml
+  /domains/reports/registration:
+    $ref: ./domains/domainsReportsRegitration.yaml   
+  /domains/reports/provision:
+    $ref: ./domains/domainsReportsProvision.yaml 
+  /domains/reports/outgoing:
+    $ref: ./domains/domainsReportsOutgoing.yaml
+  /domains/reports/incoming:
+    $ref: ./domains/domainsReportsIncoming.yaml  
+  /domains/reports/calls/{type}:
+    $ref: ./domains/domainsReportsCallsType.yaml
+  /domains/reports/calls/stats/{type}:
+    $ref: ./domains/domainsReportsCallsStatsType.yaml    
+  /domains/reports/messages:
+    $ref: ./domains/domainsReportsMessages.yaml
+  /domains/reports/group/messages:
+    $ref: ./domains/domainsReportsGroupMessages.yaml   
+  /domains/reports/sms:
+    $ref: ./domains/domainsReportsSms.yaml            
+  /domains/reports/billing/packages:
+    $ref: ./domains/domainsReportsBillingPackages.yaml 
+  /domains/reports/billing/credit:
+    $ref: ./domains/domainsReportsBillingCredit.yaml
+  /domains/reports/mpv/{type}:
+    $ref: ./domains/domainsReportsMpvType.yaml 
+  /domains/reports/calls/mpv:
+    $ref: ./domains/domainsReportsCallMpv.yaml   
+  /domains/reports/calls/stats/mpv:
+    $ref: ./domains/domainsReportsCallsStatsMpv.yaml  
+  /domains/events:
+    $ref: ./domains/domainsEvents.yaml  
+  /domains/events/all:
+    $ref: ./domains/domainsEventsAll.yaml   
+  /domains/rules:
+    $ref: ./domains/domainsRules.yaml   
+  /domains/record/calls:
+    $ref: ./domains/domainsRecordCall.yaml  
+  /domains/record/files:  
+    $ref: ./domains/domainsRecordFiles.yaml
+  /domains/record/files/file: 
+    $ref: ./domains/domainsRecordFilesFile.yaml    
+  /domains/record/file: 
+    $ref: ./domains/domainsRecordFile.yaml  
+  /domains/record: 
+    $ref: ./domains/domainsRecord.yaml 
+  /domains/record/params:
+    $ref: ./domains/domainsRecordParams.yaml                                                                                                                                                                                                                                                                                                                                                                                
 #-------------------------------------------------------------------------------------------------#
 #------------------------------------------Users--------------------------------------------------#
   /users/AccessTokens:

@@ -1,0 +1,40 @@
+    post:
+      tags:
+      - Domains  
+      summary: SetAnonymousOriginationNameRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: origination
+          required: true
+          type: string
+          description: Origination                     
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    delete:
+      tags:
+      - Domains  
+      summary: DeleteAnonymousOriginationNameRequest
+      parameters:         
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: origination
+          required: true
+          type: string
+          description: Origination 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                         

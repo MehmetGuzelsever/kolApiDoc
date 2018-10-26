@@ -1,0 +1,20 @@
+    put:
+      tags:
+      - Domains  
+      summary: RedeemTopupCardRequest (domainBillingHandler)
+      parameters:    
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID 
+        - in: query
+          name: pin_code
+          required: true
+          type: string
+          description: Pin Code                                              
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

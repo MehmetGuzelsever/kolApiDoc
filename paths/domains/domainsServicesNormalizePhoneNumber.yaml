@@ -1,20 +1,20 @@
     get:
       tags:
       - Domains  
-      summary: GetDomainAccessTokenRequest
-      parameters:
+      summary: NormalizePhoneNumberRequest
+      parameters: 
         - in: query
-          name: key
+          name: phone_number
           required: true
           type: string
-          description: Domain Api Key       
+          description: Phone Number 
         - in: query
-          name: domain_api_secret
+          name: country_code
           required: true
           type: string
-          description: Domain Api Secret 
+          description: Country Code          
       responses:
         200:
           description: The request completed successfully
           schema: 
-            $ref: '#/definitions/success'
+            $ref: '#/definitions/success'     

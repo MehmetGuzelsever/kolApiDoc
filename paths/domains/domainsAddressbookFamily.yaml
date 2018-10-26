@@ -1,0 +1,51 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetHintedDomainsRequest
+      parameters:    
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token                                                                                
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    put:
+      tags:
+      - Domains  
+      summary: AddHintedDomainsRequest
+      parameters:  
+        - in: query
+          name: domains
+          required: true
+          type: string
+          description: Domains   
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    delete:
+      tags:
+      - Domains  
+      summary: RemoveHintedDomainsRequest
+      parameters:  
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token   
+        - in: query
+          name: domain_names
+          required: true
+          type: string
+          description: Domain Names        
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                              
+                  

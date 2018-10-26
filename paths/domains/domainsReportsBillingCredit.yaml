@@ -1,0 +1,15 @@
+    get:
+      tags:
+      - Domains  
+      summary: queryDataAllCreditActionsByDomainRequest (reportApiHandler)
+      parameters: 
+        - in: query
+          name: type
+          required: true
+          type: string
+          description: Domain Access Token                                                                                                   
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  

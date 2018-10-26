@@ -1,0 +1,30 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetAnonymousCallMeStatusRequest
+      parameters:   
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'  
+    post:
+      tags:
+      - Domains  
+      summary: CreateAnonymousCallMeServiceRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token   
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                  

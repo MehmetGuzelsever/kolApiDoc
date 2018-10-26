@@ -1,0 +1,65 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetDomainSipTrunkRoutingRequest
+      parameters:  
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    post:
+      tags:
+      - Domains  
+      summary: SetDomainSipTrunkRoutingRequest
+      parameters:  
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token  
+        - in: query
+          name: signalling_ip
+          required: true
+          type: string
+          description: Signaling IP  
+        - in: body
+          name: Body Parameters
+          required: false
+          description: Parameters
+          schema: 
+            type: string
+            properties: 
+              media_ip:
+                type: string   
+              signalling_port:
+                type: string 
+              tech_prefix:
+                type: string 
+              capacity:
+                type: string  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    delete:
+      tags:
+      - Domains  
+      summary: DeleteDomainSipTrunkRoutingRequest
+      parameters:   
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                                                                                                                    

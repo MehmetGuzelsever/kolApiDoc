@@ -1,0 +1,40 @@
+    post:
+      tags:
+      - Domains  
+      summary: AddAnonymousDestinationRequest
+      parameters:         
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: destination
+          required: true
+          type: string
+          description: Destination 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'   
+    delete:
+      tags:
+      - Domains  
+      summary: RemoveAnonymousDestinationRequest        
+      parameters:         
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: destination
+          required: true
+          type: string
+          description: Destination 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                     

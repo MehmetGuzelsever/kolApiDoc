@@ -1,0 +1,50 @@
+    put:
+      tags:
+      - Domains  
+      summary: AddIpToAuthWhitelistRequest
+      parameters:         
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Api Key 
+        - in: query
+          name: domain_api_secret
+          required: true
+          type: string
+          description: Domain Api Secret  
+        - in: query
+          name: ip
+          required: true
+          type: string
+          description: IP                 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    delete:
+      tags:
+      - Domains  
+      summary: RemoveIpFromAuthWhitelistRequest
+      parameters:               
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Api Key 
+        - in: query
+          name: domain_api_secret
+          required: true
+          type: string
+          description: Domain Api Secret  
+        - in: query
+          name: ip
+          required: true
+          type: string
+          description: IP 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                  

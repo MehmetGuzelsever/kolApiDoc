@@ -1,0 +1,35 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetBlockedDestinationsRequest (domainBillingHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success' 
+    put:
+      tags:
+      - Domains  
+      summary: SetBlockedDestinationsRequest (domainBillingHandler)
+      parameters:    
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: blocked_destinations
+          required: true
+          type: string
+          description: Blocked Destinations  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                    

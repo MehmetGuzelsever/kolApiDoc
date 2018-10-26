@@ -1,0 +1,70 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetWalletUsersRequest (domainBillingHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID                                       
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    put:
+      tags:
+      - Domains  
+      summary: AddUsersToWalletRequest (domainBillingHandler)
+      parameters:   
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID   
+        - in: query
+          name: users
+          required: true
+          type: string
+          description: Users to Add    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'    
+    delete:
+      tags:
+      - Domains  
+      summary: DeleteUsersFromWalletRequest (domainBillingHandler)
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: user_id
+          required: true
+          type: string
+          description: User ID   
+        - in: query
+          name: users
+          required: true
+          type: string
+          description: Users to Remove         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'                                                      
