@@ -8,17 +8,7 @@
           required: true
           description: Parameter
           schema:
-             $ref: '#/definitions/rollerParameter'  
-        - in: query
-          name: domain_name
-          required: false
-          type: string
-          description: Domain Name   
-        - in: query
-          name: name
-          required: false
-          type: string
-          description: Full User ID                                                                                                                                                                                                                                                                               
+             $ref: '#/definitions/rollerParameter'                                                                                                                                                                                                                                                                              
       responses:
         200:
           description: The request completed successfully

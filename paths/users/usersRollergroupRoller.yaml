@@ -7,12 +7,7 @@
           name: group_name
           required: true
           type: string
-          description: Group Name     
-        - in: query
-          name: domain_name
-          required: false
-          type: string
-          description: Domain Name                                                                                                                                                                                                                                                           
+          description: Group Name                                                                                                                                                                                                                                                               
       responses:
         200:
           description: The request completed successfully
@@ -27,17 +22,7 @@
           name: group_name
           required: true
           type: string
-          description: Group Name
-        - in: query
-          name: domain_name
-          required: false
-          type: string
-          description: Domain Name   
-        - in: query
-          name: name
-          required: false
-          type: string
-          description: Full User ID    
+          description: Group Name  
       responses:
         200:
           description: The request completed successfully

@@ -4,10 +4,10 @@
       summary: UserGetDomainRolloverGroupsRequest (rollovergroupsHandler) 
       parameters:
         - in: query
-          name: domain_name
+          name: key
           required: false
           type: string
-          description: Domain Name                                                                                                                                                                                                                                                
+          description: Domain Access Token                                                                                                                                                                                                                                                
       responses:
         200:
           description: The request completed successfully
@@ -23,27 +23,6 @@
           required: true
           type: string
           description: Group Name  
-        - in: query
-          name: domain_name
-          required: false
-          type: string
-          description: Domain Name     
-        - in: query
-          name: name
-          required: false
-          type: string
-          description: Full User ID                       
-        - in: body
-          name: group policy
-          required: false
-          description: Group Policy
-          schema:
-            type: object
-            properties:
-              group_policy:
-                type: string
-              roundrobin: 
-                type: string  
       responses:
         200:
           description: The request completed successfully

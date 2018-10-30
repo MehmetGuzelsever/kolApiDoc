@@ -4,15 +4,6 @@
       summary: UnregisterMultipleDeviceRequest
       parameters:
         - in: query
-          name: user_id
-          required: true
-          type: string
-        - in: query
-          name: domain_name
-          required: true
-          type: string
-          description: Domain Name
-        - in: query
           name: type
           required: true
           type: string

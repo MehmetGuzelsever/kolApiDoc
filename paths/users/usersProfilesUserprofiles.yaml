@@ -3,16 +3,6 @@
       - Users  
       summary: SetUserProfileRequest (userProfileHandler)
       parameters:
-        - in: query
-          name: user_id
-          required: true
-          type: string
-          description: User ID       
-        - in: query
-          name: domain_name
-          required: true
-          type: string
-          description: Domain Name
         - in: body
           name: userprofile
           required: true
@@ -42,7 +32,7 @@
         - in: body
           name: userprofile
           required: true
-          description: User Profile
+          description: User Profile Update
           schema:
             $ref: '#/definitions/userProfile' 
       responses:

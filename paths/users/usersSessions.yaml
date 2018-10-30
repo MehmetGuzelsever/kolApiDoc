@@ -4,10 +4,10 @@
       summary: GetAllSessionsRequest (sessionHandler)
       parameters:
         - in: query
-          name: domain_name
+          name: key
           required: true
           type: string
-          description: Domain Name
+          description: User Access Token
       responses:
         200:
           description: The request completed successfully

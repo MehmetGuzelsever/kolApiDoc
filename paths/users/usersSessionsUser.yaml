@@ -4,10 +4,10 @@
       summary: GetUserSessionsRequest (sessionHandler)
       parameters:
         - in: query
-          name: name
+          name: key
           required: true
           type: string
-          description: Full User ID      
+          description: User Acces Token      
       responses:
         200:
           description: The request completed successfully

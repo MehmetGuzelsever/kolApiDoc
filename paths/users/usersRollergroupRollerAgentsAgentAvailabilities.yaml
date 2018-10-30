@@ -9,16 +9,6 @@
           description: Parameters 
           schema:
             $ref: '#/definitions/rollerAvailability'  
-        - in: query
-          name: domain_name
-          required: false
-          type: string
-          description: Domain Name   
-        - in: query
-          name: name
-          required: false
-          type: string
-          description: Full User ID
       responses:
         200:
           description: The request completed successfully

@@ -28,11 +28,15 @@
           required: true
           type: string
           description: Session ID
-        - in: query
-          name: name
-          required: true
-          type: string
-          description: Full User ID    
+        - in: body
+          name: leave_reason
+          required: false
+          description: Leave Reason  
+          schema: 
+            type: string
+            properties: 
+              leave_reason: 
+                type: string          
       responses:
         200:
           description: The request completed successfully

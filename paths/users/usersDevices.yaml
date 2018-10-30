@@ -4,18 +4,8 @@
       summary: GetDeviceListRequest
       parameters:
         - in: query
-          name: domain_name
-          required: true
-          type: string
-          description: Domain Name
-        - in: query
-          name: user_id
-          required: true
-          type: string
-          description: User ID
-        - in: query
           name: type
-          required: true
+          required: false
           type: string
           description: Type
       responses:

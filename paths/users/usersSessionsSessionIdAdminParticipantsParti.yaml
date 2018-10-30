@@ -12,7 +12,16 @@
           name: full_user_id
           required: true
           type: string
-          description: Full User ID                         
+          description: Full User ID   
+        - in: body
+          name: boot_reason
+          required: false
+          description: Boot Reason  
+          schema: 
+            type: string
+            properties: 
+              boot_reason:
+                type: string                             
       responses:
         200:
           description: The request completed successfully
