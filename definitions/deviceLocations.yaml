@@ -1,0 +1,12 @@
+type: string
+properties:
+  longitude:
+    type: string 
+  latitude:
+    type: string
+  accuracy_meters:
+    type: string
+  country_long_code:
+    type: string  
+  country_short_code:
+    type: string                    

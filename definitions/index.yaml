@@ -23,4 +23,6 @@ userGroupParameter:
 userParticipant:
   $ref: ./userParticipant.yaml    
 chatgroup:
-  $ref: ./chatgroup.yaml     
+  $ref: ./chatgroup.yaml   
+deviceLocations:
+  $ref: ./deviceLocations.yaml        

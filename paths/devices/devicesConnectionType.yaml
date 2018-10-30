@@ -4,16 +4,6 @@
       summary: SetDeviceConnectionTypeRequest
       parameters:
         - in: query
-          name: domain_name
-          required: true
-          type: string
-          description: Domain Name
-        - in: query
-          name: user_id
-          required: true
-          type: string
-          description: User ID  
-        - in: query
           name: device_id
           required: true
           type: string
@@ -22,7 +12,22 @@
           name: connection_type
           required: true
           type: string
-          description: Connection Type  
+          description: Connection Type 
+        - in: body
+          name: Body Parameters
+          required: false
+          description: Parameters 
+          schema:
+            type: object
+            properties: 
+              cellId: 
+                type: string  
+              MCC: 
+                type: string   
+              MNC: 
+                type: string   
+              LAC: 
+                type: string                                                             
       responses:
         200:
           description: The request completed successfully

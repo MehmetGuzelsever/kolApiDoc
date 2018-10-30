@@ -23,16 +23,22 @@
       - Devices  
       summary: uploadFileRequest
       parameters:
+        - in: body
+          name: Body Parameters
+          required: true
+          description: Parameters 
+          schema: 
+            type: object 
+            properties: 
+              file: 
+                type: object  
+              content_type: 
+                type: string                       
         - in: query
-          name: domain_name
+          name: device_id
           required: true
           type: string
-          description: Domain Name
-        - in: query
-          name: user_id
-          required: true
-          type: string
-          description: User ID  
+          description: Device ID      
         - in: query
           name: content_uuid
           required: true
