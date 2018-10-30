@@ -1,0 +1,21 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetDomainPackagesRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: domain_name
+          required: true
+          type: string
+          description: Domain Name                                                                                                                         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+ 

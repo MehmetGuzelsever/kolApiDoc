@@ -1,0 +1,25 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetDidTypesRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: provider_id
+          required: true
+          type: string
+          description: Provider Id     
+        - in: query
+          name: country
+          required: true
+          type: string
+          description: Country                                                                                                                                                               
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

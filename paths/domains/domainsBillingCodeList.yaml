@@ -1,0 +1,41 @@
+    post:
+      tags:
+      - Domains  
+      summary: CreateCodeListRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token                                                
+        - in: query
+          name: code_list_name
+          required: true
+          type: string
+          description: Code List Name                                                
+        - in: query
+          name: codes
+          required: true
+          type: string
+          description: Codes                                                
+                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    get:
+      tags:
+      - Domains  
+      summary: GetCodeListRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token                                                
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'            

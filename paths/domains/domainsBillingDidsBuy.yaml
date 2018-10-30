@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Domains  
+      summary: BuyDidRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token 
+        - in: query
+          name: provider_id
+          required: true
+          type: string
+          description: Provider Id                                                                                                                                                                
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

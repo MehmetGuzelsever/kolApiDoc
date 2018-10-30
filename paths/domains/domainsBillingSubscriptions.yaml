@@ -1,0 +1,56 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetSubscriptionsRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token                                                                                                                      
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    post:
+      tags:
+      - Domains  
+      summary: SetSubscriptionsRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: plan_id
+          required: true
+          type: string
+          description: Plan Id                                                                                                                         
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    put:
+      tags:
+      - Domains  
+      summary: UpdateSubscriptionsRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: plan_id
+          required: true
+          type: string
+          description: Plan Id                                                                                                                             
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+ 

@@ -1,0 +1,20 @@
+    get:
+      tags:
+      - Domains  
+      summary: GetBillingCodesByCountriesRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: countries
+          required: true
+          type: string
+          description: Countries                                 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'            

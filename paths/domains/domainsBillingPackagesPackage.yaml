@@ -1,0 +1,32 @@
+    post:
+      tags:
+      - Domains  
+      summary: CreateGenericPackageRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token                                                
+        - in: query
+          name: package_name
+          required: true
+          type: string
+          description: Package Name                                                
+        - in: query
+          name: activation_fee
+          required: true
+          type: string
+          description: Activation Fee             
+        - in: query
+          name: subscription_fee
+          required: true
+          type: string
+          description: Subscription Fee                                                 
+                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+ 

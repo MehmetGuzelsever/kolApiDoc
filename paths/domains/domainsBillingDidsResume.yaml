@@ -1,0 +1,20 @@
+    post:
+      tags:
+      - Domains  
+      summary: ResumeDidRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: did
+          required: true
+          type: string
+          description: Did
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'

@@ -1,0 +1,31 @@
+    post:
+      tags:
+      - Domains  
+      summary: DomainAddAgentToRolloverGroupRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: group_name
+          required: true
+          type: string
+          description: Group Name
+        - in: query
+          name: agent_contact
+          required: true
+          type: string
+          description: Agent Contact     
+        - in: query
+          name: agent_contact_type
+          required: true
+          type: string
+          description: Agent Contact Type                                  
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+      

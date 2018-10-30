@@ -1,0 +1,41 @@
+    post:
+      tags:
+      - Domains  
+      summary: DomainAddAgentAvailabilityToRolloverGroupRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: group_name
+          required: true
+          type: string
+          description: Group Name
+        - in: query
+          name: agent_id
+          required: true
+          type: string
+          description: Agent Id
+        - in: query
+          name: availability_day_of_week
+          required: true
+          type: string
+          description: Availability Day of Week
+        - in: query
+          name: availability_start_time_UTC
+          required: true
+          type: string
+          description: Availability Start Time UTC      
+        - in: query
+          name: availability_end_time_UTC
+          required: true
+          type: string
+          description: Availability End Time UTC                    
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+      

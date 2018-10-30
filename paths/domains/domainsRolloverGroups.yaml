@@ -1,0 +1,40 @@
+    get:
+      tags:
+      - Domains  
+      summary: DomainGetDomainRolloverGroupsRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: name
+          required: true
+          type: string
+          description: Domain Name          
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
+    post:
+      tags:
+      - Domains  
+      summary: DomainCreateRolloverGroupRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: group_name
+          required: true
+          type: string
+          description: Group Name              
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'            

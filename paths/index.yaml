@@ -231,6 +231,89 @@
     $ref: ./domains/domainsUsersRegister.yaml 
   /domains/configurations/configuration:
     $ref: ./domains/domainsConfConf.yaml 
+                  #Billing
+  /domains/billing/packages:
+    $ref: ./domains/domainsBillingPackages.yaml 
+  /domains/billing/packages/status:
+    $ref: ./domains/domainsBillingPackagesStatus.yaml  
+  /domains/billing/packages/status/active:
+    $ref: ./domains/domainsBillingPackagesStatusActive.yaml
+  /domains/billing/users/packages:
+    $ref: ./domains/domainsBillingUsersPackages.yaml 
+  /domains/billing/users/packages/add:
+    $ref: ./domains/domainsBillingUsersPackagesAdd.yaml  
+  /domains/billing/users/packages/assignment:
+    $ref: ./domains/domainsBillingUsersPackagesAssignment.yaml  
+  /domains/billing/users/packages/remove:
+    $ref: ./domains/domainsBillingUsersPackagesRemove.yaml 
+  /domains/billing/users/packages/status/active:
+    $ref: ./domains/domainsBillingUsersPackagesStatusActive.yaml  
+  /domains/billing/packages/create:
+    $ref: ./domains/domainsBillingPackagesCreate.yaml  
+  /domains/billing/packages/reassign:
+    $ref: ./domains/domainsBillingPackagesReassign.yaml 
+  /domains/billing/packages/credit/create:
+    $ref: ./domains/domainsBillingPackagesCreditCreate.yaml  
+  /domains/billing/code_list:
+    $ref: ./domains/domainsBillingCodeList.yaml  
+  /domains/billing/packages/package:
+    $ref: ./domains/domainsBillingPackagesPackage.yaml 
+  /domains/billing/packages/created:
+    $ref: ./domains/domainsBillingPackagesCreated.yaml  
+  /domains/billing/packages/all:
+    $ref: ./domains/domainsBillingPackagesAll.yaml  
+  /domains/billing/subscriptions:
+    $ref: ./domains/domainsBillingSubscriptions.yaml 
+  /domains/billing/account/suspend:
+    $ref: ./domains/domainsBillingAccountSuspend.yaml  
+  /domains/billing/credit/increase:
+    $ref: ./domains/domainsBillingCreditIncrease.yaml  
+  /domains/billing/credit/decrease:
+    $ref: ./domains/domainsBillingCreditDecrease.yaml 
+  /domains/billing/credit/transfer:
+    $ref: ./domains/domainsBillingCreditTransfer.yaml  
+  /domains/billing/dids/providers:
+    $ref: ./domains/domainsBillingDidsProviders.yaml  
+  /domains/billing/dids/countries:
+    $ref: ./domains/domainsBillingDidsCountries.yaml 
+  /domains/billing/dids/cities:
+    $ref: ./domains/domainsBillingDidsCities.yaml  
+  /domains/billing/dids/area_codes/by_country:
+    $ref: ./domains/domainsBillingDidsAreaCodesByCountry.yaml     
+  /domains/billing/dids/types:
+    $ref: ./domains/domainsBillingDidsTypes.yaml  
+  /domains/billing/dids/buy:
+    $ref: ./domains/domainsBillingDidsBuy.yaml      
+  /domains/billing/dids/cancel:
+    $ref: ./domains/domainsBillingDidsCancel.yaml  
+  /domains/billing/dids/associate:
+    $ref: ./domains/domainsBillingDidsAssociate.yaml      
+  /domains/billing/dids/area_codes/by_city:
+    $ref: ./domains/domainsBillingDidsAreaCodesByCity.yaml
+  /domains/billing/dids/suspend:
+    $ref: ./domains/domainsBillingDidsSuspend.yaml
+  /domains/billing/dids/resume:
+    $ref: ./domains/domainsBillingDidsResume.yaml        
+  /domains/billing/dids/mappings:
+    $ref: ./domains/domainsBillingDidsMapping.yaml        
+  /domains/billing/users/history/calls:
+    $ref: ./domains/domainsBillingUsersHistoryCalls.yaml        
+  /domains/billing/packages/transactions:
+    $ref: ./domains/domainsBillingPackagesTransactions.yaml        
+  /domains/billing/users/history/smss:
+    $ref: ./domains/domainsBillingUsersHistorySmss.yaml        
+  /domains/billing/users/history/packages:
+    $ref: ./domains/domainsBillingUsersHistoryPackages.yaml        
+  /domains/billing/users/suspend:
+    $ref: ./domains/domainsBillingUsersSuspend.yaml        
+  /domains/billing/users/resume:
+    $ref: ./domains/domainsBillingUsersResume.yaml        
+  /domains/billing/users/suspend_pstn:
+    $ref: ./domains/domainsBillingUsersSuspendPSTN.yaml        
+  /domains/billing/users/resume_pstn:
+    $ref: ./domains/domainsBillingUsersResumePSTN.yaml        
+  /domains/billing/countries/codes:
+    $ref: ./domains/domainsBillingCountriesCodes.yaml                              
   /domains/billing/domains/cdrs:  #<= start
     $ref: ./domains/domainsBillingDomainsCdrs.yaml    
   /domains/billing/domains/time/cdrs:
@@ -352,7 +435,19 @@
   /domains/record: 
     $ref: ./domains/domainsRecord.yaml 
   /domains/record/params:
-    $ref: ./domains/domainsRecordParams.yaml                                                                                                                                                                                                                                                                                                                                                                                
+    $ref: ./domains/domainsRecordParams.yaml
+  /domains/rollovergroups:
+    $ref: ./domains/domainsRolloverGroups.yaml   
+  /domains/rollovergroups/rollovergroup:
+    $ref: ./domains/domainsRolloverGroupsRolloverGroup.yaml
+  /domains/rollovergroups/rollovergroup/agents:
+    $ref: ./domains/domainsRolloverGroupsAgents.yaml
+  /domains/rollovergroups/rollovergroup/agents/agent:
+    $ref: ./domains/domainsRolloverGroupsAgentsAgent.yaml
+  /domains/rollovergroups/rollovergroup/agents/agent/availabilities:
+    $ref: ./domains/domainsRolloverGroupsAgentsAgentAvailabities.yaml
+  /domains/rollovergroups/rollovergroup/agents/agent/availabilities/availability:
+    $ref: ./domains/domainsRolloverGroupsAgentsAgentAvailabitiesAvailability.yaml                                                                                                                                                                                                                                                                                                                                                                                     
 #-------------------------------------------------------------------------------------------------#
 #------------------------------------------Users--------------------------------------------------#
   /users/AccessTokens:

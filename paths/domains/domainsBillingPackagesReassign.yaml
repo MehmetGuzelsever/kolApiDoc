@@ -1,0 +1,35 @@
+    post:
+      tags:
+      - Domains  
+      summary: reAssignPackageRequest
+      parameters:
+        - in: query
+          name: key
+          required: true
+          type: string
+          description: Domain Access Token
+        - in: query
+          name: user_name
+          required: true
+          type: string
+          description: User Name
+        - in: query
+          name: new_product_type
+          required: true
+          type: string
+          description: New Product Type     
+        - in: query
+          name: new_pstn_international
+          required: true
+          type: string
+          description: New PSTN International   
+        - in: query
+          name: new_billing_mode
+          required: true
+          type: string
+          description: New Billing Mode                                                 
+      responses:
+        200:
+          description: The request completed successfully
+          schema: 
+            $ref: '#/definitions/success'
