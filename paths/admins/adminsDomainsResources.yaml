@@ -23,6 +23,11 @@
           required: true
           description: Domain Name
           type : string
+        - name: num_of_resources
+          in: query
+          required: true
+          description: Number of Resources
+          type : string          
       responses:
         200:
           description: The request completed successfully
