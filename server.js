@@ -6,7 +6,7 @@ const swaggerTool =require("swagger-tools");
 const resolve     =require("json-refs").resolveRefs;
 const YAML        =require("js-yaml");
 const fs          =require("fs");
-const port        ="8080";
+const port        =3000;
 
 
 //Express App

@@ -14,10 +14,10 @@
           type: string
           description: User Id
         - in: query
-          name: package_id
+          name: package_name
           required: true
           type: string
-          description: Package Id                     
+          description: Package Name                     
       responses:
         200:
           description: The request completed successfully
